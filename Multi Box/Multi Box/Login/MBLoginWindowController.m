@@ -7,6 +7,7 @@
 //
 
 #import "MBLoginWindowController.h"
+#import "MBAPIKey.h"
 
 @interface MBLoginWindowController ()
 
@@ -28,7 +29,8 @@
 {
     [super windowDidLoad];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    NSString* url = [NSString stringWithFormat:@"https://www.box.com/api/oauth2/authorize?response_type=code&client_id=%@&state=authenticated", [MBAPIKey getClientId]];
+    [[self.webView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
 }
 
 @end

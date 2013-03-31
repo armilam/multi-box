@@ -30,6 +30,17 @@
 	<string>Copyright © 2013 Milamsoft. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.milamsoft.urlschemes.Multi-Box</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>msmultibox</string>
+			</array>
+		</dict>
+	</array>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

@@ -19,6 +19,13 @@
 		A5E9FA941708B9D8000C723C /* Multi_BoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FA931708B9D8000C723C /* Multi_BoxTests.m */; };
 		A5E9FAA01708BBA0000C723C /* MBLoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FA9E1708BBA0000C723C /* MBLoginWindowController.m */; };
 		A5E9FAA11708BBA0000C723C /* MBLoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E9FA9F1708BBA0000C723C /* MBLoginWindowController.xib */; };
+		A5E9FAA41708BE40000C723C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FAA31708BE40000C723C /* WebKit.framework */; };
+		A5E9FAA91708DDFD000C723C /* MBAPIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAA81708DDFD000C723C /* MBAPIKey.m */; };
+		A5E9FAAA1708DDFD000C723C /* MBAPIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAA81708DDFD000C723C /* MBAPIKey.m */; };
+		A5E9FAAE1708E51B000C723C /* NSString+ParseURLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAAD1708E51B000C723C /* NSString+ParseURLQuery.m */; };
+		A5E9FAAF1708E51B000C723C /* NSString+ParseURLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAAD1708E51B000C723C /* NSString+ParseURLQuery.m */; };
+		A5E9FAB21708E77D000C723C /* MBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAB11708E77D000C723C /* MBUser.m */; };
+		A5E9FAB31708E77D000C723C /* MBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAB11708E77D000C723C /* MBUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,13 @@
 		A5E9FA9D1708BBA0000C723C /* MBLoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBLoginWindowController.h; path = "Multi Box/Login/MBLoginWindowController.h"; sourceTree = "<group>"; };
 		A5E9FA9E1708BBA0000C723C /* MBLoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBLoginWindowController.m; path = "Multi Box/Login/MBLoginWindowController.m"; sourceTree = "<group>"; };
 		A5E9FA9F1708BBA0000C723C /* MBLoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MBLoginWindowController.xib; path = "Multi Box/Login/MBLoginWindowController.xib"; sourceTree = "<group>"; };
+		A5E9FAA31708BE40000C723C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A5E9FAA71708DDFD000C723C /* MBAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBAPIKey.h; path = Info/MBAPIKey.h; sourceTree = "<group>"; };
+		A5E9FAA81708DDFD000C723C /* MBAPIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBAPIKey.m; path = Info/MBAPIKey.m; sourceTree = "<group>"; };
+		A5E9FAAC1708E51B000C723C /* NSString+ParseURLQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+ParseURLQuery.h"; path = "Categories/NSString+ParseURLQuery.h"; sourceTree = "<group>"; };
+		A5E9FAAD1708E51B000C723C /* NSString+ParseURLQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+ParseURLQuery.m"; path = "Categories/NSString+ParseURLQuery.m"; sourceTree = "<group>"; };
+		A5E9FAB01708E77D000C723C /* MBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBUser.h; path = Info/MBUser.h; sourceTree = "<group>"; };
+		A5E9FAB11708E77D000C723C /* MBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBUser.m; path = Info/MBUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E9FAA41708BE40000C723C /* WebKit.framework in Frameworks */,
 				A5E9FA6A1708B9D8000C723C /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +95,8 @@
 		A5E9FA5D1708B9D8000C723C = {
 			isa = PBXGroup;
 			children = (
+				A5E9FAAB1708E4F2000C723C /* Categories */,
+				A5E9FAA61708DDC8000C723C /* Info */,
 				A5E9FAA21708BBA5000C723C /* Login */,
 				A5E9FA6F1708B9D8000C723C /* Multi Box */,
 				A5E9FA8C1708B9D8000C723C /* Multi BoxTests */,
@@ -100,6 +117,7 @@
 		A5E9FA681708B9D8000C723C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5E9FAA31708BE40000C723C /* WebKit.framework */,
 				A5E9FA691708B9D8000C723C /* Cocoa.framework */,
 				A5E9FA871708B9D8000C723C /* SenTestingKit.framework */,
 				A5E9FA6B1708B9D8000C723C /* Other Frameworks */,
@@ -167,6 +185,26 @@
 				A5E9FA9F1708BBA0000C723C /* MBLoginWindowController.xib */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		A5E9FAA61708DDC8000C723C /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				A5E9FAA71708DDFD000C723C /* MBAPIKey.h */,
+				A5E9FAA81708DDFD000C723C /* MBAPIKey.m */,
+				A5E9FAB01708E77D000C723C /* MBUser.h */,
+				A5E9FAB11708E77D000C723C /* MBUser.m */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
+		A5E9FAAB1708E4F2000C723C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A5E9FAAC1708E51B000C723C /* NSString+ParseURLQuery.h */,
+				A5E9FAAD1708E51B000C723C /* NSString+ParseURLQuery.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +320,9 @@
 				A5E9FA761708B9D8000C723C /* main.m in Sources */,
 				A5E9FA7D1708B9D8000C723C /* MBAppDelegate.m in Sources */,
 				A5E9FAA01708BBA0000C723C /* MBLoginWindowController.m in Sources */,
+				A5E9FAA91708DDFD000C723C /* MBAPIKey.m in Sources */,
+				A5E9FAAE1708E51B000C723C /* NSString+ParseURLQuery.m in Sources */,
+				A5E9FAB21708E77D000C723C /* MBUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +331,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E9FA941708B9D8000C723C /* Multi_BoxTests.m in Sources */,
+				A5E9FAAA1708DDFD000C723C /* MBAPIKey.m in Sources */,
+				A5E9FAAF1708E51B000C723C /* NSString+ParseURLQuery.m in Sources */,
+				A5E9FAB31708E77D000C723C /* MBUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

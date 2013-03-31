@@ -7,9 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 
 @interface MBLoginWindowController : NSWindowController
 
-@property (nonatomic, strong) WebView* webView;
+@property (nonatomic, strong) IBOutlet WebView* webView;
 
 @end
