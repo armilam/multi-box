@@ -11,6 +11,8 @@
 
 @interface MBAuthentication : NSObject
 
-+ (void)processOAuthInfo:(NSDictionary*)params completion:(void(^)(MBUser* newUser, NSError* error))completion;
++ (void)processOAuthInfo:(NSDictionary*)params completion:(void(^)(MBUser* newUser, NSException* error))completion;
++ (void)refreshAccessTokenForUser:(MBUser*)user;
++ (void)revokeUser:(MBUser*)user completion:(void(^)(BOOL success))completion;
 
 @end

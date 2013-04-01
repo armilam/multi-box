@@ -1,5 +1,5 @@
 //
-//  MBUser.h
+//  MBAccessTokenResponse.h
 //  Multi Box
 //
 //  Created by Aaron Milam on 3/31/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MBUser : NSObject
+@interface MBAccessTokenResponse : NSObject
 
 @property (nonatomic, strong) NSString* accessToken;
 @property (nonatomic, assign) NSInteger expiresIn;

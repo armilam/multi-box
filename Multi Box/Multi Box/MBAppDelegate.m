@@ -42,15 +42,42 @@
     if([url.host isEqualToString:@"authentication"])
     {
         // Box's OAuth returned us a token
-        NSDictionary* queryParams = [urlString dictionaryFromQueryComponents];
+        NSDictionary* queryParams = [url.query dictionaryFromQueryComponents];
         
-        [MBAuthentication processOAuthInfo:queryParams completion:^(MBUser* newUser, NSError* error)
+        [MBAuthentication processOAuthInfo:queryParams completion:^(MBUser* newUser, NSException* error)
         {
-            //TODO: Do something with the new user
+            //TODO: Check the user isn't already in the list
+            //TODO: Add user to list
+            if(newUser) [self.users addObject:newUser];
+            //TODO: else [do something with the error]
+            //TODO: Do other stuff like showing user in UI
+            
         }];
     }
     
     [self.loginWindow close];
+}
+
+- (void)refreshAccessTokenForUser:(MBUser*)user
+{
+    //TODO: To prevent race conditions, consider having a completion block sent to refreshAccessTokenForUser.
+    //      This could allow us to know when a user is safe to use again.
+    [MBAuthentication refreshAccessTokenForUser:user];
+}
+
+- (void)revokeUser:(MBUser*)user
+{
+    [MBAuthentication revokeUser:user completion:^(BOOL success)
+    {
+        if(success)
+        {
+            //TODO: Remove user from list and do UI stuff
+        }
+        else
+        {
+            //TODO: Report failure?
+        }
+    }];
 }
 
 
@@ -59,6 +86,16 @@
 {
     self.loginWindow = [[MBLoginWindowController alloc] initWithWindowNibName:@"MBLoginWindowController"];
     [self.loginWindow showWindow:self];
+}
+
+- (void)refreshButtonClicked:(id)sender
+{
+    [self refreshAccessTokenForUser:[self.users objectAtIndex:0]];
+}
+
+- (void)revokeButtonClicked:(id)sender
+{
+    [self revokeUser:[self.users objectAtIndex:0]];
 }
 
 @end

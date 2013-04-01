@@ -13,5 +13,7 @@
 @property (assign) IBOutlet NSWindow *window;
 
 - (IBAction)loginButtonClicked:(id)sender;
+- (IBAction)refreshButtonClicked:(id)sender;
+- (IBAction)revokeButtonClicked:(id)sender;
 
 @end
