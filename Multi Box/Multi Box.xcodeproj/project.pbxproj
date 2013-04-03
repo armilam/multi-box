@@ -32,16 +32,18 @@
 		A5E9FACB1708EDF0000C723C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FAC81708EDF0000C723C /* Security.framework */; };
 		A5E9FACC1708EDF0000C723C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FAC91708EDF0000C723C /* SystemConfiguration.framework */; };
 		A5E9FACE1708EE6A000C723C /* RestKit.framework in Copy RestKit Framework */ = {isa = PBXBuildFile; fileRef = A5E9FAC01708EC86000C723C /* RestKit.framework */; };
-		A5E9FAD11708F0AE000C723C /* MBAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAD01708F0AE000C723C /* MBAuthentication.m */; };
-		A5E9FAD21708F0AE000C723C /* MBAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAD01708F0AE000C723C /* MBAuthentication.m */; };
-		A5E9FAD61708F9EA000C723C /* MBAccessTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAD51708F9EA000C723C /* MBAccessTokenRequest.m */; };
-		A5E9FAD71708F9EA000C723C /* MBAccessTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAD51708F9EA000C723C /* MBAccessTokenRequest.m */; };
-		A5E9FADA17090C3F000C723C /* MBAccessTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAD917090C3F000C723C /* MBAccessTokenResponse.m */; };
-		A5E9FADB17090C3F000C723C /* MBAccessTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAD917090C3F000C723C /* MBAccessTokenResponse.m */; };
-		A5E9FADE17094923000C723C /* MBRefreshTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FADD17094923000C723C /* MBRefreshTokenRequest.m */; };
-		A5E9FADF17094923000C723C /* MBRefreshTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FADD17094923000C723C /* MBRefreshTokenRequest.m */; };
-		A5E9FAE217094F49000C723C /* MBRevokeTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAE117094F48000C723C /* MBRevokeTokenRequest.m */; };
-		A5E9FAE317094F49000C723C /* MBRevokeTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FAE117094F48000C723C /* MBRevokeTokenRequest.m */; };
+		D3F6415A94DAE09D358D5F77 /* MBRefreshTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F642F18F388FBB1D95ADBD /* MBRefreshTokenRequest.m */; };
+		D3F6416173B86EB60EC6E428 /* MBRefreshTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64B1B607B52208FF7F667 /* MBRefreshTokenResponse.m */; };
+		D3F64322DC6964D813E53590 /* MBRevokeTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64887EC05AB56D1429CD0 /* MBRevokeTokenRequest.m */; };
+		D3F6466D5CE4FF73CE6646B1 /* MBUser+Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6418544C7E39163BFBD4E /* MBUser+Authentication.m */; };
+		D3F647099A7AA0C345AE757F /* MBRevokeTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64887EC05AB56D1429CD0 /* MBRevokeTokenRequest.m */; };
+		D3F64829AF302117C89679FF /* MBRefreshTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64B1B607B52208FF7F667 /* MBRefreshTokenResponse.m */; };
+		D3F64853C895E456A8C7BED7 /* MBUser+Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6418544C7E39163BFBD4E /* MBUser+Authentication.m */; };
+		D3F64A3FB28518D2F3B43FA3 /* MBAccessTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F642321C94FC372733CB39 /* MBAccessTokenResponse.m */; };
+		D3F64AE95E2C23E1DE98F340 /* MBAccessTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64E059564B98C93D6094D /* MBAccessTokenRequest.m */; };
+		D3F64CDFE30EF39F0EBCC146 /* MBAccessTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64E059564B98C93D6094D /* MBAccessTokenRequest.m */; };
+		D3F64EE1BA7FFB99BA7E7A7B /* MBRefreshTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F642F18F388FBB1D95ADBD /* MBRefreshTokenRequest.m */; };
+		D3F64F2E63EBA8FA24DE36F0 /* MBAccessTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F642321C94FC372733CB39 /* MBAccessTokenResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,8 +129,8 @@
 		A5E9FA9E1708BBA0000C723C /* MBLoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBLoginWindowController.m; path = "Multi Box/Login/MBLoginWindowController.m"; sourceTree = "<group>"; };
 		A5E9FA9F1708BBA0000C723C /* MBLoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MBLoginWindowController.xib; path = "Multi Box/Login/MBLoginWindowController.xib"; sourceTree = "<group>"; };
 		A5E9FAA31708BE40000C723C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		A5E9FAA71708DDFD000C723C /* MBAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBAPIKey.h; path = Info/MBAPIKey.h; sourceTree = "<group>"; };
-		A5E9FAA81708DDFD000C723C /* MBAPIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBAPIKey.m; path = Info/MBAPIKey.m; sourceTree = "<group>"; };
+		A5E9FAA71708DDFD000C723C /* MBAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBAPIKey.h; path = ../Info/MBAPIKey.h; sourceTree = "<group>"; };
+		A5E9FAA81708DDFD000C723C /* MBAPIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBAPIKey.m; path = ../Info/MBAPIKey.m; sourceTree = "<group>"; };
 		A5E9FAAC1708E51B000C723C /* NSString+ParseURLQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+ParseURLQuery.h"; path = "Categories/NSString+ParseURLQuery.h"; sourceTree = "<group>"; };
 		A5E9FAAD1708E51B000C723C /* NSString+ParseURLQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+ParseURLQuery.m"; path = "Categories/NSString+ParseURLQuery.m"; sourceTree = "<group>"; };
 		A5E9FAB01708E77D000C723C /* MBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBUser.h; path = Info/MBUser.h; sourceTree = "<group>"; };
@@ -137,16 +139,18 @@
 		A5E9FAC71708EDF0000C723C /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		A5E9FAC81708EDF0000C723C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A5E9FAC91708EDF0000C723C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		A5E9FACF1708F0AD000C723C /* MBAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBAuthentication.h; path = "Multi Box/Login/MBAuthentication.h"; sourceTree = "<group>"; };
-		A5E9FAD01708F0AE000C723C /* MBAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBAuthentication.m; path = "Multi Box/Login/MBAuthentication.m"; sourceTree = "<group>"; };
-		A5E9FAD41708F9EA000C723C /* MBAccessTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBAccessTokenRequest.h; path = "Multi Box/Login/MBAccessTokenRequest.h"; sourceTree = "<group>"; };
-		A5E9FAD51708F9EA000C723C /* MBAccessTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBAccessTokenRequest.m; path = "Multi Box/Login/MBAccessTokenRequest.m"; sourceTree = "<group>"; };
-		A5E9FAD817090C3F000C723C /* MBAccessTokenResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBAccessTokenResponse.h; path = "Multi Box/Login/MBAccessTokenResponse.h"; sourceTree = "<group>"; };
-		A5E9FAD917090C3F000C723C /* MBAccessTokenResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBAccessTokenResponse.m; path = "Multi Box/Login/MBAccessTokenResponse.m"; sourceTree = "<group>"; };
-		A5E9FADC17094923000C723C /* MBRefreshTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBRefreshTokenRequest.h; path = "Multi Box/Login/MBRefreshTokenRequest.h"; sourceTree = "<group>"; };
-		A5E9FADD17094923000C723C /* MBRefreshTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRefreshTokenRequest.m; path = "Multi Box/Login/MBRefreshTokenRequest.m"; sourceTree = "<group>"; };
-		A5E9FAE017094F48000C723C /* MBRevokeTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBRevokeTokenRequest.h; path = "Multi Box/Login/MBRevokeTokenRequest.h"; sourceTree = "<group>"; };
-		A5E9FAE117094F48000C723C /* MBRevokeTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRevokeTokenRequest.m; path = "Multi Box/Login/MBRevokeTokenRequest.m"; sourceTree = "<group>"; };
+		D3F641682A617BBF70D5DBB7 /* MBRefreshTokenResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBRefreshTokenResponse.h; path = Info/MBRefreshTokenResponse.h; sourceTree = "<group>"; };
+		D3F6418544C7E39163BFBD4E /* MBUser+Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBUser+Authentication.m"; path = "Info/MBUser+Authentication.m"; sourceTree = "<group>"; };
+		D3F642321C94FC372733CB39 /* MBAccessTokenResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBAccessTokenResponse.m; path = "Multi Box/Login/MBAccessTokenResponse.m"; sourceTree = "<group>"; };
+		D3F642F18F388FBB1D95ADBD /* MBRefreshTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRefreshTokenRequest.m; path = "Multi Box/Login/MBRefreshTokenRequest.m"; sourceTree = "<group>"; };
+		D3F6444834221B566D1CB7C8 /* MBAccessTokenResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBAccessTokenResponse.h; path = "Multi Box/Login/MBAccessTokenResponse.h"; sourceTree = "<group>"; };
+		D3F645BF7829AB358059D97A /* MBUser+Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBUser+Authentication.h"; path = "Info/MBUser+Authentication.h"; sourceTree = "<group>"; };
+		D3F6462B46F17E9F64DCB636 /* MBRevokeTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBRevokeTokenRequest.h; path = "Multi Box/Login/MBRevokeTokenRequest.h"; sourceTree = "<group>"; };
+		D3F646D196790B4A84854046 /* MBAccessTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBAccessTokenRequest.h; path = "Multi Box/Login/MBAccessTokenRequest.h"; sourceTree = "<group>"; };
+		D3F64887EC05AB56D1429CD0 /* MBRevokeTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRevokeTokenRequest.m; path = "Multi Box/Login/MBRevokeTokenRequest.m"; sourceTree = "<group>"; };
+		D3F64B1B607B52208FF7F667 /* MBRefreshTokenResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRefreshTokenResponse.m; path = Info/MBRefreshTokenResponse.m; sourceTree = "<group>"; };
+		D3F64BBEAF4DDC38576A97DB /* MBRefreshTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBRefreshTokenRequest.h; path = "Multi Box/Login/MBRefreshTokenRequest.h"; sourceTree = "<group>"; };
+		D3F64E059564B98C93D6094D /* MBAccessTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBAccessTokenRequest.m; path = "Multi Box/Login/MBAccessTokenRequest.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,11 +180,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A56C2080170BE06B00E7B368 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A5E9FAB01708E77D000C723C /* MBUser.h */,
+				A5E9FAB11708E77D000C723C /* MBUser.m */,
+				D3F64DC01289F6EFD511823C /* Authentication */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		A5E9FA5D1708B9D8000C723C = {
 			isa = PBXGroup;
 			children = (
 				A5E9FAAB1708E4F2000C723C /* Categories */,
-				A5E9FAA61708DDC8000C723C /* Info */,
+				A5E9FAA61708DDC8000C723C /* Data Model */,
 				A5E9FAA21708BBA5000C723C /* Login */,
 				A5E9FA6F1708B9D8000C723C /* Multi Box */,
 				A5E9FA8C1708B9D8000C723C /* Multi BoxTests */,
@@ -228,6 +242,8 @@
 			children = (
 				A5E9FA7B1708B9D8000C723C /* MBAppDelegate.h */,
 				A5E9FA7C1708B9D8000C723C /* MBAppDelegate.m */,
+				A5E9FAA71708DDFD000C723C /* MBAPIKey.h */,
+				A5E9FAA81708DDFD000C723C /* MBAPIKey.m */,
 				A5E9FA7E1708B9D8000C723C /* MainMenu.xib */,
 				A5E9FA701708B9D8000C723C /* Supporting Files */,
 			);
@@ -268,16 +284,6 @@
 		A5E9FAA21708BBA5000C723C /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A5E9FACF1708F0AD000C723C /* MBAuthentication.h */,
-				A5E9FAD01708F0AE000C723C /* MBAuthentication.m */,
-				A5E9FAD41708F9EA000C723C /* MBAccessTokenRequest.h */,
-				A5E9FAD51708F9EA000C723C /* MBAccessTokenRequest.m */,
-				A5E9FADC17094923000C723C /* MBRefreshTokenRequest.h */,
-				A5E9FADD17094923000C723C /* MBRefreshTokenRequest.m */,
-				A5E9FAE017094F48000C723C /* MBRevokeTokenRequest.h */,
-				A5E9FAE117094F48000C723C /* MBRevokeTokenRequest.m */,
-				A5E9FAD817090C3F000C723C /* MBAccessTokenResponse.h */,
-				A5E9FAD917090C3F000C723C /* MBAccessTokenResponse.m */,
 				A5E9FA9D1708BBA0000C723C /* MBLoginWindowController.h */,
 				A5E9FA9E1708BBA0000C723C /* MBLoginWindowController.m */,
 				A5E9FA9F1708BBA0000C723C /* MBLoginWindowController.xib */,
@@ -285,15 +291,12 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
-		A5E9FAA61708DDC8000C723C /* Info */ = {
+		A5E9FAA61708DDC8000C723C /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				A5E9FAA71708DDFD000C723C /* MBAPIKey.h */,
-				A5E9FAA81708DDFD000C723C /* MBAPIKey.m */,
-				A5E9FAB01708E77D000C723C /* MBUser.h */,
-				A5E9FAB11708E77D000C723C /* MBUser.m */,
+				A56C2080170BE06B00E7B368 /* User */,
 			);
-			name = Info;
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 		A5E9FAAB1708E4F2000C723C /* Categories */ = {
@@ -314,6 +317,25 @@
 				A5E9FAC21708EC86000C723C /* RestKitFrameworkTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D3F64DC01289F6EFD511823C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D3F646D196790B4A84854046 /* MBAccessTokenRequest.h */,
+				D3F64E059564B98C93D6094D /* MBAccessTokenRequest.m */,
+				D3F6444834221B566D1CB7C8 /* MBAccessTokenResponse.h */,
+				D3F642321C94FC372733CB39 /* MBAccessTokenResponse.m */,
+				D3F64BBEAF4DDC38576A97DB /* MBRefreshTokenRequest.h */,
+				D3F642F18F388FBB1D95ADBD /* MBRefreshTokenRequest.m */,
+				D3F641682A617BBF70D5DBB7 /* MBRefreshTokenResponse.h */,
+				D3F64B1B607B52208FF7F667 /* MBRefreshTokenResponse.m */,
+				D3F6462B46F17E9F64DCB636 /* MBRevokeTokenRequest.h */,
+				D3F64887EC05AB56D1429CD0 /* MBRevokeTokenRequest.m */,
+				D3F645BF7829AB358059D97A /* MBUser+Authentication.h */,
+				D3F6418544C7E39163BFBD4E /* MBUser+Authentication.m */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,11 +493,12 @@
 				A5E9FAA91708DDFD000C723C /* MBAPIKey.m in Sources */,
 				A5E9FAAE1708E51B000C723C /* NSString+ParseURLQuery.m in Sources */,
 				A5E9FAB21708E77D000C723C /* MBUser.m in Sources */,
-				A5E9FAD11708F0AE000C723C /* MBAuthentication.m in Sources */,
-				A5E9FAD61708F9EA000C723C /* MBAccessTokenRequest.m in Sources */,
-				A5E9FADA17090C3F000C723C /* MBAccessTokenResponse.m in Sources */,
-				A5E9FADE17094923000C723C /* MBRefreshTokenRequest.m in Sources */,
-				A5E9FAE217094F49000C723C /* MBRevokeTokenRequest.m in Sources */,
+				D3F64CDFE30EF39F0EBCC146 /* MBAccessTokenRequest.m in Sources */,
+				D3F64F2E63EBA8FA24DE36F0 /* MBAccessTokenResponse.m in Sources */,
+				D3F64EE1BA7FFB99BA7E7A7B /* MBRefreshTokenRequest.m in Sources */,
+				D3F6416173B86EB60EC6E428 /* MBRefreshTokenResponse.m in Sources */,
+				D3F64322DC6964D813E53590 /* MBRevokeTokenRequest.m in Sources */,
+				D3F64853C895E456A8C7BED7 /* MBUser+Authentication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,11 +510,12 @@
 				A5E9FAAA1708DDFD000C723C /* MBAPIKey.m in Sources */,
 				A5E9FAAF1708E51B000C723C /* NSString+ParseURLQuery.m in Sources */,
 				A5E9FAB31708E77D000C723C /* MBUser.m in Sources */,
-				A5E9FAD21708F0AE000C723C /* MBAuthentication.m in Sources */,
-				A5E9FAD71708F9EA000C723C /* MBAccessTokenRequest.m in Sources */,
-				A5E9FADB17090C3F000C723C /* MBAccessTokenResponse.m in Sources */,
-				A5E9FADF17094923000C723C /* MBRefreshTokenRequest.m in Sources */,
-				A5E9FAE317094F49000C723C /* MBRevokeTokenRequest.m in Sources */,
+				D3F64AE95E2C23E1DE98F340 /* MBAccessTokenRequest.m in Sources */,
+				D3F64A3FB28518D2F3B43FA3 /* MBAccessTokenResponse.m in Sources */,
+				D3F6415A94DAE09D358D5F77 /* MBRefreshTokenRequest.m in Sources */,
+				D3F64829AF302117C89679FF /* MBRefreshTokenResponse.m in Sources */,
+				D3F647099A7AA0C345AE757F /* MBRevokeTokenRequest.m in Sources */,
+				D3F6466D5CE4FF73CE6646B1 /* MBUser+Authentication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +712,7 @@
 				A5E9FA991708B9D8000C723C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5E9FA9A1708B9D8000C723C /* Build configuration list for PBXNativeTarget "Multi BoxTests" */ = {
 			isa = XCConfigurationList;
@@ -696,6 +721,7 @@
 				A5E9FA9C1708B9D8000C723C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

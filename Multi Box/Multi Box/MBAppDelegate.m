@@ -9,8 +9,7 @@
 #import "MBAppDelegate.h"
 #import "MBLoginWindowController.h"
 #import "NSString+ParseURLQuery.h"
-#import "MBUser.h"
-#import "MBAuthentication.h"
+#import "MBUser+Authentication.h"
 
 @interface MBAppDelegate()
 
@@ -29,6 +28,7 @@
                                                         andEventID:kAEGetURL];
     
     //TODO: Load existing users
+    // Use initWithRefreshToken
     self.users = [NSMutableArray array];
 
 }
@@ -44,7 +44,7 @@
         // Box's OAuth returned us a token
         NSDictionary* queryParams = [url.query dictionaryFromQueryComponents];
         
-        [MBAuthentication processOAuthInfo:queryParams completion:^(MBUser* newUser, NSException* error)
+        [MBUser authenticateNewUser:queryParams completion:^(MBUser* newUser, NSException* error)
         {
             //TODO: Check the user isn't already in the list
             //TODO: Add user to list
@@ -62,12 +62,12 @@
 {
     //TODO: To prevent race conditions, consider having a completion block sent to refreshAccessTokenForUser.
     //      This could allow us to know when a user is safe to use again.
-    [MBAuthentication refreshAccessTokenForUser:user];
+    [user refreshAccessToken];
 }
 
 - (void)revokeUser:(MBUser*)user
 {
-    [MBAuthentication revokeUser:user completion:^(BOOL success)
+    [user revokeWithCompletion:^(BOOL success)
     {
         if(success)
         {

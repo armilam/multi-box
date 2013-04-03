@@ -1,21 +1,22 @@
 //
-//  MBAuthentication.m
+//  MBUser+Authentication.m
 //  Multi Box
 //
-//  Created by Aaron Milam on 3/31/13.
+//  Created by Aaron Milam on 4/3/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBAuthentication.h"
+#import "MBUser+Authentication.h"
 #import "MBAccessTokenRequest.h"
-#import "MBRefreshTokenRequest.h"
-#import "MBRevokeTokenRequest.h"
 #import "MBAccessTokenResponse.h"
+#import "MBRefreshTokenRequest.h"
+#import "MBRefreshTokenResponse.h"
+#import "MBRevokeTokenRequest.h"
 #import <RestKit/RestKit.h>
 
-@implementation MBAuthentication
+@implementation MBUser (Authentication)
 
-+ (void)processOAuthInfo:(NSDictionary*)params completion:(void(^)(MBUser* newUser, NSException* error))completion
++ (void)authenticateNewUser:(NSDictionary*)params completion:(void(^)(MBUser* newUser, NSException* error))completion
 {
     NSString* error = [[params objectForKey:@"error"] objectAtIndex:0];
     NSString* state = [[params objectForKey:@"state"] objectAtIndex:0];
@@ -59,7 +60,7 @@
         
         MBAccessTokenRequest* tokenRequest = [[MBAccessTokenRequest alloc] init];
         tokenRequest.code = authCode;
-
+        
         [manager postObject:nil path:@"/api/oauth2/token" parameters:[tokenRequest requestParameters] success:^(RKObjectRequestOperation* operation, RKMappingResult* result)
          {
              if([result array].count < 1)
@@ -68,13 +69,14 @@
              }
              
              //TODO: Success! Now can we get more info about the user? Name?
-
+             
              MBAccessTokenResponse* tokenResponse = [[result array] objectAtIndex:0];
              MBUser* newUser = [[MBUser alloc] init];
              newUser.accessToken = tokenResponse.accessToken;
              newUser.expiresIn = tokenResponse.expiresIn;
              newUser.tokenType = tokenResponse.tokenType;
              newUser.refreshToken = tokenResponse.refreshToken;
+             [newUser resetRefreshTokenExpiration];
              if(completion) completion(newUser, nil);
          }
                     failure:^(RKObjectRequestOperation *operation, NSError *error)
@@ -89,10 +91,10 @@
     }
 }
 
-+ (void)refreshAccessTokenForUser:(MBUser *)user
+- (void)refreshAccessToken
 {
     //TODO: I can see potential race conditions here when the app tries to use the user's access token while this refresh is still happening
-    RKObjectMapping* tokenMapping = [RKObjectMapping mappingForClass:[MBAccessTokenResponse class]];
+    RKObjectMapping* tokenMapping = [RKObjectMapping mappingForClass:[MBRefreshTokenResponse class]];
     [tokenMapping addAttributeMappingsFromDictionary:@{
      @"access_token":   @"accessToken",
      @"expires_in":     @"expiresIn",
@@ -118,7 +120,7 @@
     [manager addRequestDescriptor:requestDescriptor];
     [manager addResponseDescriptor:responseDescriptor];
     
-    MBRefreshTokenRequest* tokenRequest = [[MBRefreshTokenRequest alloc] initWithUser:user];
+    MBRefreshTokenRequest* tokenRequest = [[MBRefreshTokenRequest alloc] initWithUser:self];
     
     [manager postObject:nil path:@"/api/oauth2/token" parameters:[tokenRequest requestParameters] success:^(RKObjectRequestOperation* operation, RKMappingResult* result)
      {
@@ -128,11 +130,12 @@
              return ;
          }
          
-         MBAccessTokenResponse* tokenResponse = [[result array] objectAtIndex:0];
-         user.accessToken = tokenResponse.accessToken;
-         user.expiresIn = tokenResponse.expiresIn;
-         user.tokenType = tokenResponse.tokenType;
-         user.refreshToken = tokenResponse.refreshToken;
+         MBRefreshTokenResponse* tokenResponse = [[result array] objectAtIndex:0];
+         self.accessToken = tokenResponse.accessToken;
+         self.expiresIn = tokenResponse.expiresIn;
+         self.tokenType = tokenResponse.tokenType;
+         self.refreshToken = tokenResponse.refreshToken;
+         [self resetRefreshTokenExpiration];
          
          NSLog(@"Got refreshed token");
      }
@@ -142,12 +145,15 @@
      }];
 }
 
-+ (void)revokeUser:(MBUser*)user completion:(void(^)(BOOL success))completion
+- (void)revokeWithCompletion:(void(^)(BOOL success))completion
 {
+    //TODO: Figure out how to revoke
+    @throw [NSException exceptionWithName:@"revokeUser not available" reason:@"For some reason, I can't figure out the whole object mapping thing in this case. I get a text/html response, but I don't know how to handle that. Figure that out, and maybe I'll get revoke to work." userInfo:nil];
+    
     //TODO: I can see potential race conditions here when the app tries to use the user's access token while this revoke is still happening
     
-    NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful); // Anything in 2xx
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:nil pathPattern:@"/api/oauth2/revoke" keyPath:nil statusCodes:statusCodes];
+    //    NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful); // Anything in 2xx
+    //    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:nil pathPattern:@"/api/oauth2/revoke" keyPath:nil statusCodes:statusCodes];
     
     RKObjectMapping* requestMapping = [RKObjectMapping requestMapping];
     [requestMapping addAttributeMappingsFromDictionary:@{
@@ -161,9 +167,9 @@
     RKObjectManager* manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://www.box.com"]];
     manager.requestSerializationMIMEType = RKMIMETypeFormURLEncoded;
     [manager addRequestDescriptor:requestDescriptor];
-    [manager addResponseDescriptor:responseDescriptor];
+    //    [manager addResponseDescriptor:responseDescriptor];
     
-    MBRefreshTokenRequest* tokenRequest = [[MBRefreshTokenRequest alloc] initWithUser:user];
+    MBRevokeTokenRequest* tokenRequest = [[MBRevokeTokenRequest alloc] initWithUser:self];
     //TODO: CRASH: Mapping is incorrect. Test to see the error.
     [manager postObject:nil path:@"/api/oauth2/revoke" parameters:[tokenRequest requestParameters] success:^(RKObjectRequestOperation* operation, RKMappingResult* result)
      {
