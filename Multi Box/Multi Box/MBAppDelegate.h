@@ -7,13 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MBMainViewController.h"
 
 @interface MBAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (nonatomic, strong) MBMainViewController* mainViewController;
 
-- (IBAction)loginButtonClicked:(id)sender;
-- (IBAction)refreshButtonClicked:(id)sender;
-- (IBAction)revokeButtonClicked:(id)sender;
++ (MBAppDelegate*)appDelegate;
 
 @end

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5095643170BF1A900FF4CD3 /* MBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5095641170BF1A900FF4CD3 /* MBMainViewController.m */; };
+		A5095644170BF1A900FF4CD3 /* MBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5095641170BF1A900FF4CD3 /* MBMainViewController.m */; };
+		A5095645170BF1A900FF4CD3 /* MBMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5095642170BF1A900FF4CD3 /* MBMainViewController.xib */; };
+		A5095646170BF1A900FF4CD3 /* MBMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5095642170BF1A900FF4CD3 /* MBMainViewController.xib */; };
+		A5095649170BF4D700FF4CD3 /* MBUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5095648170BF4D700FF4CD3 /* MBUserListViewController.m */; };
+		A509564A170BF4D700FF4CD3 /* MBUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5095648170BF4D700FF4CD3 /* MBUserListViewController.m */; };
+		A509564E170BF7C500FF4CD3 /* MBUser+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = A509564D170BF7C500FF4CD3 /* MBUser+Collection.m */; };
+		A509564F170BF7C500FF4CD3 /* MBUser+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = A509564D170BF7C500FF4CD3 /* MBUser+Collection.m */; };
+		A5095652170BFD1D00FF4CD3 /* MBUserListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5095651170BFD1D00FF4CD3 /* MBUserListCell.m */; };
+		A5095653170BFD1D00FF4CD3 /* MBUserListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5095651170BFD1D00FF4CD3 /* MBUserListCell.m */; };
+		A5095655170BFD3000FF4CD3 /* MBUserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */; };
+		A5095656170BFD3000FF4CD3 /* MBUserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */; };
 		A5E9FA6A1708B9D8000C723C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FA691708B9D8000C723C /* Cocoa.framework */; };
 		A5E9FA741708B9D8000C723C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5E9FA721708B9D8000C723C /* InfoPlist.strings */; };
 		A5E9FA761708B9D8000C723C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FA751708B9D8000C723C /* main.m */; };
@@ -124,6 +136,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A5095640170BF1A900FF4CD3 /* MBMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMainViewController.h; path = "Main View/MBMainViewController.h"; sourceTree = "<group>"; };
+		A5095641170BF1A900FF4CD3 /* MBMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMainViewController.m; path = "Main View/MBMainViewController.m"; sourceTree = "<group>"; };
+		A5095642170BF1A900FF4CD3 /* MBMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MBMainViewController.xib; path = "Main View/MBMainViewController.xib"; sourceTree = "<group>"; };
+		A5095647170BF4D700FF4CD3 /* MBUserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBUserListViewController.h; path = "Main View/MBUserListViewController.h"; sourceTree = "<group>"; };
+		A5095648170BF4D700FF4CD3 /* MBUserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBUserListViewController.m; path = "Main View/MBUserListViewController.m"; sourceTree = "<group>"; };
+		A509564C170BF7C500FF4CD3 /* MBUser+Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBUser+Collection.h"; path = "Data Model/User/Collection/MBUser+Collection.h"; sourceTree = "<group>"; };
+		A509564D170BF7C500FF4CD3 /* MBUser+Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBUser+Collection.m"; path = "Data Model/User/Collection/MBUser+Collection.m"; sourceTree = "<group>"; };
+		A5095650170BFD1D00FF4CD3 /* MBUserListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBUserListCell.h; path = "Main View/MBUserListCell.h"; sourceTree = "<group>"; };
+		A5095651170BFD1D00FF4CD3 /* MBUserListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBUserListCell.m; path = "Main View/MBUserListCell.m"; sourceTree = "<group>"; };
+		A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBUserListCell.xib; sourceTree = "<group>"; };
 		A5E9FA661708B9D8000C723C /* Multi Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E9FA691708B9D8000C723C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A5E9FA6C1708B9D8000C723C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -198,9 +220,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A509563F170BF18100FF4CD3 /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				A5095640170BF1A900FF4CD3 /* MBMainViewController.h */,
+				A5095641170BF1A900FF4CD3 /* MBMainViewController.m */,
+				A5095642170BF1A900FF4CD3 /* MBMainViewController.xib */,
+				A5095647170BF4D700FF4CD3 /* MBUserListViewController.h */,
+				A5095648170BF4D700FF4CD3 /* MBUserListViewController.m */,
+				A5095650170BFD1D00FF4CD3 /* MBUserListCell.h */,
+				A5095651170BFD1D00FF4CD3 /* MBUserListCell.m */,
+				A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */,
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		A509564B170BF7AC00FF4CD3 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				A509564C170BF7C500FF4CD3 /* MBUser+Collection.h */,
+				A509564D170BF7C500FF4CD3 /* MBUser+Collection.m */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
 		A56C2080170BE06B00E7B368 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				A509564B170BF7AC00FF4CD3 /* Collection */,
 				D3F64DC01289F6EFD511823C /* Authentication */,
 				D3F649A9166C30CF0E01C6F3 /* MBUser.h */,
 				D3F64A52077838350A586D70 /* MBUser.m */,
@@ -214,6 +261,7 @@
 				A5E9FAAB1708E4F2000C723C /* Categories */,
 				A5E9FAA61708DDC8000C723C /* Data Model */,
 				D3F6429A6CE04EE9854A49DD /* Login */,
+				A509563F170BF18100FF4CD3 /* Main View */,
 				A5E9FA6F1708B9D8000C723C /* Multi Box */,
 				A5E9FA8C1708B9D8000C723C /* Multi BoxTests */,
 				A5E9FA681708B9D8000C723C /* Frameworks */,
@@ -471,6 +519,8 @@
 				A5E9FA7A1708B9D8000C723C /* Credits.rtf in Resources */,
 				A5E9FA801708B9D8000C723C /* MainMenu.xib in Resources */,
 				D3F64539C38782E0128068AF /* MBLoginWindowController.xib in Resources */,
+				A5095645170BF1A900FF4CD3 /* MBMainViewController.xib in Resources */,
+				A5095655170BFD3000FF4CD3 /* MBUserListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +530,8 @@
 			files = (
 				A5E9FA911708B9D8000C723C /* InfoPlist.strings in Resources */,
 				D3F642FCA14D9856F4C44BA0 /* MBLoginWindowController.xib in Resources */,
+				A5095646170BF1A900FF4CD3 /* MBMainViewController.xib in Resources */,
+				A5095656170BFD3000FF4CD3 /* MBUserListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +570,10 @@
 				D3F648D01C7FF5300FC752C4 /* MBRefreshTokenResponse.m in Sources */,
 				D3F6483995826A2F0F5DA26B /* MBAPIKey.m in Sources */,
 				D3F641EB583EC5FB66676055 /* MBLoginWindowController.m in Sources */,
+				A5095643170BF1A900FF4CD3 /* MBMainViewController.m in Sources */,
+				A5095649170BF4D700FF4CD3 /* MBUserListViewController.m in Sources */,
+				A509564E170BF7C500FF4CD3 /* MBUser+Collection.m in Sources */,
+				A5095652170BFD1D00FF4CD3 /* MBUserListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +592,10 @@
 				D3F64CFBF8CDC2177D710FFB /* MBRefreshTokenResponse.m in Sources */,
 				D3F64DC5C0019A26589156B5 /* MBAPIKey.m in Sources */,
 				D3F641570C2332B51F2CA9A3 /* MBLoginWindowController.m in Sources */,
+				A5095644170BF1A900FF4CD3 /* MBMainViewController.m in Sources */,
+				A509564A170BF4D700FF4CD3 /* MBUserListViewController.m in Sources */,
+				A509564F170BF7C500FF4CD3 /* MBUser+Collection.m in Sources */,
+				A5095653170BFD1D00FF4CD3 /* MBUserListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

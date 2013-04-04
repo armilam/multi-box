@@ -30,6 +30,9 @@
     //TODO: Load existing users
     // Use initWithRefreshToken
     self.users = [NSMutableArray array];
+    
+    self.mainViewController = [[MBMainViewController alloc] initWithNibName:@"MBMainViewController" bundle:[NSBundle mainBundle]];
+    [self.window.contentView addSubview:self.mainViewController.view];
 
 }
 
@@ -58,44 +61,22 @@
     [self.loginWindow close];
 }
 
-- (void)refreshAccessTokenForUser:(MBUser*)user
++ (MBAppDelegate*)appDelegate
 {
-    //TODO: To prevent race conditions, consider having a completion block sent to refreshAccessTokenForUser.
-    //      This could allow us to know when a user is safe to use again.
-    [user refreshAccessToken];
-}
-
-- (void)revokeUser:(MBUser*)user
-{
-    [user revokeWithCompletion:^(BOOL success)
-    {
-        if(success)
-        {
-            //TODO: Remove user from list and do UI stuff
-        }
-        else
-        {
-            //TODO: Report failure?
-        }
-    }];
+    return [NSApp delegate];
 }
 
 
 
+
+
+
+
+//TODO: Remove this when it is handled elsewhere
 - (void)loginButtonClicked:(id)sender
 {
     self.loginWindow = [[MBLoginWindowController alloc] initWithWindowNibName:@"MBLoginWindowController"];
     [self.loginWindow showWindow:self];
-}
-
-- (void)refreshButtonClicked:(id)sender
-{
-    [self refreshAccessTokenForUser:[self.users objectAtIndex:0]];
-}
-
-- (void)revokeButtonClicked:(id)sender
-{
-    [self revokeUser:[self.users objectAtIndex:0]];
 }
 
 @end
