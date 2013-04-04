@@ -10,11 +10,11 @@
 #import "MBLoginWindowController.h"
 #import "NSString+ParseURLQuery.h"
 #import "MBUser+Authentication.h"
+#import "MBUser+Collection.h"
 
 @interface MBAppDelegate()
 
 @property (nonatomic, strong) MBLoginWindowController* loginWindow;
-@property (nonatomic, strong) NSMutableArray* users;
 
 @end
 
@@ -29,7 +29,6 @@
     
     //TODO: Load existing users
     // Use initWithRefreshToken
-    self.users = [NSMutableArray array];
     
     self.mainViewController = [[MBMainViewController alloc] initWithNibName:@"MBMainViewController" bundle:[NSBundle mainBundle]];
     [self.window.contentView addSubview:self.mainViewController.view];
@@ -49,11 +48,16 @@
         
         [MBUser authenticateNewUser:queryParams completion:^(MBUser* newUser, NSException* error)
         {
-            //TODO: Check the user isn't already in the list
-            //TODO: Add user to list
-            if(newUser) [self.users addObject:newUser];
-            //TODO: else [do something with the error]
-            //TODO: Do other stuff like showing user in UI
+            //TODO: Can I close the browser window after auth? Should I just use app-based browser window?
+            if(newUser && [MBUser addRegisteredUser:newUser])
+            {
+                //TODO: Make a better interface for telling the tableView to update
+                [self.mainViewController.userListViewController.tableView reloadData];
+            }
+            else
+            {
+                //TODO: else [do something with the error]
+            }
             
         }];
     }
@@ -64,19 +68,6 @@
 + (MBAppDelegate*)appDelegate
 {
     return [NSApp delegate];
-}
-
-
-
-
-
-
-
-//TODO: Remove this when it is handled elsewhere
-- (void)loginButtonClicked:(id)sender
-{
-    self.loginWindow = [[MBLoginWindowController alloc] initWithWindowNibName:@"MBLoginWindowController"];
-    [self.loginWindow showWindow:self];
 }
 
 @end

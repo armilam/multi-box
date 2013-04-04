@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) IBOutlet MBUserListViewController* userListViewController;
 
+- (IBAction)login:(id)sender;
+
 @end

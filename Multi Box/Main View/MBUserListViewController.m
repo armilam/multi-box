@@ -18,9 +18,23 @@
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    self.userListCell = [tableView makeViewWithIdentifier:@"MBUserListCell" owner:self];
+    NSString* const userListCellIdentifier = @"MBUserListCell";
+    
+    self.userListCell = [tableView makeViewWithIdentifier:userListCellIdentifier owner:self];
+    
+    if(!self.userListCell)
+    {
+        [[NSBundle mainBundle] loadNibNamed:@"MBUserListCell" owner:self topLevelObjects:nil];
+        self.userListCell.identifier = userListCellIdentifier;
+    }
+    
     [self.userListCell setUser:[[MBUser registeredUsers] objectAtIndex:row]];
     return self.userListCell;
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
+{
+    return 96.0;
 }
 
 @end

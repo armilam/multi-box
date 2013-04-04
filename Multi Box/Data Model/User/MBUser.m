@@ -13,6 +13,32 @@
 @property (nonatomic, strong, readwrite) NSDate* accessTokenExpiration;
 @property (nonatomic, strong, readwrite) NSDate* refreshTokenExpiration;
 
+#pragma mark - Box User Information
+@property (nonatomic, strong, readwrite) NSString* userId;
+@property (nonatomic, strong, readwrite) NSString* name;
+@property (nonatomic, strong, readwrite) NSNumber* boxSizeBytes;
+@property (nonatomic, strong, readwrite) NSNumber* boxBytesUsed;
+@property (nonatomic, strong, readwrite) NSNumber* maxUploadSizeBytes;
+@property (nonatomic, strong, readwrite) NSString* status;
+@property (nonatomic, strong, readwrite) NSString* avatarUrlString;
+@property (nonatomic, assign, readwrite) BOOL isSyncEnabled;
+
+#pragma mark - Box User Information (currently unused by this app)
+@property (nonatomic, strong, readwrite) NSString* userType;
+@property (nonatomic, strong, readwrite) NSString* loginId;
+@property (nonatomic, strong, readwrite) NSDate* createdAt;
+@property (nonatomic, strong, readwrite) NSDate* modifiedAt;
+@property (nonatomic, strong, readwrite) NSString* language;
+@property (nonatomic, strong, readwrite) NSString* role;
+@property (nonatomic, strong, readwrite) NSString* jobTitle;
+@property (nonatomic, strong, readwrite) NSString* phone;
+@property (nonatomic, strong, readwrite) NSString* address;
+@property (nonatomic, strong, readwrite) NSArray* trackingCodes;
+@property (nonatomic, assign, readwrite) BOOL canSeeManagedUsers;
+@property (nonatomic, assign, readwrite) BOOL isExemptFromDeviceLimits;
+@property (nonatomic, assign, readwrite) BOOL isExemptFromLoginVerification;
+//@property (nonatomic, strong, readwrite) MBEnterprise* enterprise;
+
 @end
 
 @implementation MBUser

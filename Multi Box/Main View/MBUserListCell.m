@@ -28,7 +28,7 @@
 - (void)setUser:(MBUser *)user
 {
     _user = user;
-    self.userNameTextField.stringValue = user.accessToken;
+    self.userNameTextField.stringValue = user.name;
 }
 
 @end

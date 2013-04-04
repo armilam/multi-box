@@ -7,6 +7,7 @@
 //
 
 #import "MBMainViewController.h"
+#import "MBAPIKey.h"
 
 @interface MBMainViewController ()
 
@@ -22,6 +23,13 @@
     }
     
     return self;
+}
+
+- (void)login:(id)sender
+{
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.box.com/api/oauth2/authorize?response_type=code&client_id=%@&state=authenticated", [MBAPIKey getClientId]]];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+    
 }
 
 @end

@@ -12,6 +12,7 @@
 #import "MBRefreshTokenRequest.h"
 #import "MBRefreshTokenResponse.h"
 #import "MBRevokeTokenRequest.h"
+#import "MBUser+GetInfo.h"
 #import <RestKit/RestKit.h>
 
 @implementation MBUser (Authentication)
@@ -68,8 +69,6 @@
                  if(completion) completion(nil, [NSException exceptionWithName:@"No data returned" reason:@"No data was returned in authentication" userInfo:nil]);
              }
              
-             //TODO: Success! Now can we get more info about the user? Name?
-             
              MBAccessTokenResponse* tokenResponse = [[result array] objectAtIndex:0];
              MBUser* newUser = [[MBUser alloc] init];
              newUser.accessToken = tokenResponse.accessToken;
@@ -77,7 +76,9 @@
              newUser.tokenType = tokenResponse.tokenType;
              newUser.refreshToken = tokenResponse.refreshToken;
              [newUser resetRefreshTokenExpiration];
-             if(completion) completion(newUser, nil);
+             
+             // Now get the user's details
+             [newUser getUserInfoWithCompletion:^(MBUser* user){ if(completion) completion(user, nil); }];
          }
                     failure:^(RKObjectRequestOperation *operation, NSError *error)
          {

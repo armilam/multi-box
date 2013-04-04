@@ -19,6 +19,10 @@
 		A5095653170BFD1D00FF4CD3 /* MBUserListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5095651170BFD1D00FF4CD3 /* MBUserListCell.m */; };
 		A5095655170BFD3000FF4CD3 /* MBUserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */; };
 		A5095656170BFD3000FF4CD3 /* MBUserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */; };
+		A557872E170DB0BC007185F1 /* MBUser+GetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A557872D170DB0BC007185F1 /* MBUser+GetInfo.m */; };
+		A557872F170DB0BC007185F1 /* MBUser+GetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A557872D170DB0BC007185F1 /* MBUser+GetInfo.m */; };
+		A5578733170DB24A007185F1 /* MBGetUserInfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5578732170DB24A007185F1 /* MBGetUserInfoResponse.m */; };
+		A5578734170DB24A007185F1 /* MBGetUserInfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5578732170DB24A007185F1 /* MBGetUserInfoResponse.m */; };
 		A5E9FA6A1708B9D8000C723C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FA691708B9D8000C723C /* Cocoa.framework */; };
 		A5E9FA741708B9D8000C723C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5E9FA721708B9D8000C723C /* InfoPlist.strings */; };
 		A5E9FA761708B9D8000C723C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FA751708B9D8000C723C /* main.m */; };
@@ -146,6 +150,10 @@
 		A5095650170BFD1D00FF4CD3 /* MBUserListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBUserListCell.h; path = "Main View/MBUserListCell.h"; sourceTree = "<group>"; };
 		A5095651170BFD1D00FF4CD3 /* MBUserListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBUserListCell.m; path = "Main View/MBUserListCell.m"; sourceTree = "<group>"; };
 		A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBUserListCell.xib; sourceTree = "<group>"; };
+		A557872C170DB0BC007185F1 /* MBUser+GetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBUser+GetInfo.h"; path = "Data Model/User/User Info/MBUser+GetInfo.h"; sourceTree = "<group>"; };
+		A557872D170DB0BC007185F1 /* MBUser+GetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBUser+GetInfo.m"; path = "Data Model/User/User Info/MBUser+GetInfo.m"; sourceTree = "<group>"; };
+		A5578731170DB24A007185F1 /* MBGetUserInfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBGetUserInfoResponse.h; path = "Data Model/User/User Info/MBGetUserInfoResponse.h"; sourceTree = "<group>"; };
+		A5578732170DB24A007185F1 /* MBGetUserInfoResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBGetUserInfoResponse.m; path = "Data Model/User/User Info/MBGetUserInfoResponse.m"; sourceTree = "<group>"; };
 		A5E9FA661708B9D8000C723C /* Multi Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E9FA691708B9D8000C723C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A5E9FA6C1708B9D8000C723C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -244,9 +252,21 @@
 			name = Collection;
 			sourceTree = "<group>";
 		};
+		A5578728170DB06A007185F1 /* User Info */ = {
+			isa = PBXGroup;
+			children = (
+				A557872C170DB0BC007185F1 /* MBUser+GetInfo.h */,
+				A557872D170DB0BC007185F1 /* MBUser+GetInfo.m */,
+				A5578731170DB24A007185F1 /* MBGetUserInfoResponse.h */,
+				A5578732170DB24A007185F1 /* MBGetUserInfoResponse.m */,
+			);
+			name = "User Info";
+			sourceTree = "<group>";
+		};
 		A56C2080170BE06B00E7B368 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				A5578728170DB06A007185F1 /* User Info */,
 				A509564B170BF7AC00FF4CD3 /* Collection */,
 				D3F64DC01289F6EFD511823C /* Authentication */,
 				D3F649A9166C30CF0E01C6F3 /* MBUser.h */,
@@ -574,6 +594,8 @@
 				A5095649170BF4D700FF4CD3 /* MBUserListViewController.m in Sources */,
 				A509564E170BF7C500FF4CD3 /* MBUser+Collection.m in Sources */,
 				A5095652170BFD1D00FF4CD3 /* MBUserListCell.m in Sources */,
+				A557872E170DB0BC007185F1 /* MBUser+GetInfo.m in Sources */,
+				A5578733170DB24A007185F1 /* MBGetUserInfoResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +618,8 @@
 				A509564A170BF4D700FF4CD3 /* MBUserListViewController.m in Sources */,
 				A509564F170BF7C500FF4CD3 /* MBUser+Collection.m in Sources */,
 				A5095653170BFD1D00FF4CD3 /* MBUserListCell.m in Sources */,
+				A557872F170DB0BC007185F1 /* MBUser+GetInfo.m in Sources */,
+				A5578734170DB24A007185F1 /* MBGetUserInfoResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
