@@ -16,6 +16,7 @@
 #pragma mark - Box User Information
 @property (nonatomic, strong, readwrite) NSString* userId;
 @property (nonatomic, strong, readwrite) NSString* name;
+@property (nonatomic, strong, readwrite) NSString* loginId;
 @property (nonatomic, strong, readwrite) NSNumber* boxSizeBytes;
 @property (nonatomic, strong, readwrite) NSNumber* boxBytesUsed;
 @property (nonatomic, strong, readwrite) NSNumber* maxUploadSizeBytes;
@@ -25,7 +26,6 @@
 
 #pragma mark - Box User Information (currently unused by this app)
 @property (nonatomic, strong, readwrite) NSString* userType;
-@property (nonatomic, strong, readwrite) NSString* loginId;
 @property (nonatomic, strong, readwrite) NSDate* createdAt;
 @property (nonatomic, strong, readwrite) NSDate* modifiedAt;
 @property (nonatomic, strong, readwrite) NSString* language;
@@ -49,6 +49,7 @@
     [responseMapping addAttributeMappingsFromDictionary:@{
         @"id" : @"userId",
         @"name" : @"name",
+        @"login" : @"loginId",
         @"space_amount" : @"boxSizeBytes",
         @"space_used" : @"boxBytesUsed",
         @"max_upload_size" : @"maxUploadSizeBytes",
@@ -85,6 +86,7 @@
 {
     self.userId = response.userId;
     self.name = response.name;
+    self.loginId = response.loginId;
     self.boxSizeBytes = response.boxSizeBytes;
     self.boxBytesUsed = response.boxBytesUsed;
     self.maxUploadSizeBytes = response.maxUploadSizeBytes;
