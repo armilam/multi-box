@@ -1,0 +1,335 @@
+\hypertarget{interface_m_b_user}{\section{M\-B\-User Class Reference}
+\label{interface_m_b_user}\index{M\-B\-User@{M\-B\-User}}
+}
+
+
+{\ttfamily \#import $<$M\-B\-User.\-h$>$}
+
+Inheritance diagram for M\-B\-User\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_m_b_user}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_m_b_user}{M\-B\-User} $\ast$) -\/ \hyperlink{interface_m_b_user_afa309643318bee0ce22a0d6dd1788726}{init\-With\-Refresh\-Token\-:expiration\-:}
+\begin{DoxyCompactList}\small\item\em To be used when deserializing a saved user. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_m_b_user_ab61dd468c5d14a9aafc488b8b2c37f40}{reset\-Refresh\-Token\-Expiration}
+\item 
+(void) -\/ \hyperlink{interface_m_b_user_a988475a0321b26e1146e538bfee65ef6}{refresh\-Access\-Token}
+\item 
+(void) -\/ \hyperlink{interface_m_b_user_a1e56d1480e455bac35e1a57a2db7fb47}{revoke\-With\-Completion\-:}
+\item 
+(void) -\/ \hyperlink{interface_m_b_user_abcc7b52369b86b5d370384bb4c797ce8}{get\-User\-Info\-With\-Completion\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interface_m_b_user_a2cfdd3551de108fd02e909f267379947}{authenticate\-New\-User\-:completion\-:}
+\item 
+(N\-S\-Array $\ast$) + \hyperlink{interface_m_b_user_ad0d4a054b9aaf94b637b09d0e4ed74e8}{registered\-Users}
+\item 
+(B\-O\-O\-L) + \hyperlink{interface_m_b_user_a9dd337b188782e945b16c6d55075bfc2}{add\-Registered\-User\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{access\-Token}
+\item 
+N\-S\-Integer \hyperlink{interface_m_b_user_ae251d07feaa95423629811e829c40f0a}{expires\-In}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_aebb1b1ab373299d1bbcb8edacfc117c2}{token\-Type}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}{refresh\-Token}
+\item 
+N\-S\-Date $\ast$ \hyperlink{interface_m_b_user_a66df6e37883628503b521d292bbe692b}{access\-Token\-Expiration}
+\begin{DoxyCompactList}\small\item\em This is a calculated time of expiration for \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token}. \end{DoxyCompactList}\item 
+N\-S\-Date $\ast$ \hyperlink{interface_m_b_user_a73ea1a88a0ebe4f2fe0e71809784ebfd}{refresh\-Token\-Expiration}
+\begin{DoxyCompactList}\small\item\em This is a calculated time of expiration for \hyperlink{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}{M\-B\-User\-::refresh\-Token}. \end{DoxyCompactList}\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_a25211835b4b5dff492e975e6231df626}{user\-Id}
+\begin{DoxyCompactList}\small\item\em The id used by the Box A\-P\-I to identify the user. \end{DoxyCompactList}\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_a4b93d352d2fca75b34e1b5a50e03f587}{name}
+\begin{DoxyCompactList}\small\item\em The user's real (or registered) name. \end{DoxyCompactList}\item 
+N\-S\-Number $\ast$ \hyperlink{interface_m_b_user_a5f0c26ade8cb0b15f1067b38c019ce7a}{box\-Size\-Bytes}
+\begin{DoxyCompactList}\small\item\em The capacity of the user's Box in bytes. \end{DoxyCompactList}\item 
+N\-S\-Number $\ast$ \hyperlink{interface_m_b_user_acb7add7d0302f772a6129c0051613c31}{box\-Bytes\-Used}
+\begin{DoxyCompactList}\small\item\em The amount of space used in the user's Box in bytes. \end{DoxyCompactList}\item 
+N\-S\-Number $\ast$ \hyperlink{interface_m_b_user_a05bf0a718069ae9578677ffa56810faa}{max\-Upload\-Size\-Bytes}
+\begin{DoxyCompactList}\small\item\em The maximum upload size for the user in bytes. \end{DoxyCompactList}\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_ac2acf327011ce6ed9e26a41ceddaee31}{status}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_a561dafa784b88045a1660b62565aa4ed}{avatar\-Url\-String}
+\begin{DoxyCompactList}\small\item\em A U\-R\-L string to the user's avatar image. \end{DoxyCompactList}\item 
+B\-O\-O\-L \hyperlink{interface_m_b_user_ad96023d6090470b8b69b65e4e82361d0}{is\-Sync\-Enabled}
+\begin{DoxyCompactList}\small\item\em Indicates whether the user has sync enabled. \end{DoxyCompactList}\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_a4baa5811f82638a002a7b57635f6b864}{user\-Type}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_a133ab894b68ab5232ee18873bd749f36}{login\-Id}
+\item 
+N\-S\-Date $\ast$ \hyperlink{interface_m_b_user_a14b222dd776fc02c65470ce74c8cf1e1}{created\-At}
+\item 
+N\-S\-Date $\ast$ \hyperlink{interface_m_b_user_ac957ef51fb5ded8d1247e8716c750f5a}{modified\-At}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_a16b5f08f316920cc2cb6cd8527a81041}{language}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_acd96026ab462f1abd3a9eee81d2cd1e2}{role}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_a0ae29472d42bbcfbb3741f4ff60711a0}{job\-Title}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_a09fb51588f5dee689d7ae9e71ef93199}{phone}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_m_b_user_a444397aa067cf65287a72615bdbdf076}{address}
+\item 
+N\-S\-Array $\ast$ \hyperlink{interface_m_b_user_a2268ce10a4634da2a0f27e6eb1fd8a88}{tracking\-Codes}
+\item 
+B\-O\-O\-L \hyperlink{interface_m_b_user_aa9d85e54ce8ba89ab2ce480d31821553}{can\-See\-Managed\-Users}
+\item 
+B\-O\-O\-L \hyperlink{interface_m_b_user_a2596dea4aeaeb87b1d3d872c54e63f1a}{is\-Exempt\-From\-Device\-Limits}
+\item 
+B\-O\-O\-L \hyperlink{interface_m_b_user_a13cc5f0142bb943e1d08798f8510b265}{is\-Exempt\-From\-Login\-Verification}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_m_b_user_a9dd337b188782e945b16c6d55075bfc2}{\index{M\-B\-User@{M\-B\-User}!add\-Registered\-User\-:@{add\-Registered\-User\-:}}
+\index{add\-Registered\-User\-:@{add\-Registered\-User\-:}!MBUser@{M\-B\-User}}
+\subsubsection[{add\-Registered\-User\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (B\-O\-O\-L) add\-Registered\-User\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf M\-B\-User}$\ast$)}]{user}
+\end{DoxyParamCaption}
+}}\label{interface_m_b_user_a9dd337b188782e945b16c6d55075bfc2}
+Adds a registered user to the collection. If the user is already represented in the list (identified by \hyperlink{interface_m_b_user_a25211835b4b5dff492e975e6231df626}{M\-B\-User\-::user\-Id}), then the user is not added. This is normally called after authenticating a user. 
+\begin{DoxyParams}{Parameters}
+{\em user} & The user to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A B\-O\-O\-L indicating whether the user was added to the collection 
+\end{DoxyReturn}
+
+
+Provided by category \hyperlink{category_m_b_user_07_collection_08_a9dd337b188782e945b16c6d55075bfc2}{M\-B\-User(\-Collection)}.
+
+\hypertarget{interface_m_b_user_a2cfdd3551de108fd02e909f267379947}{\index{M\-B\-User@{M\-B\-User}!authenticate\-New\-User\-:completion\-:@{authenticate\-New\-User\-:completion\-:}}
+\index{authenticate\-New\-User\-:completion\-:@{authenticate\-New\-User\-:completion\-:}!MBUser@{M\-B\-User}}
+\subsubsection[{authenticate\-New\-User\-:completion\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) authenticate\-New\-User\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Dictionary$\ast$)}]{params}
+\item[{completion:({\bf M\-B\-User}$\ast$ new\-User, N\-S\-Exception$\ast$ error)}]{completion}
+\end{DoxyParamCaption}
+}}\label{interface_m_b_user_a2cfdd3551de108fd02e909f267379947}
+Gets a user's access\-Token and refresh\-Token. Also populates the \hyperlink{interface_m_b_user}{M\-B\-User} object with details about the user, including name, email address, and avatar image U\-R\-L. 
+\begin{DoxyParams}{Parameters}
+{\em params} & The params returned from the Box A\-P\-I after a user logs in. \\
+\hline
+{\em completion} & A block to be called once the user is authenticated (or authentication failed). The block passes in the new \hyperlink{interface_m_b_user}{M\-B\-User} object and an N\-S\-Exception object which will be nil unless any errors occurred. \\
+\hline
+\end{DoxyParams}
+
+
+Provided by category \hyperlink{category_m_b_user_07_authentication_08_a2cfdd3551de108fd02e909f267379947}{M\-B\-User(\-Authentication)}.
+
+\hypertarget{interface_m_b_user_abcc7b52369b86b5d370384bb4c797ce8}{\index{M\-B\-User@{M\-B\-User}!get\-User\-Info\-With\-Completion\-:@{get\-User\-Info\-With\-Completion\-:}}
+\index{get\-User\-Info\-With\-Completion\-:@{get\-User\-Info\-With\-Completion\-:}!MBUser@{M\-B\-User}}
+\subsubsection[{get\-User\-Info\-With\-Completion\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) get\-User\-Info\-With\-Completion\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf M\-B\-User}$\ast$ user)}]{return\-Block}
+\end{DoxyParamCaption}
+}}\label{interface_m_b_user_abcc7b52369b86b5d370384bb4c797ce8}
+Requests the user's detailed information from the Box A\-P\-I. This will fill in the \hyperlink{interface_m_b_user}{M\-B\-User} object's user detail properties. 
+\begin{DoxyParams}{Parameters}
+{\em return\-Block} & A block to be called once the user info is retrieved. The block passes in an \hyperlink{interface_m_b_user}{M\-B\-User} object with the user's filled-\/in details. \\
+\hline
+\end{DoxyParams}
+
+
+Provided by category \hyperlink{category_m_b_user_07_get_info_08_abcc7b52369b86b5d370384bb4c797ce8}{M\-B\-User(\-Get\-Info)}.
+
+\hypertarget{interface_m_b_user_afa309643318bee0ce22a0d6dd1788726}{\index{M\-B\-User@{M\-B\-User}!init\-With\-Refresh\-Token\-:expiration\-:@{init\-With\-Refresh\-Token\-:expiration\-:}}
+\index{init\-With\-Refresh\-Token\-:expiration\-:@{init\-With\-Refresh\-Token\-:expiration\-:}!MBUser@{M\-B\-User}}
+\subsubsection[{init\-With\-Refresh\-Token\-:expiration\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf M\-B\-User} $\ast$) init\-With\-Refresh\-Token\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String$\ast$)}]{refresh\-Token}
+\item[{expiration:(N\-S\-Date$\ast$)}]{expiration}
+\end{DoxyParamCaption}
+}}\label{interface_m_b_user_afa309643318bee0ce22a0d6dd1788726}
+
+
+To be used when deserializing a saved user. 
+
+\hypertarget{interface_m_b_user_a988475a0321b26e1146e538bfee65ef6}{\index{M\-B\-User@{M\-B\-User}!refresh\-Access\-Token@{refresh\-Access\-Token}}
+\index{refresh\-Access\-Token@{refresh\-Access\-Token}!MBUser@{M\-B\-User}}
+\subsubsection[{refresh\-Access\-Token}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) refresh\-Access\-Token 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_m_b_user_a988475a0321b26e1146e538bfee65ef6}
+Refreshes \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token}. The Box A\-P\-I invalidates \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token} every hour, so this must be called in order to have continued access. As long as \hyperlink{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}{M\-B\-User\-::refresh\-Token} is still valid, calling this will give the \hyperlink{interface_m_b_user}{M\-B\-User} object a new valid \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token}. 
+
+Provided by category \hyperlink{category_m_b_user_07_authentication_08_a988475a0321b26e1146e538bfee65ef6}{M\-B\-User(\-Authentication)}.
+
+\hypertarget{interface_m_b_user_ad0d4a054b9aaf94b637b09d0e4ed74e8}{\index{M\-B\-User@{M\-B\-User}!registered\-Users@{registered\-Users}}
+\index{registered\-Users@{registered\-Users}!MBUser@{M\-B\-User}}
+\subsubsection[{registered\-Users}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Array $\ast$) registered\-Users 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_m_b_user_ad0d4a054b9aaf94b637b09d0e4ed74e8}
+Returns an N\-S\-Array of \hyperlink{interface_m_b_user}{M\-B\-User} objects representing all users currently registered in the app. \begin{DoxyReturn}{Returns}
+An N\-S\-Array of \hyperlink{interface_m_b_user}{M\-B\-User} objects 
+\end{DoxyReturn}
+
+
+Provided by category \hyperlink{category_m_b_user_07_collection_08_ad0d4a054b9aaf94b637b09d0e4ed74e8}{M\-B\-User(\-Collection)}.
+
+\hypertarget{interface_m_b_user_ab61dd468c5d14a9aafc488b8b2c37f40}{\index{M\-B\-User@{M\-B\-User}!reset\-Refresh\-Token\-Expiration@{reset\-Refresh\-Token\-Expiration}}
+\index{reset\-Refresh\-Token\-Expiration@{reset\-Refresh\-Token\-Expiration}!MBUser@{M\-B\-User}}
+\subsubsection[{reset\-Refresh\-Token\-Expiration}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) reset\-Refresh\-Token\-Expiration 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_m_b_user_ab61dd468c5d14a9aafc488b8b2c37f40}
+Calls the Box A\-P\-I to refresh the user's \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token} and \hyperlink{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}{M\-B\-User\-::refresh\-Token}. T\-O\-D\-O\-: Pass in a block so the caller can find out whether the refresh was successful. \hypertarget{interface_m_b_user_a1e56d1480e455bac35e1a57a2db7fb47}{\index{M\-B\-User@{M\-B\-User}!revoke\-With\-Completion\-:@{revoke\-With\-Completion\-:}}
+\index{revoke\-With\-Completion\-:@{revoke\-With\-Completion\-:}!MBUser@{M\-B\-User}}
+\subsubsection[{revoke\-With\-Completion\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) revoke\-With\-Completion\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L success)}]{completion}
+\end{DoxyParamCaption}
+}}\label{interface_m_b_user_a1e56d1480e455bac35e1a57a2db7fb47}
+Revokes the \hyperlink{interface_m_b_user}{M\-B\-User} object's \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token} and \hyperlink{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}{M\-B\-User\-::refresh\-Token}. Useful on logout. 
+\begin{DoxyParams}{Parameters}
+{\em completion} & A block to run upon completion of the request. The block passes in a B\-O\-O\-L which indicates success of the request. \\
+\hline
+\end{DoxyParams}
+
+
+Provided by category \hyperlink{category_m_b_user_07_authentication_08_a1e56d1480e455bac35e1a57a2db7fb47}{M\-B\-User(\-Authentication)}.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{\index{M\-B\-User@{M\-B\-User}!access\-Token@{access\-Token}}
+\index{access\-Token@{access\-Token}!MBUser@{M\-B\-User}}
+\subsubsection[{access\-Token}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) access\-Token\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}
+The access token required to identify the user each for request. It is valid for one hour. This is provided by the Box A\-P\-I. \hypertarget{interface_m_b_user_a66df6e37883628503b521d292bbe692b}{\index{M\-B\-User@{M\-B\-User}!access\-Token\-Expiration@{access\-Token\-Expiration}}
+\index{access\-Token\-Expiration@{access\-Token\-Expiration}!MBUser@{M\-B\-User}}
+\subsubsection[{access\-Token\-Expiration}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date$\ast$) access\-Token\-Expiration\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a66df6e37883628503b521d292bbe692b}
+
+
+This is a calculated time of expiration for \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token}. 
+
+\hypertarget{interface_m_b_user_a444397aa067cf65287a72615bdbdf076}{\index{M\-B\-User@{M\-B\-User}!address@{address}}
+\index{address@{address}!MBUser@{M\-B\-User}}
+\subsubsection[{address}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) address\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a444397aa067cf65287a72615bdbdf076}
+\hypertarget{interface_m_b_user_a561dafa784b88045a1660b62565aa4ed}{\index{M\-B\-User@{M\-B\-User}!avatar\-Url\-String@{avatar\-Url\-String}}
+\index{avatar\-Url\-String@{avatar\-Url\-String}!MBUser@{M\-B\-User}}
+\subsubsection[{avatar\-Url\-String}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) avatar\-Url\-String\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a561dafa784b88045a1660b62565aa4ed}
+
+
+A U\-R\-L string to the user's avatar image. 
+
+\hypertarget{interface_m_b_user_acb7add7d0302f772a6129c0051613c31}{\index{M\-B\-User@{M\-B\-User}!box\-Bytes\-Used@{box\-Bytes\-Used}}
+\index{box\-Bytes\-Used@{box\-Bytes\-Used}!MBUser@{M\-B\-User}}
+\subsubsection[{box\-Bytes\-Used}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Number$\ast$) box\-Bytes\-Used\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_acb7add7d0302f772a6129c0051613c31}
+
+
+The amount of space used in the user's Box in bytes. 
+
+\hypertarget{interface_m_b_user_a5f0c26ade8cb0b15f1067b38c019ce7a}{\index{M\-B\-User@{M\-B\-User}!box\-Size\-Bytes@{box\-Size\-Bytes}}
+\index{box\-Size\-Bytes@{box\-Size\-Bytes}!MBUser@{M\-B\-User}}
+\subsubsection[{box\-Size\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Number$\ast$) box\-Size\-Bytes\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a5f0c26ade8cb0b15f1067b38c019ce7a}
+
+
+The capacity of the user's Box in bytes. 
+
+\hypertarget{interface_m_b_user_aa9d85e54ce8ba89ab2ce480d31821553}{\index{M\-B\-User@{M\-B\-User}!can\-See\-Managed\-Users@{can\-See\-Managed\-Users}}
+\index{can\-See\-Managed\-Users@{can\-See\-Managed\-Users}!MBUser@{M\-B\-User}}
+\subsubsection[{can\-See\-Managed\-Users}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) can\-See\-Managed\-Users\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_m_b_user_aa9d85e54ce8ba89ab2ce480d31821553}
+\hypertarget{interface_m_b_user_a14b222dd776fc02c65470ce74c8cf1e1}{\index{M\-B\-User@{M\-B\-User}!created\-At@{created\-At}}
+\index{created\-At@{created\-At}!MBUser@{M\-B\-User}}
+\subsubsection[{created\-At}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date$\ast$) created\-At\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a14b222dd776fc02c65470ce74c8cf1e1}
+\hypertarget{interface_m_b_user_ae251d07feaa95423629811e829c40f0a}{\index{M\-B\-User@{M\-B\-User}!expires\-In@{expires\-In}}
+\index{expires\-In@{expires\-In}!MBUser@{M\-B\-User}}
+\subsubsection[{expires\-In}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) expires\-In\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_m_b_user_ae251d07feaa95423629811e829c40f0a}
+The amount of time in seconds that the \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token} will expire after generation. This has always been 3600 (one hour) for me so far. This is provided by the Box A\-P\-I. \hypertarget{interface_m_b_user_a2596dea4aeaeb87b1d3d872c54e63f1a}{\index{M\-B\-User@{M\-B\-User}!is\-Exempt\-From\-Device\-Limits@{is\-Exempt\-From\-Device\-Limits}}
+\index{is\-Exempt\-From\-Device\-Limits@{is\-Exempt\-From\-Device\-Limits}!MBUser@{M\-B\-User}}
+\subsubsection[{is\-Exempt\-From\-Device\-Limits}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Exempt\-From\-Device\-Limits\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_m_b_user_a2596dea4aeaeb87b1d3d872c54e63f1a}
+\hypertarget{interface_m_b_user_a13cc5f0142bb943e1d08798f8510b265}{\index{M\-B\-User@{M\-B\-User}!is\-Exempt\-From\-Login\-Verification@{is\-Exempt\-From\-Login\-Verification}}
+\index{is\-Exempt\-From\-Login\-Verification@{is\-Exempt\-From\-Login\-Verification}!MBUser@{M\-B\-User}}
+\subsubsection[{is\-Exempt\-From\-Login\-Verification}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Exempt\-From\-Login\-Verification\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_m_b_user_a13cc5f0142bb943e1d08798f8510b265}
+\hypertarget{interface_m_b_user_ad96023d6090470b8b69b65e4e82361d0}{\index{M\-B\-User@{M\-B\-User}!is\-Sync\-Enabled@{is\-Sync\-Enabled}}
+\index{is\-Sync\-Enabled@{is\-Sync\-Enabled}!MBUser@{M\-B\-User}}
+\subsubsection[{is\-Sync\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Sync\-Enabled\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_m_b_user_ad96023d6090470b8b69b65e4e82361d0}
+
+
+Indicates whether the user has sync enabled. 
+
+\hypertarget{interface_m_b_user_a0ae29472d42bbcfbb3741f4ff60711a0}{\index{M\-B\-User@{M\-B\-User}!job\-Title@{job\-Title}}
+\index{job\-Title@{job\-Title}!MBUser@{M\-B\-User}}
+\subsubsection[{job\-Title}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) job\-Title\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a0ae29472d42bbcfbb3741f4ff60711a0}
+\hypertarget{interface_m_b_user_a16b5f08f316920cc2cb6cd8527a81041}{\index{M\-B\-User@{M\-B\-User}!language@{language}}
+\index{language@{language}!MBUser@{M\-B\-User}}
+\subsubsection[{language}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) language\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a16b5f08f316920cc2cb6cd8527a81041}
+\hypertarget{interface_m_b_user_a133ab894b68ab5232ee18873bd749f36}{\index{M\-B\-User@{M\-B\-User}!login\-Id@{login\-Id}}
+\index{login\-Id@{login\-Id}!MBUser@{M\-B\-User}}
+\subsubsection[{login\-Id}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) login\-Id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a133ab894b68ab5232ee18873bd749f36}
+\hypertarget{interface_m_b_user_a05bf0a718069ae9578677ffa56810faa}{\index{M\-B\-User@{M\-B\-User}!max\-Upload\-Size\-Bytes@{max\-Upload\-Size\-Bytes}}
+\index{max\-Upload\-Size\-Bytes@{max\-Upload\-Size\-Bytes}!MBUser@{M\-B\-User}}
+\subsubsection[{max\-Upload\-Size\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Number$\ast$) max\-Upload\-Size\-Bytes\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a05bf0a718069ae9578677ffa56810faa}
+
+
+The maximum upload size for the user in bytes. 
+
+\hypertarget{interface_m_b_user_ac957ef51fb5ded8d1247e8716c750f5a}{\index{M\-B\-User@{M\-B\-User}!modified\-At@{modified\-At}}
+\index{modified\-At@{modified\-At}!MBUser@{M\-B\-User}}
+\subsubsection[{modified\-At}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date$\ast$) modified\-At\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_ac957ef51fb5ded8d1247e8716c750f5a}
+\hypertarget{interface_m_b_user_a4b93d352d2fca75b34e1b5a50e03f587}{\index{M\-B\-User@{M\-B\-User}!name@{name}}
+\index{name@{name}!MBUser@{M\-B\-User}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a4b93d352d2fca75b34e1b5a50e03f587}
+
+
+The user's real (or registered) name. 
+
+\hypertarget{interface_m_b_user_a09fb51588f5dee689d7ae9e71ef93199}{\index{M\-B\-User@{M\-B\-User}!phone@{phone}}
+\index{phone@{phone}!MBUser@{M\-B\-User}}
+\subsubsection[{phone}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) phone\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a09fb51588f5dee689d7ae9e71ef93199}
+\hypertarget{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}{\index{M\-B\-User@{M\-B\-User}!refresh\-Token@{refresh\-Token}}
+\index{refresh\-Token@{refresh\-Token}!MBUser@{M\-B\-User}}
+\subsubsection[{refresh\-Token}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) refresh\-Token\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}
+The refresh token required to refresh the user's \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token} and \hyperlink{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}{M\-B\-User\-::refresh\-Token}. This is valid for two weeks. This is provided by the Box A\-P\-I. \hypertarget{interface_m_b_user_a73ea1a88a0ebe4f2fe0e71809784ebfd}{\index{M\-B\-User@{M\-B\-User}!refresh\-Token\-Expiration@{refresh\-Token\-Expiration}}
+\index{refresh\-Token\-Expiration@{refresh\-Token\-Expiration}!MBUser@{M\-B\-User}}
+\subsubsection[{refresh\-Token\-Expiration}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date$\ast$) refresh\-Token\-Expiration\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a73ea1a88a0ebe4f2fe0e71809784ebfd}
+
+
+This is a calculated time of expiration for \hyperlink{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}{M\-B\-User\-::refresh\-Token}. 
+
+\hypertarget{interface_m_b_user_acd96026ab462f1abd3a9eee81d2cd1e2}{\index{M\-B\-User@{M\-B\-User}!role@{role}}
+\index{role@{role}!MBUser@{M\-B\-User}}
+\subsubsection[{role}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) role\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_acd96026ab462f1abd3a9eee81d2cd1e2}
+\hypertarget{interface_m_b_user_ac2acf327011ce6ed9e26a41ceddaee31}{\index{M\-B\-User@{M\-B\-User}!status@{status}}
+\index{status@{status}!MBUser@{M\-B\-User}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) status\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_ac2acf327011ce6ed9e26a41ceddaee31}
+The user's status as given by the Box A\-P\-I. The possible values are \char`\"{}active\char`\"{} and \char`\"{}inactive\char`\"{}. \hypertarget{interface_m_b_user_aebb1b1ab373299d1bbcb8edacfc117c2}{\index{M\-B\-User@{M\-B\-User}!token\-Type@{token\-Type}}
+\index{token\-Type@{token\-Type}!MBUser@{M\-B\-User}}
+\subsubsection[{token\-Type}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) token\-Type\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_aebb1b1ab373299d1bbcb8edacfc117c2}
+As far as I have been able to tell so far, this will always be \char`\"{}bearer\char`\"{}. This is provided by the Box A\-P\-I. \hypertarget{interface_m_b_user_a2268ce10a4634da2a0f27e6eb1fd8a88}{\index{M\-B\-User@{M\-B\-User}!tracking\-Codes@{tracking\-Codes}}
+\index{tracking\-Codes@{tracking\-Codes}!MBUser@{M\-B\-User}}
+\subsubsection[{tracking\-Codes}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array$\ast$) tracking\-Codes\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a2268ce10a4634da2a0f27e6eb1fd8a88}
+\hypertarget{interface_m_b_user_a25211835b4b5dff492e975e6231df626}{\index{M\-B\-User@{M\-B\-User}!user\-Id@{user\-Id}}
+\index{user\-Id@{user\-Id}!MBUser@{M\-B\-User}}
+\subsubsection[{user\-Id}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) user\-Id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a25211835b4b5dff492e975e6231df626}
+
+
+The id used by the Box A\-P\-I to identify the user. 
+
+\hypertarget{interface_m_b_user_a4baa5811f82638a002a7b57635f6b864}{\index{M\-B\-User@{M\-B\-User}!user\-Type@{user\-Type}}
+\index{user\-Type@{user\-Type}!MBUser@{M\-B\-User}}
+\subsubsection[{user\-Type}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) user\-Type\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_m_b_user_a4baa5811f82638a002a7b57635f6b864}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Multi Box/\-Data Model/\-User/\hyperlink{_m_b_user_8h}{M\-B\-User.\-h}\item 
+Multi Box/\-Data Model/\-User/\hyperlink{_m_b_user_8m}{M\-B\-User.\-m}\end{DoxyCompactItemize}

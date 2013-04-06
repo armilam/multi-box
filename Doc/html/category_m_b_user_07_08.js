@@ -1,0 +1,26 @@
+var category_m_b_user_07_08 =
+[
+    [ "accessTokenExpiration", "category_m_b_user_07_08.html#a66df6e37883628503b521d292bbe692b", null ],
+    [ "address", "category_m_b_user_07_08.html#a90b69a40ac9494c24ef220d2564afc0d", null ],
+    [ "avatarUrlString", "category_m_b_user_07_08.html#a57a8fd5d5d911cc6d5845a80c689c95b", null ],
+    [ "boxBytesUsed", "category_m_b_user_07_08.html#a6a4749d925f5a1eeb3b286ed5303e540", null ],
+    [ "boxSizeBytes", "category_m_b_user_07_08.html#aa03dfa57fb8b0fae8e391a60d77c9fc9", null ],
+    [ "canSeeManagedUsers", "category_m_b_user_07_08.html#aa9d85e54ce8ba89ab2ce480d31821553", null ],
+    [ "createdAt", "category_m_b_user_07_08.html#aa7512892f007799a179ce343a431f1e0", null ],
+    [ "isExemptFromDeviceLimits", "category_m_b_user_07_08.html#a2596dea4aeaeb87b1d3d872c54e63f1a", null ],
+    [ "isExemptFromLoginVerification", "category_m_b_user_07_08.html#a13cc5f0142bb943e1d08798f8510b265", null ],
+    [ "isSyncEnabled", "category_m_b_user_07_08.html#ad96023d6090470b8b69b65e4e82361d0", null ],
+    [ "jobTitle", "category_m_b_user_07_08.html#a83c48f901d8e998e2a5bf9989963cb2c", null ],
+    [ "language", "category_m_b_user_07_08.html#a21232543498af2a825f7cc68e1b13870", null ],
+    [ "loginId", "category_m_b_user_07_08.html#aef87cc29a92dcb61b32d4df4b20e1eaa", null ],
+    [ "maxUploadSizeBytes", "category_m_b_user_07_08.html#aa4a94c1c6e1dd4e50cdfd06f23657ef2", null ],
+    [ "modifiedAt", "category_m_b_user_07_08.html#aa5b9bb3fc8bf7241c31847a009fa8544", null ],
+    [ "name", "category_m_b_user_07_08.html#afc8ccc6676addc3b49a494b2bf969c68", null ],
+    [ "phone", "category_m_b_user_07_08.html#a898dc377fa828bb1a4e94ad8f1acb101", null ],
+    [ "refreshTokenExpiration", "category_m_b_user_07_08.html#a73ea1a88a0ebe4f2fe0e71809784ebfd", null ],
+    [ "role", "category_m_b_user_07_08.html#a51575ddbd2b177ec3462a7b48d4f5059", null ],
+    [ "status", "category_m_b_user_07_08.html#a4a8dc3b7ee7453cb36548ab5c66baf72", null ],
+    [ "trackingCodes", "category_m_b_user_07_08.html#ad9df8718131f2681768bf851afb43963", null ],
+    [ "userId", "category_m_b_user_07_08.html#a283433e5becee129a91a7edbce5f3380", null ],
+    [ "userType", "category_m_b_user_07_08.html#a1cf94c9d11f80e81a86397d45539ee2c", null ]
+];
