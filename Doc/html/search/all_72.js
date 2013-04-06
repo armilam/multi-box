@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['refreshaccesstoken',['refreshAccessToken',['../category_m_b_user_07_authentication_08.html#a988475a0321b26e1146e538bfee65ef6',1,'MBUser(Authentication)::refreshAccessToken()'],['../interface_m_b_user.html#a988475a0321b26e1146e538bfee65ef6',1,'MBUser::refreshAccessToken()']]],
+  ['refreshtoken',['refreshToken',['../interface_m_b_access_token_response.html#a52a523200e9ed6203d66dc7250c725dd',1,'MBAccessTokenResponse::refreshToken()'],['../interface_m_b_refresh_token_response.html#a52a523200e9ed6203d66dc7250c725dd',1,'MBRefreshTokenResponse::refreshToken()'],['../interface_m_b_user.html#a52a523200e9ed6203d66dc7250c725dd',1,'MBUser::refreshToken()']]],
+  ['refreshtokenexpiration',['refreshTokenExpiration',['../interface_m_b_user.html#a73ea1a88a0ebe4f2fe0e71809784ebfd',1,'MBUser::refreshTokenExpiration()'],['../category_m_b_user_07_08.html#a73ea1a88a0ebe4f2fe0e71809784ebfd',1,'MBUser()::refreshTokenExpiration()']]],
+  ['registeredusers',['registeredUsers',['../category_m_b_user_07_collection_08.html#ad0d4a054b9aaf94b637b09d0e4ed74e8',1,'MBUser(Collection)::registeredUsers()'],['../interface_m_b_user.html#ad0d4a054b9aaf94b637b09d0e4ed74e8',1,'MBUser::registeredUsers()']]],
+  ['requestparameters',['requestParameters',['../interface_m_b_access_token_request.html#a4d3c7a419dcb0f78e0ba7d834f70386f',1,'MBAccessTokenRequest::requestParameters()'],['../interface_m_b_refresh_token_request.html#a4d3c7a419dcb0f78e0ba7d834f70386f',1,'MBRefreshTokenRequest::requestParameters()'],['../interface_m_b_revoke_token_request.html#a4d3c7a419dcb0f78e0ba7d834f70386f',1,'MBRevokeTokenRequest::requestParameters()']]],
+  ['resetrefreshtokenexpiration',['resetRefreshTokenExpiration',['../interface_m_b_user.html#ab61dd468c5d14a9aafc488b8b2c37f40',1,'MBUser']]],
+  ['revokewithcompletion_3a',['revokeWithCompletion:',['../category_m_b_user_07_authentication_08.html#a1e56d1480e455bac35e1a57a2db7fb47',1,'MBUser(Authentication)::revokeWithCompletion:()'],['../interface_m_b_user.html#a1e56d1480e455bac35e1a57a2db7fb47',1,'MBUser::revokeWithCompletion:()']]],
+  ['role',['role',['../interface_m_b_user.html#acd96026ab462f1abd3a9eee81d2cd1e2',1,'MBUser::role()'],['../category_m_b_user_07_08.html#a51575ddbd2b177ec3462a7b48d4f5059',1,'MBUser()::role()']]]
+];

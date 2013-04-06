@@ -1,0 +1,27 @@
+var annotated =
+[
+    [ "MBAccessTokenRequest", "interface_m_b_access_token_request.html", "interface_m_b_access_token_request" ],
+    [ "MBAccessTokenResponse", "interface_m_b_access_token_response.html", "interface_m_b_access_token_response" ],
+    [ "MBAPIKey", "interface_m_b_a_p_i_key.html", null ],
+    [ "MBAppDelegate", "interface_m_b_app_delegate.html", "interface_m_b_app_delegate" ],
+    [ "MBAppDelegate()", "category_m_b_app_delegate_07_08.html", "category_m_b_app_delegate_07_08" ],
+    [ "MBGetUserInfoResponse", "interface_m_b_get_user_info_response.html", "interface_m_b_get_user_info_response" ],
+    [ "MBLoginWindowController", "interface_m_b_login_window_controller.html", "interface_m_b_login_window_controller" ],
+    [ "MBLoginWindowController()", "category_m_b_login_window_controller_07_08.html", null ],
+    [ "MBMainViewController", "interface_m_b_main_view_controller.html", "interface_m_b_main_view_controller" ],
+    [ "MBMainViewController()", "category_m_b_main_view_controller_07_08.html", null ],
+    [ "MBRefreshTokenRequest", "interface_m_b_refresh_token_request.html", "interface_m_b_refresh_token_request" ],
+    [ "MBRefreshTokenRequest()", "category_m_b_refresh_token_request_07_08.html", "category_m_b_refresh_token_request_07_08" ],
+    [ "MBRefreshTokenResponse", "interface_m_b_refresh_token_response.html", "interface_m_b_refresh_token_response" ],
+    [ "MBRevokeTokenRequest", "interface_m_b_revoke_token_request.html", "interface_m_b_revoke_token_request" ],
+    [ "MBRevokeTokenRequest()", "category_m_b_revoke_token_request_07_08.html", "category_m_b_revoke_token_request_07_08" ],
+    [ "MBUser", "interface_m_b_user.html", "interface_m_b_user" ],
+    [ "MBUser()", "category_m_b_user_07_08.html", "category_m_b_user_07_08" ],
+    [ "MBUser(Authentication)", "category_m_b_user_07_authentication_08.html", "category_m_b_user_07_authentication_08" ],
+    [ "MBUser(Collection)", "category_m_b_user_07_collection_08.html", null ],
+    [ "MBUser(GetInfo)", "category_m_b_user_07_get_info_08.html", "category_m_b_user_07_get_info_08" ],
+    [ "MBUserListCell", "interface_m_b_user_list_cell.html", "interface_m_b_user_list_cell" ],
+    [ "MBUserListViewController", "interface_m_b_user_list_view_controller.html", "interface_m_b_user_list_view_controller" ],
+    [ "Multi_BoxTests", "interface_multi___box_tests.html", null ],
+    [ "NSString(ParseURLQuery)", "category_n_s_string_07_parse_u_r_l_query_08.html", "category_n_s_string_07_parse_u_r_l_query_08" ]
+];

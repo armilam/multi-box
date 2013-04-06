@@ -1,0 +1,74 @@
+\hypertarget{category_m_b_user_07_authentication_08}{\section{M\-B\-User(Authentication) Category Reference}
+\label{category_m_b_user_07_authentication_08}\index{M\-B\-User(\-Authentication)@{M\-B\-User(\-Authentication)}}
+}
+
+
+{\ttfamily \#import $<$M\-B\-User+\-Authentication.\-h$>$}
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{category_m_b_user_07_authentication_08_a988475a0321b26e1146e538bfee65ef6}{refresh\-Access\-Token}
+\item 
+(void) -\/ \hyperlink{category_m_b_user_07_authentication_08_a1e56d1480e455bac35e1a57a2db7fb47}{revoke\-With\-Completion\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{category_m_b_user_07_authentication_08_a2cfdd3551de108fd02e909f267379947}{authenticate\-New\-User\-:completion\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{category_m_b_user_07_authentication_08_a2cfdd3551de108fd02e909f267379947}{\index{M\-B\-User(\-Authentication)@{M\-B\-User(\-Authentication)}!authenticate\-New\-User\-:completion\-:@{authenticate\-New\-User\-:completion\-:}}
+\index{authenticate\-New\-User\-:completion\-:@{authenticate\-New\-User\-:completion\-:}!MBUser(Authentication)@{M\-B\-User(\-Authentication)}}
+\subsubsection[{authenticate\-New\-User\-:completion\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) authenticate\-New\-User\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Dictionary$\ast$)}]{params}
+\item[{completion:({\bf M\-B\-User}$\ast$ new\-User, N\-S\-Exception$\ast$ error)}]{completion}
+\end{DoxyParamCaption}
+}}\label{category_m_b_user_07_authentication_08_a2cfdd3551de108fd02e909f267379947}
+Gets a user's access\-Token and refresh\-Token. Also populates the \hyperlink{interface_m_b_user}{M\-B\-User} object with details about the user, including name, email address, and avatar image U\-R\-L. 
+\begin{DoxyParams}{Parameters}
+{\em params} & The params returned from the Box A\-P\-I after a user logs in. \\
+\hline
+{\em completion} & A block to be called once the user is authenticated (or authentication failed). The block passes in the new \hyperlink{interface_m_b_user}{M\-B\-User} object and an N\-S\-Exception object which will be nil unless any errors occurred. \\
+\hline
+\end{DoxyParams}
+
+
+Extends class \hyperlink{interface_m_b_user_a2cfdd3551de108fd02e909f267379947}{M\-B\-User}.
+
+\hypertarget{category_m_b_user_07_authentication_08_a988475a0321b26e1146e538bfee65ef6}{\index{M\-B\-User(\-Authentication)@{M\-B\-User(\-Authentication)}!refresh\-Access\-Token@{refresh\-Access\-Token}}
+\index{refresh\-Access\-Token@{refresh\-Access\-Token}!MBUser(Authentication)@{M\-B\-User(\-Authentication)}}
+\subsubsection[{refresh\-Access\-Token}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) refresh\-Access\-Token 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{category_m_b_user_07_authentication_08_a988475a0321b26e1146e538bfee65ef6}
+Refreshes \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token}. The Box A\-P\-I invalidates \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token} every hour, so this must be called in order to have continued access. As long as \hyperlink{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}{M\-B\-User\-::refresh\-Token} is still valid, calling this will give the \hyperlink{interface_m_b_user}{M\-B\-User} object a new valid \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token}. 
+
+Extends class \hyperlink{interface_m_b_user_a988475a0321b26e1146e538bfee65ef6}{M\-B\-User}.
+
+\hypertarget{category_m_b_user_07_authentication_08_a1e56d1480e455bac35e1a57a2db7fb47}{\index{M\-B\-User(\-Authentication)@{M\-B\-User(\-Authentication)}!revoke\-With\-Completion\-:@{revoke\-With\-Completion\-:}}
+\index{revoke\-With\-Completion\-:@{revoke\-With\-Completion\-:}!MBUser(Authentication)@{M\-B\-User(\-Authentication)}}
+\subsubsection[{revoke\-With\-Completion\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) revoke\-With\-Completion\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L success)}]{completion}
+\end{DoxyParamCaption}
+}}\label{category_m_b_user_07_authentication_08_a1e56d1480e455bac35e1a57a2db7fb47}
+Revokes the \hyperlink{interface_m_b_user}{M\-B\-User} object's \hyperlink{interface_m_b_user_aae7d6df5c0e6da13e80b3ddb82ae7081}{M\-B\-User\-::access\-Token} and \hyperlink{interface_m_b_user_a52a523200e9ed6203d66dc7250c725dd}{M\-B\-User\-::refresh\-Token}. Useful on logout. 
+\begin{DoxyParams}{Parameters}
+{\em completion} & A block to run upon completion of the request. The block passes in a B\-O\-O\-L which indicates success of the request. \\
+\hline
+\end{DoxyParams}
+
+
+Extends class \hyperlink{interface_m_b_user_a1e56d1480e455bac35e1a57a2db7fb47}{M\-B\-User}.
+
+
+
+The documentation for this category was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Multi Box/\-Data Model/\-User/\-Authentication/\hyperlink{_m_b_user_09_authentication_8h}{M\-B\-User+\-Authentication.\-h}\item 
+Multi Box/\-Data Model/\-User/\-Authentication/\hyperlink{_m_b_user_09_authentication_8m}{M\-B\-User+\-Authentication.\-m}\end{DoxyCompactItemize}

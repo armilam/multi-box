@@ -10,21 +10,54 @@
 
 @interface MBUser : NSObject
 
+/// The access token required to identify the user each for request. It is valid for one hour.
+/// This is provided by the Box API.
 @property (nonatomic, strong) NSString* accessToken;
+
+/// The amount of time in seconds that the MBUser::accessToken will expire after generation.
+/// This has always been 3600 (one hour) for me so far.
+/// This is provided by the Box API.
 @property (nonatomic, assign) NSInteger expiresIn;
+
+/// As far as I have been able to tell so far, this will always be "bearer".
+/// This is provided by the Box API.
 @property (nonatomic, strong) NSString* tokenType;
+
+/// The refresh token required to refresh the user's MBUser::accessToken and MBUser::refreshToken.
+/// This is valid for two weeks.
+/// This is provided by the Box API.
 @property (nonatomic, strong) NSString* refreshToken;
+
+/// This is a calculated time of expiration for MBUser::accessToken.
 @property (nonatomic, strong, readonly) NSDate* accessTokenExpiration;
+
+/// This is a calculated time of expiration for MBUser::refreshToken.
 @property (nonatomic, strong, readonly) NSDate* refreshTokenExpiration;
 
 #pragma mark - Box User Information
+/// The id used by the Box API to identify the user.
 @property (nonatomic, strong, readonly) NSString* userId;
+
+/// The user's real (or registered) name.
 @property (nonatomic, strong, readonly) NSString* name;
+
+/// The capacity of the user's Box in bytes.
 @property (nonatomic, strong, readonly) NSNumber* boxSizeBytes;
+
+/// The amount of space used in the user's Box in bytes.
 @property (nonatomic, strong, readonly) NSNumber* boxBytesUsed;
+
+/// The maximum upload size for the user in bytes.
 @property (nonatomic, strong, readonly) NSNumber* maxUploadSizeBytes;
+
+/// The user's status as given by the Box API.
+/// The possible values are "active" and "inactive".
 @property (nonatomic, strong, readonly) NSString* status;
+
+/// A URL string to the user's avatar image.
 @property (nonatomic, strong, readonly) NSString* avatarUrlString;
+
+/// Indicates whether the user has sync enabled.
 @property (nonatomic, assign, readonly) BOOL isSyncEnabled;
 
 #pragma mark - Box User Information (currently unused by this app)
@@ -45,9 +78,11 @@
 
 #pragma mark - Methods
 
-// To be used when deserializing a saved user
+/// To be used when deserializing a saved user
 - (MBUser*)initWithRefreshToken:(NSString*)refreshToken expiration:(NSDate*)expiration;
 
+/// Calls the Box API to refresh the user's MBUser::accessToken and MBUser::refreshToken.
+/// TODO: Pass in a block so the caller can find out whether the refresh was successful.
 - (void)resetRefreshTokenExpiration;
 
 @end
