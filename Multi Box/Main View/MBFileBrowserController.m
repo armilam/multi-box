@@ -8,6 +8,7 @@
 
 #import "MBFileBrowserController.h"
 #import "MBFolder.h"
+#import "MBFile.h"
 #import "MBUser+GetInfo.h"
 
 @interface MBFileBrowserController()
@@ -23,19 +24,59 @@
     //TODO: Spinner while we wait?
     [user.rootFolder refreshContents:^(MBFolder* folder)
     {
-         [self.fileBrowser reloadColumn:0];
+        [self.fileBrowser loadColumnZero];
          //TODO: Clear all other columns
     }];
 }
 
-- (NSInteger)browser:(NSBrowser *)sender numberOfRowsInColumn:(NSInteger)column
+- (id)rootItemForBrowser:(NSBrowser*)browser
 {
-    if(column == 0)
+    return self.user.rootFolder;
+}
+
+- (NSInteger)browser:(NSBrowser*)browser numberOfChildrenOfItem:(id)item
+{
+    if([item isKindOfClass:[MBFolder class]])
     {
-        return self.user.rootFolder.itemCollection.count;
+        MBFolder* folderItem = (MBFolder*)item;
+        return folderItem.itemCollection.count;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+- (id)browser:(NSBrowser*)browser child:(NSInteger)index ofItem:(id)item
+{
+    // Assumes the item is an MBFolder object
+    MBFolder* folderItem = (MBFolder*)item;
+    return [folderItem.itemCollection objectAtIndex:index];
+}
+
+- (BOOL)browser:(NSBrowser*)browser isLeafItem:(id)item
+{
+    // It's a leaf item if and only if the item is an MBFile object
+    return [item isKindOfClass:[MBFile class]];
+}
+
+- (id)browser:(NSBrowser*)browser objectValueForItem:(id)item
+{
+    if([item isKindOfClass:[MBFolder class]])
+    {
+        MBFolder* folderItem = (MBFolder*)item;
+        return folderItem.name;
+    }
+    else if([item isKindOfClass:[MBFile class]])
+    {
+        return @"A FILE";
+        
+        //TODO: Use the following lines instead
+//        MBFile* fileItem = (MBFile*)item;
+//        return fileItem.name;
     }
     
-    return 0;
+    return @"INVALID TYPE";
 }
 
 @end

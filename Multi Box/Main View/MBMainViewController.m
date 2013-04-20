@@ -31,7 +31,6 @@
     [super loadView];
 
     MBFileBrowserController* fbController = self.fileBrowserController;
-    [self.fileBrowser setDelegate:fbController];
     self.userListViewController.userSelectedAction = ^(MBUser* user)
     {
         [fbController setUser:user];

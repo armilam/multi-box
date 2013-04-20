@@ -54,6 +54,8 @@
 		A5F6330C17233BA9000B3CA4 /* MBFolderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F6330A17233BA9000B3CA4 /* MBFolderResponse.m */; };
 		A5F6331017233BC0000B3CA4 /* MBFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F6330F17233BC0000B3CA4 /* MBFileResponse.m */; };
 		A5F6331117233BC0000B3CA4 /* MBFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F6330F17233BC0000B3CA4 /* MBFileResponse.m */; };
+		A5F63314172352D8000B3CA4 /* MBFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F63313172352D8000B3CA4 /* MBFile.m */; };
+		A5F63315172352D8000B3CA4 /* MBFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F63313172352D8000B3CA4 /* MBFile.m */; };
 		D3F6401017387F415D5E2B72 /* MBRefreshTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6409F15958C127F608896 /* MBRefreshTokenRequest.m */; };
 		D3F640408ECB12A2A8E1B709 /* MBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64A52077838350A586D70 /* MBUser.m */; };
 		D3F64064592856D9E6E59638 /* MBAccessTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64CB2175A4FAABE85C992 /* MBAccessTokenResponse.m */; };
@@ -203,6 +205,8 @@
 		A5F6330A17233BA9000B3CA4 /* MBFolderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFolderResponse.m; path = "Data Model/Folder/MBFolderResponse.m"; sourceTree = "<group>"; };
 		A5F6330E17233BC0000B3CA4 /* MBFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBFileResponse.h; path = "Data Model/File/MBFileResponse.h"; sourceTree = "<group>"; };
 		A5F6330F17233BC0000B3CA4 /* MBFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFileResponse.m; path = "Data Model/File/MBFileResponse.m"; sourceTree = "<group>"; };
+		A5F63312172352D8000B3CA4 /* MBFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBFile.h; path = "Data Model/File/MBFile.h"; sourceTree = "<group>"; };
+		A5F63313172352D8000B3CA4 /* MBFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFile.m; path = "Data Model/File/MBFile.m"; sourceTree = "<group>"; };
 		D3F6409F15958C127F608896 /* MBRefreshTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRefreshTokenRequest.m; path = "Data Model/User/Authentication/MBRefreshTokenRequest.m"; sourceTree = "<group>"; };
 		D3F6427844E40CA6F1731EE9 /* MBRevokeTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRevokeTokenRequest.m; path = "Data Model/User/Authentication/MBRevokeTokenRequest.m"; sourceTree = "<group>"; };
 		D3F642DE9BABB9439E996035 /* MBRefreshTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBRefreshTokenRequest.h; path = "Data Model/User/Authentication/MBRefreshTokenRequest.h"; sourceTree = "<group>"; };
@@ -449,6 +453,8 @@
 			children = (
 				A5F6330E17233BC0000B3CA4 /* MBFileResponse.h */,
 				A5F6330F17233BC0000B3CA4 /* MBFileResponse.m */,
+				A5F63312172352D8000B3CA4 /* MBFile.h */,
+				A5F63313172352D8000B3CA4 /* MBFile.m */,
 			);
 			name = File;
 			sourceTree = "<group>";
@@ -661,6 +667,7 @@
 				A5F6330317233A7E000B3CA4 /* MBFolderItemsResponse.m in Sources */,
 				A5F6330B17233BA9000B3CA4 /* MBFolderResponse.m in Sources */,
 				A5F6331017233BC0000B3CA4 /* MBFileResponse.m in Sources */,
+				A5F63314172352D8000B3CA4 /* MBFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +697,7 @@
 				A5F6330417233A7E000B3CA4 /* MBFolderItemsResponse.m in Sources */,
 				A5F6330C17233BA9000B3CA4 /* MBFolderResponse.m in Sources */,
 				A5F6331117233BC0000B3CA4 /* MBFileResponse.m in Sources */,
+				A5F63315172352D8000B3CA4 /* MBFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
