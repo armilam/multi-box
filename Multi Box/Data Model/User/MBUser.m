@@ -7,6 +7,7 @@
 //
 
 #import "MBUser.h"
+#import "MBFolder.h"
 
 @interface MBUser()
 
@@ -39,13 +40,26 @@
 @property (nonatomic, assign, readwrite) BOOL isExemptFromLoginVerification;
 //@property (nonatomic, strong, readwrite) MBEnterprise* enterprise;
 
+#pragma mark - MB Info
+
+@property (nonatomic, strong, readwrite) MBFolder* rootFolder;
+
 @end
 
 @implementation MBUser
 
-- (MBUser*)initWithRefreshToken:(NSString*)refreshToken expiration:(NSDate*)expiration;
+- (MBUser*)init
 {
     self = [super init];
+    
+    self.rootFolder = [[MBFolder alloc] initRootFolderForUser:self];
+    
+    return self;
+}
+
+- (MBUser*)initWithRefreshToken:(NSString*)refreshToken expiration:(NSDate*)expiration;
+{
+    self = [self init];
 
     self.refreshToken = refreshToken;
     self.refreshTokenExpiration = expiration;

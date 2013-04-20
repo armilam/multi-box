@@ -21,14 +21,21 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
-        MBFileBrowserController* fbController = self.fileBrowserController;
-        self.userListViewController.userSelectedAction = ^(MBUser* user)
-        {
-            [fbController setUser:user];
-        };
     }
     
     return self;
+}
+
+- (void)loadView
+{
+    [super loadView];
+
+    MBFileBrowserController* fbController = self.fileBrowserController;
+    [self.fileBrowser setDelegate:fbController];
+    self.userListViewController.userSelectedAction = ^(MBUser* user)
+    {
+        [fbController setUser:user];
+    };
 }
 
 - (void)login:(id)sender

@@ -8,7 +8,7 @@
 
 #import "MBAppDelegate.h"
 #import "MBLoginWindowController.h"
-#import "NSString+ParseURLQuery.h"
+#import "NSString+URLQuery.h"
 #import "MBUser+Authentication.h"
 #import "MBUser+Collection.h"
 

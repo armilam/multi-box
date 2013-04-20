@@ -59,7 +59,6 @@
 						<string key="NSFrame">{{410, 38}, {326, 300}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -160,7 +159,7 @@
 										<string key="NSFrameSize">{380, 260}</string>
 										<reference key="NSSuperview" ref="303017659"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="796620923"/>
+										<reference key="NSNextKeyView" ref="810982768"/>
 										<string key="NSReuseIdentifierKey">_NS:13</string>
 										<bool key="NSEnabled">YES</bool>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -321,7 +320,7 @@
 						<string key="NSFrame">{{20, 38}, {382, 278}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="810982768"/>
+						<reference key="NSNextKeyView" ref="303017659"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="NSsFlags">133682</int>
 						<reference key="NSVScroller" ref="418544959"/>
@@ -374,6 +373,14 @@
 						<reference key="destination" ref="177643245"/>
 					</object>
 					<int key="connectionID">123</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">fileBrowser</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="444748935"/>
+					</object>
+					<int key="connectionID">127</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1064,7 +1071,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">126</int>
+			<int key="maxID">127</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1102,10 +1109,15 @@
 						</object>
 					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="fileBrowser">NSBrowser</string>
 						<string key="fileBrowserController">MBFileBrowserController</string>
 						<string key="userListViewController">MBUserListViewController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="fileBrowser">
+							<string key="name">fileBrowser</string>
+							<string key="candidateClassName">NSBrowser</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="fileBrowserController">
 							<string key="name">fileBrowserController</string>
 							<string key="candidateClassName">MBFileBrowserController</string>

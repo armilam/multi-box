@@ -1,14 +1,14 @@
 //
-//  NSString+ParseURLQuery.m
+//  NSString+URLQuery.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 3/31/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "NSString+ParseURLQuery.h"
+#import "NSString+URLQuery.h"
 
-@implementation NSString (ParseURLQuery)
+@implementation NSString (URLQuery)
 
 - (NSString *)stringByDecodingURLFormat
 {
@@ -42,6 +42,19 @@
         [results addObject:value];
     }
     return queryComponents;
+}
+
++ (NSString*)queryStringFromDictionary:(NSDictionary *)queryDictionary
+{
+    NSMutableArray* parts = [NSMutableArray array];
+    for(NSString* key in queryDictionary)
+    {
+        NSString* value = [queryDictionary objectForKey:key];
+        NSString* part = [NSString stringWithFormat:@"%@=%@", [key stringByEncodingURLFormat], [value stringByEncodingURLFormat]];
+        [parts addObject:part];
+    }
+
+    return [parts componentsJoinedByString:@"&"];
 }
 
 @end

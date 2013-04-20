@@ -21,8 +21,8 @@
     _user = user;
     
     //TODO: Spinner while we wait?
-    [user getRootFolder:^(MBFolder* folder)
-     {
+    [user.rootFolder refreshContents:^(MBFolder* folder)
+    {
          [self.fileBrowser reloadColumn:0];
          //TODO: Clear all other columns
     }];

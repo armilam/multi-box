@@ -16,6 +16,8 @@
 @property (nonatomic, strong) IBOutlet MBUserListViewController* userListViewController;
 @property (nonatomic, strong) IBOutlet MBFileBrowserController* fileBrowserController;
 
+@property IBOutlet NSBrowser* fileBrowser;
+
 /// Called when the '+' button under the user list is clicked.
 /// Starts the process for logging a user in.
 - (IBAction)login:(id)sender;

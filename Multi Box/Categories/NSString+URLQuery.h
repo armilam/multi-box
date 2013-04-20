@@ -1,5 +1,5 @@
 //
-//  NSString+ParseURLQuery.h
+//  NSString+URLQuery.h
 //  Multi Box
 //
 //  Created by Aaron Milam on 3/31/13.
@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (ParseURLQuery)
+@interface NSString (URLQuery)
 
 - (NSMutableDictionary *)dictionaryFromQueryComponents;
++ (NSString*)queryStringFromDictionary:(NSDictionary*)queryDictionary;
 
 @end

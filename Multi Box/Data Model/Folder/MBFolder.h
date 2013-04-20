@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class MBUser;
+@class MBUser, MBFolderResponse;
 
 @interface MBFolder : NSObject
 
@@ -68,6 +68,18 @@
 
 /// Whether this folder will be synced by the Box clients
 @property (nonatomic, strong, readonly) NSString* syncState;
+
+#pragma mark - Methods
+
+/// Initializes an MBFolder object with the correct details as the user's root folder;
+/// MBFolder::refreshContents: must be called in order to get the folder's info and contents.
+/// @param user The user to whom this folder belongs.
+- (MBFolder*)initRootFolderForUser:(MBUser*)user;
+
+/// Refreshes the contents of the folder from Box.
+/// @param returnBlock A block to be called once the folder contents are retrieved.
+/// The block passes in the MBFolder object whose contents and info have been refreshed.
+- (void)refreshContents:(void(^)(MBFolder* folder))returnBlock;
 
 
 @end
