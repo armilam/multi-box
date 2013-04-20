@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class MBFolder;
+
 @interface MBUser : NSObject
 
+#pragma mark Box info
 /// The access token required to identify the user each for request. It is valid for one hour.
 /// This is provided by the Box API.
 @property (nonatomic, strong) NSString* accessToken;
@@ -75,6 +78,10 @@
 @property (nonatomic, assign, readonly) BOOL isExemptFromDeviceLimits;
 @property (nonatomic, assign, readonly) BOOL isExemptFromLoginVerification;
 //@property (nonatomic, strong, readonly) MBEnterprise* enterprise;
+
+#pragma mark - MB Info
+
+@property (nonatomic, strong, readonly) MBFolder* rootFolder;
 
 #pragma mark - Methods
 

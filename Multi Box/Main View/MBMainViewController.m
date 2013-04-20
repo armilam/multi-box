@@ -8,6 +8,7 @@
 
 #import "MBMainViewController.h"
 #import "MBAPIKey.h"
+#import "MBUser.h"
 
 @interface MBMainViewController ()
 
@@ -20,6 +21,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
+        MBFileBrowserController* fbController = self.fileBrowserController;
+        self.userListViewController.userSelectedAction = ^(MBUser* user)
+        {
+            [fbController setUser:user];
+        };
     }
     
     return self;

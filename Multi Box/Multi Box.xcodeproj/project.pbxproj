@@ -19,6 +19,8 @@
 		A5095653170BFD1D00FF4CD3 /* MBUserListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5095651170BFD1D00FF4CD3 /* MBUserListCell.m */; };
 		A5095655170BFD3000FF4CD3 /* MBUserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */; };
 		A5095656170BFD3000FF4CD3 /* MBUserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */; };
+		A5205FEC1716504100BC8C69 /* MBFileBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5205FEB1716504100BC8C69 /* MBFileBrowserController.m */; };
+		A5205FED1716504100BC8C69 /* MBFileBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5205FEB1716504100BC8C69 /* MBFileBrowserController.m */; };
 		A555A31D170E3313005428DA /* box_logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A555A31C170E3313005428DA /* box_logo_small.png */; };
 		A555A31E170E3313005428DA /* box_logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A555A31C170E3313005428DA /* box_logo_small.png */; };
 		A555A322170E7CD0005428DA /* MBFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A555A321170E7CD0005428DA /* MBFolder.m */; };
@@ -154,6 +156,8 @@
 		A5095650170BFD1D00FF4CD3 /* MBUserListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBUserListCell.h; path = "Main View/MBUserListCell.h"; sourceTree = "<group>"; };
 		A5095651170BFD1D00FF4CD3 /* MBUserListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBUserListCell.m; path = "Main View/MBUserListCell.m"; sourceTree = "<group>"; };
 		A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBUserListCell.xib; sourceTree = "<group>"; };
+		A5205FEA1716504100BC8C69 /* MBFileBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBFileBrowserController.h; path = "Main View/MBFileBrowserController.h"; sourceTree = "<group>"; };
+		A5205FEB1716504100BC8C69 /* MBFileBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFileBrowserController.m; path = "Main View/MBFileBrowserController.m"; sourceTree = "<group>"; };
 		A555A31C170E3313005428DA /* box_logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = box_logo_small.png; path = Images/box_logo_small.png; sourceTree = "<group>"; };
 		A555A320170E7CD0005428DA /* MBFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBFolder.h; path = "Data Model/Folder/MBFolder.h"; sourceTree = "<group>"; };
 		A555A321170E7CD0005428DA /* MBFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFolder.m; path = "Data Model/Folder/MBFolder.m"; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 				A5095650170BFD1D00FF4CD3 /* MBUserListCell.h */,
 				A5095651170BFD1D00FF4CD3 /* MBUserListCell.m */,
 				A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */,
+				A5205FEA1716504100BC8C69 /* MBFileBrowserController.h */,
+				A5205FEB1716504100BC8C69 /* MBFileBrowserController.m */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -625,6 +631,7 @@
 				A557872E170DB0BC007185F1 /* MBUser+GetInfo.m in Sources */,
 				A5578733170DB24A007185F1 /* MBGetUserInfoResponse.m in Sources */,
 				A555A322170E7CD0005428DA /* MBFolder.m in Sources */,
+				A5205FEC1716504100BC8C69 /* MBFileBrowserController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +657,7 @@
 				A557872F170DB0BC007185F1 /* MBUser+GetInfo.m in Sources */,
 				A5578734170DB24A007185F1 /* MBGetUserInfoResponse.m in Sources */,
 				A555A323170E7CD0005428DA /* MBFolder.m in Sources */,
+				A5205FED1716504100BC8C69 /* MBFileBrowserController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

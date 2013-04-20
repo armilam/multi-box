@@ -80,6 +80,44 @@
     [operation start];
 }
 
+- (void)getRootFolder:(void (^)(MBFolder *))returnBlock
+{
+    //TODO: This entire method is only copied from above. Make it work for root folder.
+    RKObjectMapping* responseMapping = [RKObjectMapping mappingForClass:[MBGetUserInfoResponse class]];
+    [responseMapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"userId",
+     @"name" : @"name",
+     @"login" : @"loginId",
+     @"space_amount" : @"boxSizeBytes",
+     @"space_used" : @"boxBytesUsed",
+     @"max_upload_size" : @"maxUploadSizeBytes",
+     @"status" : @"status",
+     @"avatar_url" : @"avatarUrlString",
+     @"is_sync_enabled" : @"isSyncEnabled"
+     }];
+    
+    NSIndexSet* statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful); // Anything in 2xx
+    RKResponseDescriptor* responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/2.0/users/me" keyPath:nil statusCodes:statusCodes];
+    
+    //TODO: Break out URLs
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.box.com/2.0/users/me"]];
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", self.accessToken] forHTTPHeaderField:@"Authorization"];
+    RKObjectRequestOperation* operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
+    
+    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result)
+     {
+         NSLog(@"Got user info");
+         [self copyUserInfoFrom:[[result array] objectAtIndex:0]];
+         if(returnBlock) returnBlock(self);
+     }
+                                     failure:^(RKObjectRequestOperation *operation, NSError *error)
+     {
+         if(returnBlock) returnBlock(nil);
+         NSLog(@"Failed with error: %@", [error localizedDescription]);
+     }];
+    [operation start];
+}
+
 #pragma mark - Helpers
 
 - (void)copyUserInfoFrom:(MBGetUserInfoResponse*)response

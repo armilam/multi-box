@@ -37,4 +37,9 @@
     return 96.0;
 }
 
+- (void)selectedRow:(id)sender
+{
+    if(self.userSelectedAction) self.userSelectedAction([[MBUser registeredUsers] objectAtIndex:self.tableView.selectedRow]);
+}
+
 @end
