@@ -7,7 +7,26 @@
 //
 
 #import "MBFile.h"
+#import "MBFolder.h"
+
+@interface MBFile()
+
+@property (readwrite) NSString* bid;
+@property (readwrite) NSString* name;
+@property (readwrite) MBFolder* parent;
+
+@end
 
 @implementation MBFile
+
++ (MBFile*)fileFromResponse:(MBFileResponse*)fileResponse withParent:(MBFolder*)parent
+{
+    MBFile* newFile = [[MBFile alloc] init];
+    newFile.parent = parent;
+    newFile.bid = fileResponse.id;
+    newFile.name = fileResponse.name;
+    
+    return newFile;
+}
 
 @end

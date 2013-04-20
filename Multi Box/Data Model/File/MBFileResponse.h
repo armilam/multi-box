@@ -10,6 +10,9 @@
 
 @interface MBFileResponse : NSObject
 
+@property NSString* id;
+@property NSString* name;
+
 /* From folder content listing
  {
  "type": "file",

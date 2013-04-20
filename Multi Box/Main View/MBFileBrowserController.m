@@ -69,11 +69,8 @@
     }
     else if([item isKindOfClass:[MBFile class]])
     {
-        return @"A FILE";
-        
-        //TODO: Use the following lines instead
-//        MBFile* fileItem = (MBFile*)item;
-//        return fileItem.name;
+        MBFile* fileItem = (MBFile*)item;
+        return fileItem.name;
     }
     
     return @"INVALID TYPE";

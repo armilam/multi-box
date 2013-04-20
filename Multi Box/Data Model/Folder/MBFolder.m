@@ -7,6 +7,7 @@
 //
 
 #import "MBFolder.h"
+#import "MBFile.h"
 #import "MBUser.h"
 #import "MBFolderItemsResponse.h"
 #import "MBFileResponse.h"
@@ -58,19 +59,26 @@
     RKObjectMapping* folderMapping = [RKObjectMapping mappingForClass:[MBFolderResponse class]];
     [folderMapping addAttributeMappingsFromArray:@[@"name", @"id"]];
     
-    //TODO: File mapping
+    //TODO: Expand file mapping
+    RKObjectMapping* fileMapping = [RKObjectMapping mappingForClass:[MBFileResponse class]];
+    [fileMapping addAttributeMappingsFromArray:@[@"name", @"id"]];
+    
+    RKDynamicMapping* dynamicMapping = [RKDynamicMapping new];
+    [dynamicMapping addMatcher:[RKObjectMappingMatcher matcherWithKeyPath:@"type" expectedValue:@"file" objectMapping:fileMapping]];
+    [dynamicMapping addMatcher:[RKObjectMappingMatcher matcherWithKeyPath:@"type" expectedValue:@"folder" objectMapping:folderMapping]];
     
     //TODO: Do something with limit and offset and whatever else comes with the response
     RKObjectMapping* responseMapping = [RKObjectMapping mappingForClass:[MBFolderItemsResponse class]];
-    [responseMapping addRelationshipMappingWithSourceKeyPath:@"entries" mapping:folderMapping];
+    [responseMapping addRelationshipMappingWithSourceKeyPath:@"entries" mapping:dynamicMapping];
     
     NSIndexSet* statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful); // Anything in 2xx
     RKResponseDescriptor* responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/2.0/folders/:id/items" keyPath:nil statusCodes:statusCodes];
-    
+
+    //TODO: Get more fields to correspond with the expanded folder and file mappings
     NSDictionary* queryItems =
     @{
-      @"limit" : @"1",
-      @"offset" : @"0",
+//      @"limit" : @"1",
+//      @"offset" : @"0",
       @"fields" : @"name,id"
     };
     
@@ -91,7 +99,7 @@
              }
              else if([item isKindOfClass:[MBFileResponse class]])
              {
-                 //TODO: parse file and add to item collection
+                 [items addObject:[MBFile fileFromResponse:item withParent:self]];
              }
          }
          
