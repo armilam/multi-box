@@ -76,4 +76,27 @@
     return @"INVALID TYPE";
 }
 
+- (NSIndexSet *)browser:(NSBrowser *)browser selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes inColumn:(NSInteger)column
+{
+    NSInteger row = [proposedSelectionIndexes firstIndex];
+    id selectedItem = [browser itemAtRow:row inColumn:column];
+    
+    if([selectedItem isKindOfClass:[MBFolder class]])
+    {
+        MBFolder* selectedFolder = selectedItem;
+        //TODO: Expand folder
+        [selectedFolder refreshContents:^(MBFolder* refreshedFolder)
+        {
+            [browser reloadColumn:column+1];
+        }];
+    }
+    else if([selectedItem isKindOfClass:[MBFile class]])
+    {
+        MBFile* selectedFile = selectedItem;
+        //TODO: Show leaf details
+    }
+    
+    return proposedSelectionIndexes;
+}
+
 @end

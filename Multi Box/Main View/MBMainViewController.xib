@@ -59,6 +59,7 @@
 						<string key="NSFrame">{{410, 38}, {326, 300}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -74,12 +75,12 @@
 							</object>
 						</object>
 						<string key="NSPathSeparator">/</string>
-						<int key="NSMinColumnWidth">100</int>
-						<int key="NSNumberOfVisibleColumns">3</int>
+						<int key="NSMinColumnWidth">300</int>
+						<int key="NSNumberOfVisibleColumns">1</int>
 						<int key="NSColumnResizingType">1</int>
-						<double key="NSPreferedColumnWidth">100</double>
+						<double key="NSPreferedColumnWidth">300</double>
 						<bool key="NSAllowsTypeSelect">YES</bool>
-						<int key="NSBrFlags">469843968</int>
+						<int key="NSBrFlags">469843970</int>
 						<double key="NSBrowserRowHeight">17</double>
 					</object>
 					<object class="NSButton" id="816924266">
@@ -159,7 +160,7 @@
 										<string key="NSFrameSize">{380, 260}</string>
 										<reference key="NSSuperview" ref="303017659"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="810982768"/>
+										<reference key="NSNextKeyView" ref="796620923"/>
 										<string key="NSReuseIdentifierKey">_NS:13</string>
 										<bool key="NSEnabled">YES</bool>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -320,7 +321,7 @@
 						<string key="NSFrame">{{20, 38}, {382, 278}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="303017659"/>
+						<reference key="NSNextKeyView" ref="810982768"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="NSsFlags">133682</int>
 						<reference key="NSVScroller" ref="418544959"/>
