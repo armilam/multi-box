@@ -8,7 +8,7 @@
 
 #import "MBMainViewController.h"
 #import "MBAPIKey.h"
-#import "MBUser.h"
+#import "MBBoxUser.h"
 
 @interface MBMainViewController ()
 
@@ -31,7 +31,7 @@
     [super loadView];
 
     MBFileBrowserController* fbController = self.fileBrowserController;
-    self.userListViewController.userSelectedAction = ^(MBUser* user)
+    self.userListViewController.userSelectedAction = ^(MBBoxUser* user)
     {
         [fbController setUser:user];
     };

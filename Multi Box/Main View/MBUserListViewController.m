@@ -7,11 +7,11 @@
 //
 
 #import "MBUserListViewController.h"
-#import "MBUser+Collection.h"
+#import "MBBoxUser+Collection.h"
 
 @implementation MBUserListViewController
 
-- (void)reloadUser:(MBUser *)user
+- (void)reloadUser:(MBBoxUser *)user
 {
     //TODO: Reload the user in the list instead of the whole list
     [self.tableView reloadData];
@@ -19,7 +19,7 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return [[MBUser registeredUsers] count];
+    return [[MBBoxUser registeredUsers] count];
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
@@ -34,7 +34,7 @@
         self.userListCell.identifier = userListCellIdentifier;
     }
     
-    [self.userListCell setUser:[[MBUser registeredUsers] objectAtIndex:row]];
+    [self.userListCell setUser:[[MBBoxUser registeredUsers] objectAtIndex:row]];
     return self.userListCell;
 }
 
@@ -45,7 +45,7 @@
 
 - (void)selectedRow:(id)sender
 {
-    if(self.userSelectedAction) self.userSelectedAction([[MBUser registeredUsers] objectAtIndex:self.tableView.selectedRow]);
+    if(self.userSelectedAction) self.userSelectedAction([[MBBoxUser registeredUsers] objectAtIndex:self.tableView.selectedRow]);
 }
 
 @end

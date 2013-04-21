@@ -1,5 +1,5 @@
 //
-//  MBFolderItemsResponse.h
+//  MBBoxFolderItemsResponse.h
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/20/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MBFolderItemsResponse : NSObject
+@interface MBBoxFolderItemsResponse : NSObject
 
 @property NSNumber* total_count;
 @property NSArray* entries;

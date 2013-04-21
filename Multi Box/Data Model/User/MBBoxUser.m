@@ -1,15 +1,15 @@
 //
-//  MBUser.m
+//  MBBoxUser.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 3/31/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBUser.h"
-#import "MBFolder.h"
+#import "MBBoxUser.h"
+#import "MBBoxFolder.h"
 
-@interface MBUser()
+@interface MBBoxUser()
 
 @property (nonatomic, strong, readwrite) NSDate* accessTokenExpiration;
 @property (nonatomic, strong, readwrite) NSDate* refreshTokenExpiration;
@@ -42,22 +42,22 @@
 
 #pragma mark - MB Info
 
-@property (nonatomic, strong, readwrite) MBFolder* rootFolder;
+@property (nonatomic, strong, readwrite) MBBoxFolder* rootFolder;
 
 @end
 
-@implementation MBUser
+@implementation MBBoxUser
 
-- (MBUser*)init
+- (MBBoxUser*)init
 {
     self = [super init];
     
-    self.rootFolder = [[MBFolder alloc] initRootFolderForUser:self];
+    self.rootFolder = [[MBBoxFolder alloc] initRootFolderForUser:self];
     
     return self;
 }
 
-- (MBUser*)initWithRefreshToken:(NSString*)refreshToken expiration:(NSDate*)expiration;
+- (MBBoxUser*)initWithRefreshToken:(NSString*)refreshToken expiration:(NSDate*)expiration;
 {
     self = [self init];
 

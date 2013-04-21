@@ -1,24 +1,24 @@
 //
-//  MBUser+Authentication.m
+//  MBBoxUser+Authentication.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/3/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBUser+Authentication.h"
-#import "MBUser+Collection.h"
-#import "MBAccessTokenRequest.h"
-#import "MBAccessTokenResponse.h"
-#import "MBRefreshTokenRequest.h"
-#import "MBRefreshTokenResponse.h"
-#import "MBRevokeTokenRequest.h"
-#import "MBUser+GetInfo.h"
+#import "MBBoxUser+Authentication.h"
+#import "MBBoxUser+Collection.h"
+#import "MBBoxAccessTokenRequest.h"
+#import "MBBoxAccessTokenResponse.h"
+#import "MBBoxRefreshTokenRequest.h"
+#import "MBBoxRefreshTokenResponse.h"
+#import "MBBoxRevokeTokenRequest.h"
+#import "MBBoxUser+GetInfo.h"
 #import <RestKit/RestKit.h>
 
-@implementation MBUser (Authentication)
+@implementation MBBoxUser (Authentication)
 
-+ (void)authenticateNewUser:(NSDictionary*)params completion:(void(^)(MBUser* newUser, NSException* error))completion
++ (void)authenticateNewUser:(NSDictionary*)params completion:(void(^)(MBBoxUser* newUser, NSException* error))completion
 {
     NSString* error = [[params objectForKey:@"error"] objectAtIndex:0];
     NSString* state = [[params objectForKey:@"state"] objectAtIndex:0];
@@ -34,7 +34,7 @@
         // The user's auth code
         NSString* authCode = [[params objectForKey:@"code"] objectAtIndex:0];
         
-        RKObjectMapping* tokenMapping = [RKObjectMapping mappingForClass:[MBAccessTokenResponse class]];
+        RKObjectMapping* tokenMapping = [RKObjectMapping mappingForClass:[MBBoxAccessTokenResponse class]];
         [tokenMapping addAttributeMappingsFromDictionary:@{
          @"access_token":   @"accessToken",
          @"expires_in":     @"expiresIn",
@@ -53,14 +53,14 @@
          @"clientSecret":  @"client_secret"
          }];
         
-        RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:[MBAccessTokenRequest class] rootKeyPath:nil];
+        RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:[MBBoxAccessTokenRequest class] rootKeyPath:nil];
         
         RKObjectManager* manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://www.box.com"]];
         manager.requestSerializationMIMEType = RKMIMETypeFormURLEncoded;
         [manager addRequestDescriptor:requestDescriptor];
         [manager addResponseDescriptor:responseDescriptor];
         
-        MBAccessTokenRequest* tokenRequest = [[MBAccessTokenRequest alloc] init];
+        MBBoxAccessTokenRequest* tokenRequest = [[MBBoxAccessTokenRequest alloc] init];
         tokenRequest.code = authCode;
         
         [manager postObject:nil path:@"/api/oauth2/token" parameters:[tokenRequest requestParameters] success:^(RKObjectRequestOperation* operation, RKMappingResult* result)
@@ -70,8 +70,8 @@
                  if(completion) completion(nil, [NSException exceptionWithName:@"No data returned" reason:@"No data was returned in authentication" userInfo:nil]);
              }
              
-             MBAccessTokenResponse* tokenResponse = [[result array] objectAtIndex:0];
-             MBUser* newUser = [[MBUser alloc] init];
+             MBBoxAccessTokenResponse* tokenResponse = [[result array] objectAtIndex:0];
+             MBBoxUser* newUser = [[MBBoxUser alloc] init];
              newUser.accessToken = tokenResponse.accessToken;
              newUser.expiresIn = tokenResponse.expiresIn;
              newUser.tokenType = tokenResponse.tokenType;
@@ -79,7 +79,7 @@
              [newUser resetRefreshTokenExpiration];
              
              // Now get the user's details
-             [newUser getUserInfoWithCompletion:^(MBUser* user){ if(completion) completion(user, nil); }];
+             [newUser getUserInfoWithCompletion:^(MBBoxUser* user){ if(completion) completion(user, nil); }];
          }
                     failure:^(RKObjectRequestOperation *operation, NSError *error)
          {
@@ -93,10 +93,10 @@
     }
 }
 
-- (void)refreshAccessTokenCompletion:(void(^)(MBUser* user, NSException* error))completion
+- (void)refreshAccessTokenCompletion:(void(^)(MBBoxUser* user, NSException* error))completion
 {
     //TODO: I can see potential race conditions here when the app tries to use the user's access token while this refresh is still happening
-    RKObjectMapping* tokenMapping = [RKObjectMapping mappingForClass:[MBRefreshTokenResponse class]];
+    RKObjectMapping* tokenMapping = [RKObjectMapping mappingForClass:[MBBoxRefreshTokenResponse class]];
     [tokenMapping addAttributeMappingsFromDictionary:@{
      @"access_token":   @"accessToken",
      @"expires_in":     @"expiresIn",
@@ -115,14 +115,14 @@
      @"clientSecret":  @"client_secret"
      }];
     
-    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:[MBRefreshTokenRequest class] rootKeyPath:nil];
+    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:[MBBoxRefreshTokenRequest class] rootKeyPath:nil];
     
     RKObjectManager* manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://www.box.com"]];
     manager.requestSerializationMIMEType = RKMIMETypeFormURLEncoded;
     [manager addRequestDescriptor:requestDescriptor];
     [manager addResponseDescriptor:responseDescriptor];
     
-    MBRefreshTokenRequest* tokenRequest = [[MBRefreshTokenRequest alloc] initWithUser:self];
+    MBBoxRefreshTokenRequest* tokenRequest = [[MBBoxRefreshTokenRequest alloc] initWithUser:self];
     
     [manager postObject:nil path:@"/api/oauth2/token" parameters:[tokenRequest requestParameters] success:^(RKObjectRequestOperation* operation, RKMappingResult* result)
      {
@@ -132,14 +132,14 @@
              return ;
          }
          
-         MBRefreshTokenResponse* tokenResponse = [[result array] objectAtIndex:0];
+         MBBoxRefreshTokenResponse* tokenResponse = [[result array] objectAtIndex:0];
          self.accessToken = tokenResponse.accessToken;
          self.expiresIn = tokenResponse.expiresIn;
          self.tokenType = tokenResponse.tokenType;
          self.refreshToken = tokenResponse.refreshToken;
          [self resetRefreshTokenExpiration];
          
-         [MBUser persistUser:self];
+         [MBBoxUser persistUser:self];
          
          NSLog(@"Got refreshed token");
          
@@ -170,14 +170,14 @@
      @"clientSecret":  @"client_secret"
      }];
     
-    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:[MBRevokeTokenRequest class] rootKeyPath:nil];
+    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:[MBBoxRevokeTokenRequest class] rootKeyPath:nil];
     
     RKObjectManager* manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://www.box.com"]];
     manager.requestSerializationMIMEType = RKMIMETypeFormURLEncoded;
     [manager addRequestDescriptor:requestDescriptor];
     //    [manager addResponseDescriptor:responseDescriptor];
     
-    MBRevokeTokenRequest* tokenRequest = [[MBRevokeTokenRequest alloc] initWithUser:self];
+    MBBoxRevokeTokenRequest* tokenRequest = [[MBBoxRevokeTokenRequest alloc] initWithUser:self];
     //TODO: CRASH: Mapping is incorrect. Test to see the error.
     [manager postObject:nil path:@"/api/oauth2/revoke" parameters:[tokenRequest requestParameters] success:^(RKObjectRequestOperation* operation, RKMappingResult* result)
      {

@@ -1,15 +1,15 @@
 //
-//  MBAccessTokenRequest.m
+//  MBBoxAccessTokenRequest.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 3/31/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBAccessTokenRequest.h"
+#import "MBBoxAccessTokenRequest.h"
 #import "MBAPIKey.h"
 
-@implementation MBAccessTokenRequest
+@implementation MBBoxAccessTokenRequest
 
 - (NSString *)grantType
 {

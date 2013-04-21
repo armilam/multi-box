@@ -1,23 +1,23 @@
 //
-//  MBRevokeTokenRequest.m
+//  MBBoxRevokeTokenRequest.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/1/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBRevokeTokenRequest.h"
+#import "MBBoxRevokeTokenRequest.h"
 #import "MBAPIKey.h"
 
-@interface MBRevokeTokenRequest()
+@interface MBBoxRevokeTokenRequest()
 
-@property (nonatomic, strong) MBUser* user;
+@property (nonatomic, strong) MBBoxUser* user;
 
 @end
 
-@implementation MBRevokeTokenRequest
+@implementation MBBoxRevokeTokenRequest
 
-- (id)initWithUser:(MBUser *)user
+- (id)initWithUser:(MBBoxUser *)user
 {
     self = [super init];
     self.user = user;

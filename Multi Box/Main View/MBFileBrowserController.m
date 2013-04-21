@@ -7,9 +7,9 @@
 //
 
 #import "MBFileBrowserController.h"
-#import "MBFolder.h"
-#import "MBFile.h"
-#import "MBUser+GetInfo.h"
+#import "MBBoxFolder.h"
+#import "MBBoxFile.h"
+#import "MBBoxUser+GetInfo.h"
 
 @interface MBFileBrowserController()
 
@@ -17,12 +17,12 @@
 
 @implementation MBFileBrowserController
 
-- (void)setUser:(MBUser *)user
+- (void)setUser:(MBBoxUser *)user
 {
     _user = user;
     
     //TODO: Spinner while we wait?
-    [user.rootFolder refreshContents:^(MBFolder* folder)
+    [user.rootFolder refreshContents:^(MBBoxFolder* folder)
     {
         [self.fileBrowser loadColumnZero];
          //TODO: Clear all other columns
@@ -36,9 +36,9 @@
 
 - (NSInteger)browser:(NSBrowser*)browser numberOfChildrenOfItem:(id)item
 {
-    if([item isKindOfClass:[MBFolder class]])
+    if([item isKindOfClass:[MBBoxFolder class]])
     {
-        MBFolder* folderItem = (MBFolder*)item;
+        MBBoxFolder* folderItem = (MBBoxFolder*)item;
         return folderItem.itemCollection.count;
     }
     else
@@ -49,27 +49,27 @@
 
 - (id)browser:(NSBrowser*)browser child:(NSInteger)index ofItem:(id)item
 {
-    // Assumes the item is an MBFolder object
-    MBFolder* folderItem = (MBFolder*)item;
+    // Assumes the item is an MBBoxFolder object
+    MBBoxFolder* folderItem = (MBBoxFolder*)item;
     return [folderItem.itemCollection objectAtIndex:index];
 }
 
 - (BOOL)browser:(NSBrowser*)browser isLeafItem:(id)item
 {
-    // It's a leaf item if and only if the item is an MBFile object
-    return [item isKindOfClass:[MBFile class]];
+    // It's a leaf item if and only if the item is an MBBoxFile object
+    return [item isKindOfClass:[MBBoxFile class]];
 }
 
 - (id)browser:(NSBrowser*)browser objectValueForItem:(id)item
 {
-    if([item isKindOfClass:[MBFolder class]])
+    if([item isKindOfClass:[MBBoxFolder class]])
     {
-        MBFolder* folderItem = (MBFolder*)item;
+        MBBoxFolder* folderItem = (MBBoxFolder*)item;
         return folderItem.name;
     }
-    else if([item isKindOfClass:[MBFile class]])
+    else if([item isKindOfClass:[MBBoxFile class]])
     {
-        MBFile* fileItem = (MBFile*)item;
+        MBBoxFile* fileItem = (MBBoxFile*)item;
         return fileItem.name;
     }
     
@@ -81,18 +81,18 @@
     NSInteger row = [proposedSelectionIndexes firstIndex];
     id selectedItem = [browser itemAtRow:row inColumn:column];
     
-    if([selectedItem isKindOfClass:[MBFolder class]])
+    if([selectedItem isKindOfClass:[MBBoxFolder class]])
     {
-        MBFolder* selectedFolder = selectedItem;
+        MBBoxFolder* selectedFolder = selectedItem;
         //TODO: Expand folder
-        [selectedFolder refreshContents:^(MBFolder* refreshedFolder)
+        [selectedFolder refreshContents:^(MBBoxFolder* refreshedFolder)
         {
             [browser reloadColumn:column+1];
         }];
     }
-    else if([selectedItem isKindOfClass:[MBFile class]])
+    else if([selectedItem isKindOfClass:[MBBoxFile class]])
     {
-        MBFile* selectedFile = selectedItem;
+        MBBoxFile* selectedFile = selectedItem;
         //TODO: Show leaf details
     }
     

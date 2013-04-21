@@ -1,5 +1,5 @@
 //
-//  MBFileResponse.h
+//  MBBoxFileResponse.h
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/20/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MBFileResponse : NSObject
+@interface MBBoxFileResponse : NSObject
 
 @property NSString* id;
 @property NSString* name;

@@ -1,13 +1,13 @@
 //
-//  MBFolderItemsResponse.m
+//  MBBoxFolderItemsResponse.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/20/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBFolderItemsResponse.h"
+#import "MBBoxFolderItemsResponse.h"
 
-@implementation MBFolderItemsResponse
+@implementation MBBoxFolderItemsResponse
 
 @end

@@ -1,5 +1,5 @@
 //
-//  MBFolder.h
+//  MBBoxFolder.h
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/4/13.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class MBUser, MBFolderResponse;
+@class MBBoxUser, MBBoxFolderResponse;
 
-@interface MBFolder : NSObject
+@interface MBBoxFolder : NSObject
 
 /// Point of convention - I'm going to use "bid" from now on as the "id" property I get back from
 /// the Box API for any object. It stands for "Box id". Hopefully that will be obvious enough.
@@ -43,13 +43,13 @@
 @property (nonatomic, strong, readonly) NSArray* pathCollection;
 
 /// The user who created this folder
-@property (nonatomic, strong, readonly) MBUser* createdBy;
+@property (nonatomic, strong, readonly) MBBoxUser* createdBy;
 
 /// The user who last modified this folder
-@property (nonatomic, strong, readonly) MBUser* modifiedBy;
+@property (nonatomic, strong, readonly) MBBoxUser* modifiedBy;
 
 /// The user who owns this folder
-@property (nonatomic, strong, readonly) MBUser* ownedBy;
+@property (nonatomic, strong, readonly) MBBoxUser* ownedBy;
 
 /// The URL to share this folder
 @property (nonatomic, strong, readonly) NSString* sharedLinkUrlString;
@@ -58,7 +58,7 @@
 @property (nonatomic, strong, readonly) NSString* folderUploadEmail;
 
 /// The parent to this folder
-@property (nonatomic, strong, readonly) MBFolder* parent;
+@property (nonatomic, strong, readonly) MBBoxFolder* parent;
 
 /// Whether this item is deleted or not
 @property (nonatomic, strong, readonly) NSString* itemStatus;
@@ -71,15 +71,15 @@
 
 #pragma mark - Methods
 
-/// Initializes an MBFolder object with the correct details as the user's root folder;
-/// MBFolder::refreshContents: must be called in order to get the folder's info and contents.
+/// Initializes an MBBoxFolder object with the correct details as the user's root folder;
+/// MBBoxFolder::refreshContents: must be called in order to get the folder's info and contents.
 /// @param user The user to whom this folder belongs.
-- (MBFolder*)initRootFolderForUser:(MBUser*)user;
+- (MBBoxFolder*)initRootFolderForUser:(MBBoxUser*)user;
 
 /// Refreshes the contents of the folder from Box.
 /// @param returnBlock A block to be called once the folder contents are retrieved.
-/// The block passes in the MBFolder object whose contents and info have been refreshed.
-- (void)refreshContents:(void(^)(MBFolder* folder))returnBlock;
+/// The block passes in the MBBoxFolder object whose contents and info have been refreshed.
+- (void)refreshContents:(void(^)(MBBoxFolder* folder))returnBlock;
 
 
 @end

@@ -1,23 +1,23 @@
 //
-//  MBRefreshTokenRequest.m
+//  MBBoxRefreshTokenRequest.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/1/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBRefreshTokenRequest.h"
+#import "MBBoxRefreshTokenRequest.h"
 #import "MBAPIKey.h"
 
-@interface MBRefreshTokenRequest()
+@interface MBBoxRefreshTokenRequest()
 
-@property (nonatomic, strong) MBUser* user;
+@property (nonatomic, strong) MBBoxUser* user;
 
 @end
 
-@implementation MBRefreshTokenRequest
+@implementation MBBoxRefreshTokenRequest
 
-- (id)initWithUser:(MBUser *)user
+- (id)initWithUser:(MBBoxUser *)user
 {
     self = [super init];
     self.user = user;

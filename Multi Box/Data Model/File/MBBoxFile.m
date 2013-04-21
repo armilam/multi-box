@@ -1,27 +1,27 @@
 //
-//  MBFile.m
+//  MBBoxFile.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/20/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBFile.h"
-#import "MBFolder.h"
+#import "MBBoxFile.h"
+#import "MBBoxFolder.h"
 
-@interface MBFile()
+@interface MBBoxFile()
 
 @property (readwrite) NSString* bid;
 @property (readwrite) NSString* name;
-@property (readwrite) MBFolder* parent;
+@property (readwrite) MBBoxFolder* parent;
 
 @end
 
-@implementation MBFile
+@implementation MBBoxFile
 
-+ (MBFile*)fileFromResponse:(MBFileResponse*)fileResponse withParent:(MBFolder*)parent
++ (MBBoxFile*)fileFromResponse:(MBBoxFileResponse*)fileResponse withParent:(MBBoxFolder*)parent
 {
-    MBFile* newFile = [[MBFile alloc] init];
+    MBBoxFile* newFile = [[MBBoxFile alloc] init];
     newFile.parent = parent;
     newFile.bid = fileResponse.id;
     newFile.name = fileResponse.name;

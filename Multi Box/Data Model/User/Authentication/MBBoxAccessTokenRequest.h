@@ -1,5 +1,5 @@
 //
-//  MBAccessTokenRequest.h
+//  MBBoxAccessTokenRequest.h
 //  Multi Box
 //
 //  Created by Aaron Milam on 3/31/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MBAccessTokenRequest : NSObject
+@interface MBBoxAccessTokenRequest : NSObject
 
 @property (nonatomic, readonly) NSString* grantType;
 @property (nonatomic, strong) NSString* code;

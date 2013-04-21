@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MBUser.h"
+#import "MBBoxUser.h"
 
 @interface MBFileBrowserController : NSViewController <NSBrowserDelegate>
 
 @property (nonatomic, strong) IBOutlet NSBrowser* fileBrowser;
 
-@property (nonatomic, strong) MBUser* user;
+@property (nonatomic, strong) MBBoxUser* user;
 
 @end

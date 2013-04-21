@@ -1,16 +1,16 @@
 //
-//  MBUser+Collection.m
+//  MBBoxUser+Collection.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/3/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBUser+Collection.h"
-#import "MBUser+Authentication.h"
-#import "MBUser+GetInfo.h"
+#import "MBBoxUser+Collection.h"
+#import "MBBoxUser+Authentication.h"
+#import "MBBoxUser+GetInfo.h"
 
-/// A collection of MBUser objects
+/// A collection of MBBoxUser objects
 static NSMutableArray* _registeredUsers;
 
 static NSString* const user_id_key = @"user_id";
@@ -20,7 +20,7 @@ static NSString* const refresh_token_key = @"refresh_token";
 static NSString* const avatar_url_key = @"avatar_url";
 static NSString* const persisted_users_key = @"persisted_users";
 
-@interface MBUser()
+@interface MBBoxUser()
 
 @property (nonatomic, strong, readwrite) NSDate* refreshTokenExpiration;
 @property (nonatomic, strong, readwrite) NSDate* accessTokenExpiration;
@@ -32,17 +32,17 @@ static NSString* const persisted_users_key = @"persisted_users";
 
 @end
 
-@implementation MBUser (Collection)
+@implementation MBBoxUser (Collection)
 
-+ (void)loadPersistedUsersLoadCompletion:(void(^)(MBUser* user, BOOL success))completion
++ (void)loadPersistedUsersLoadCompletion:(void(^)(MBBoxUser* user, BOOL success))completion
 {
-    NSMutableArray* allPersistedUsers = [MBUser persistedUsers];
-    NSMutableArray* registeredUsers = [MBUser mutableRegisteredUsers];
+    NSMutableArray* allPersistedUsers = [MBBoxUser persistedUsers];
+    NSMutableArray* registeredUsers = [MBBoxUser mutableRegisteredUsers];
     [registeredUsers removeAllObjects];
     
     for(NSDictionary* persistedUser in allPersistedUsers)
     {
-        MBUser* regUser = [[MBUser alloc] initWithPersistentDictionary:persistedUser completion:completion];
+        MBBoxUser* regUser = [[MBBoxUser alloc] initWithPersistentDictionary:persistedUser completion:completion];
         [registeredUsers addObject:regUser];
     }
 }
@@ -59,7 +59,7 @@ static NSString* const persisted_users_key = @"persisted_users";
     };
 }
 
-- (MBUser*)initWithPersistentDictionary:(NSDictionary*)dictionary completion:(void(^)(MBUser* user, BOOL success))completion
+- (MBBoxUser*)initWithPersistentDictionary:(NSDictionary*)dictionary completion:(void(^)(MBBoxUser* user, BOOL success))completion
 {
     self = [self init];
     
@@ -75,7 +75,7 @@ static NSString* const persisted_users_key = @"persisted_users";
     if([self.refreshTokenExpiration compare:[NSDate date]] == NSOrderedDescending)
     {
         // Get an access token, since the refresh token is still valid
-        [self refreshAccessTokenCompletion:^(MBUser* user, NSException* error)
+        [self refreshAccessTokenCompletion:^(MBBoxUser* user, NSException* error)
         {
             if(error)
             {
@@ -83,7 +83,7 @@ static NSString* const persisted_users_key = @"persisted_users";
             }
             else
             {
-                [user getUserInfoWithCompletion:^(MBUser* user)
+                [user getUserInfoWithCompletion:^(MBBoxUser* user)
                 {
                     if(completion) completion(user, YES);
                 }];
@@ -103,10 +103,10 @@ static NSString* const persisted_users_key = @"persisted_users";
 //TODO: It may be better to, instead of persisting one user, to persist all users at the same time.
 //      This way, we don't have the complexity of trying to find and update a user.
 //      We are keeping track of all persisted users in the registeredUsers property, anyway.
-+ (void)persistUser:(MBUser*)user
++ (void)persistUser:(MBBoxUser*)user
 {
     // Get the existing persisted users
-    NSMutableArray* userArray = [MBUser persistedUsers];
+    NSMutableArray* userArray = [MBBoxUser persistedUsers];
     
     // Find the user in the existing persisted users array
     NSUInteger userIndex = [userArray indexOfObjectPassingTest:^(NSDictionary* dUser, NSUInteger index, BOOL* stop)
@@ -146,24 +146,24 @@ static NSString* const persisted_users_key = @"persisted_users";
 
 + (NSArray *)registeredUsers
 {
-    return [NSArray arrayWithArray:[MBUser mutableRegisteredUsers]];
+    return [NSArray arrayWithArray:[MBBoxUser mutableRegisteredUsers]];
 }
 
-+ (BOOL)addRegisteredUser:(MBUser*)user
++ (BOOL)addRegisteredUser:(MBBoxUser*)user
 {
-    NSMutableArray* users = [MBUser mutableRegisteredUsers];
+    NSMutableArray* users = [MBBoxUser mutableRegisteredUsers];
     
     //TODO: If user is already in the list, return NO
 
     [users addObject:user];
-    [MBUser persistUser:user];
+    [MBBoxUser persistUser:user];
 
     return YES;
 }
 
-+ (BOOL)removeRegisteredUser:(MBUser*)user
++ (BOOL)removeRegisteredUser:(MBBoxUser*)user
 {
-    NSMutableArray* users = [MBUser mutableRegisteredUsers];
+    NSMutableArray* users = [MBBoxUser mutableRegisteredUsers];
     
     //TODO: If user is not in the list, return NO
     

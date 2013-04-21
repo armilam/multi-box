@@ -9,8 +9,8 @@
 #import "MBAppDelegate.h"
 #import "MBLoginWindowController.h"
 #import "NSString+URLQuery.h"
-#import "MBUser+Authentication.h"
-#import "MBUser+Collection.h"
+#import "MBBoxUser+Authentication.h"
+#import "MBBoxUser+Collection.h"
 
 @interface MBAppDelegate()
 
@@ -28,7 +28,7 @@
                                                         andEventID:kAEGetURL];
     
     // Load existing users
-    [MBUser loadPersistedUsersLoadCompletion:^(MBUser* user, BOOL success)
+    [MBBoxUser loadPersistedUsersLoadCompletion:^(MBBoxUser* user, BOOL success)
     {
         if(success)
         {
@@ -57,10 +57,10 @@
         // Box's OAuth returned us a token
         NSDictionary* queryParams = [url.query dictionaryFromQueryComponents];
         
-        [MBUser authenticateNewUser:queryParams completion:^(MBUser* newUser, NSException* error)
+        [MBBoxUser authenticateNewUser:queryParams completion:^(MBBoxUser* newUser, NSException* error)
         {
             //TODO: Can I close the browser window after auth? Should I just use app-based browser window?
-            if(newUser && [MBUser addRegisteredUser:newUser])
+            if(newUser && [MBBoxUser addRegisteredUser:newUser])
             {
                 //TODO: Make a better interface for telling the tableView to update
                 [self.mainViewController.userListViewController.tableView reloadData];

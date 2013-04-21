@@ -1,13 +1,13 @@
 //
-//  MBGetUserInfoResponse.m
+//  MBBoxGetUserInfoResponse.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/4/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBGetUserInfoResponse.h"
+#import "MBBoxGetUserInfoResponse.h"
 
-@implementation MBGetUserInfoResponse
+@implementation MBBoxGetUserInfoResponse
 
 @end

@@ -25,7 +25,7 @@
     // Drawing code here.
 }
 
-- (void)setUser:(MBUser *)user
+- (void)setUser:(MBBoxUser *)user
 {
     _user = user;
     self.userNameTextField.stringValue = user.name;

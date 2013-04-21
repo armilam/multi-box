@@ -1,5 +1,5 @@
 //
-//  MBUser.h
+//  MBBoxUser.h
 //  Multi Box
 //
 //  Created by Aaron Milam on 3/31/13.
@@ -8,16 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@class MBFolder;
+@class MBBoxFolder;
 
-@interface MBUser : NSObject
+@interface MBBoxUser : NSObject
 
 #pragma mark Box info
 /// The access token required to identify the user each for request. It is valid for one hour.
 /// This is provided by the Box API.
 @property (nonatomic, strong) NSString* accessToken;
 
-/// The amount of time in seconds that the MBUser::accessToken will expire after generation.
+/// The amount of time in seconds that the MBBoxUser::accessToken will expire after generation.
 /// This has always been 3600 (one hour) for me so far.
 /// This is provided by the Box API.
 @property (nonatomic, assign) NSInteger expiresIn;
@@ -26,15 +26,15 @@
 /// This is provided by the Box API.
 @property (nonatomic, strong) NSString* tokenType;
 
-/// The refresh token required to refresh the user's MBUser::accessToken and MBUser::refreshToken.
+/// The refresh token required to refresh the user's MBBoxUser::accessToken and MBBoxUser::refreshToken.
 /// This is valid for two weeks.
 /// This is provided by the Box API.
 @property (nonatomic, strong) NSString* refreshToken;
 
-/// This is a calculated time of expiration for MBUser::accessToken.
+/// This is a calculated time of expiration for MBBoxUser::accessToken.
 @property (nonatomic, strong, readonly) NSDate* accessTokenExpiration;
 
-/// This is a calculated time of expiration for MBUser::refreshToken.
+/// This is a calculated time of expiration for MBBoxUser::refreshToken.
 @property (nonatomic, strong, readonly) NSDate* refreshTokenExpiration;
 
 #pragma mark - Box User Information
@@ -81,14 +81,14 @@
 
 #pragma mark - MB Info
 
-@property (nonatomic, strong, readonly) MBFolder* rootFolder;
+@property (nonatomic, strong, readonly) MBBoxFolder* rootFolder;
 
 #pragma mark - Methods
 
 /// To be used when deserializing a saved user
-- (MBUser*)initWithRefreshToken:(NSString*)refreshToken expiration:(NSDate*)expiration;
+- (MBBoxUser*)initWithRefreshToken:(NSString*)refreshToken expiration:(NSDate*)expiration;
 
-/// Calls the Box API to refresh the user's MBUser::accessToken and MBUser::refreshToken.
+/// Calls the Box API to refresh the user's MBBoxUser::accessToken and MBBoxUser::refreshToken.
 /// TODO: Pass in a block so the caller can find out whether the refresh was successful.
 - (void)resetRefreshTokenExpiration;
 

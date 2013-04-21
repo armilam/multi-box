@@ -1,5 +1,5 @@
 //
-//  MBFile.h
+//  MBBoxFile.h
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/20/13.
@@ -7,20 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MBFileResponse.h"
+#import "MBBoxFileResponse.h"
 
-@class MBFolder;
+@class MBBoxFolder;
 
-@interface MBFile : NSObject
+@interface MBBoxFile : NSObject
 
 @property (readonly) NSString* bid;
 @property (readonly) NSString* name;
-@property (readonly) MBFolder* parent;
+@property (readonly) MBBoxFolder* parent;
 
-/// Creates and populates an MBFile object using values from fileResponse.
+/// Creates and populates an MBBoxFile object using values from fileResponse.
 /// @param fileResponse The object containing the info from Box API about the file.
 /// @param parent The file's parent folder.
-/// @return A new MBFile object.
-+ (MBFile*)fileFromResponse:(MBFileResponse*)fileResponse withParent:(MBFolder*)parent;
+/// @return A new MBBoxFile object.
++ (MBBoxFile*)fileFromResponse:(MBBoxFileResponse*)fileResponse withParent:(MBBoxFolder*)parent;
 
 @end

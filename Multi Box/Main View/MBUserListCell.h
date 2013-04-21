@@ -7,13 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "MBUser.h"
+#import "MBBoxUser.h"
 
 @interface MBUserListCell : NSView
 
 @property (nonatomic, strong) IBOutlet NSTextField* userNameTextField;
 @property (nonatomic, strong) IBOutlet NSTextField* userEmailTextField;
 @property (nonatomic, strong) IBOutlet NSImageView* avatarImageView;
-@property (nonatomic, strong) MBUser* user;
+@property (nonatomic, strong) MBBoxUser* user;
 
 @end

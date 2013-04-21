@@ -8,20 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "MBUserListCell.h"
-#import "MBUser.h"
+#import "MBBoxUser.h"
 
 /// Controls the user list in the MBMainViewController.
-/// Uses MBUser::registeredUsers to populate with the registered users.
+/// Uses MBBoxUser::registeredUsers to populate with the registered users.
 @interface MBUserListViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet NSTableView* tableView;
 @property (nonatomic, strong) IBOutlet MBUserListCell* userListCell;
 
 /// This is called when a user is selected.
-@property (nonatomic, copy) void(^userSelectedAction)(MBUser* user);
+@property (nonatomic, copy) void(^userSelectedAction)(MBBoxUser* user);
 
 - (IBAction)selectedRow:(id)sender;
 
-- (void)reloadUser:(MBUser*)user;
+- (void)reloadUser:(MBBoxUser*)user;
 
 @end

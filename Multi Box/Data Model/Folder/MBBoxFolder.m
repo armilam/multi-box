@@ -1,22 +1,22 @@
 //
-//  MBFolder.m
+//  MBBoxFolder.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/4/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBFolder.h"
-#import "MBFile.h"
-#import "MBUser.h"
-#import "MBFolderItemsResponse.h"
-#import "MBFileResponse.h"
-#import "MBFolderResponse.h"
+#import "MBBoxFolder.h"
+#import "MBBoxFile.h"
+#import "MBBoxUser.h"
+#import "MBBoxFolderItemsResponse.h"
+#import "MBBoxFileResponse.h"
+#import "MBBoxFolderResponse.h"
 #import "NSString+URLQuery.h"
 #import <RestKit/RestKit.h>
 #import <RestKit/RKObjectManager.h>
 
-@interface MBFolder()
+@interface MBBoxFolder()
 
 @property (nonatomic, strong, readwrite) NSString* bid;
 @property (nonatomic, strong, readwrite) NSString* sequenceId;
@@ -27,23 +27,23 @@
 @property (nonatomic, strong, readwrite) NSString* bdescription;
 @property (nonatomic, assign, readwrite) NSInteger size;
 @property (nonatomic, strong, readwrite) NSArray* pathCollection;
-@property (nonatomic, strong, readwrite) MBUser* createdBy;
-@property (nonatomic, strong, readwrite) MBUser* modifiedBy;
-@property (nonatomic, strong, readwrite) MBUser* ownedBy;
+@property (nonatomic, strong, readwrite) MBBoxUser* createdBy;
+@property (nonatomic, strong, readwrite) MBBoxUser* modifiedBy;
+@property (nonatomic, strong, readwrite) MBBoxUser* ownedBy;
 @property (nonatomic, strong, readwrite) NSString* sharedLinkUrlString;
 @property (nonatomic, strong, readwrite) NSString* folderUploadEmail;
-@property (nonatomic, strong, readwrite) MBFolder* parent;
+@property (nonatomic, strong, readwrite) MBBoxFolder* parent;
 @property (nonatomic, strong, readwrite) NSString* itemStatus;
 @property (nonatomic, strong, readwrite) NSArray* itemCollection;
 @property (nonatomic, strong, readwrite) NSString* syncState;
 
-@property (nonatomic, strong, readwrite) MBUser* user;
+@property (nonatomic, strong, readwrite) MBBoxUser* user;
 
 @end
 
-@implementation MBFolder
+@implementation MBBoxFolder
 
-- (MBFolder*)initRootFolderForUser:(MBUser*)user
+- (MBBoxFolder*)initRootFolderForUser:(MBBoxUser*)user
 {
     self = [self init];
     
@@ -53,14 +53,14 @@
     return self;
 }
 
-- (void)refreshContents:(void (^)(MBFolder *))returnBlock
+- (void)refreshContents:(void (^)(MBBoxFolder *))returnBlock
 {
     //TODO: Expand folder mapping
-    RKObjectMapping* folderMapping = [RKObjectMapping mappingForClass:[MBFolderResponse class]];
+    RKObjectMapping* folderMapping = [RKObjectMapping mappingForClass:[MBBoxFolderResponse class]];
     [folderMapping addAttributeMappingsFromArray:@[@"name", @"id"]];
     
     //TODO: Expand file mapping
-    RKObjectMapping* fileMapping = [RKObjectMapping mappingForClass:[MBFileResponse class]];
+    RKObjectMapping* fileMapping = [RKObjectMapping mappingForClass:[MBBoxFileResponse class]];
     [fileMapping addAttributeMappingsFromArray:@[@"name", @"id"]];
     
     RKDynamicMapping* dynamicMapping = [RKDynamicMapping new];
@@ -68,7 +68,7 @@
     [dynamicMapping addMatcher:[RKObjectMappingMatcher matcherWithKeyPath:@"type" expectedValue:@"folder" objectMapping:folderMapping]];
     
     //TODO: Do something with limit and offset and whatever else comes with the response
-    RKObjectMapping* responseMapping = [RKObjectMapping mappingForClass:[MBFolderItemsResponse class]];
+    RKObjectMapping* responseMapping = [RKObjectMapping mappingForClass:[MBBoxFolderItemsResponse class]];
     [responseMapping addRelationshipMappingWithSourceKeyPath:@"entries" mapping:dynamicMapping];
     
     NSIndexSet* statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful); // Anything in 2xx
@@ -93,13 +93,13 @@
          NSMutableArray* items = [NSMutableArray arrayWithCapacity:[result.array[0] entries].count];
          for(id item in [result.array[0] entries])
          {
-             if([item isKindOfClass:[MBFolderResponse class]])
+             if([item isKindOfClass:[MBBoxFolderResponse class]])
              {
-                 [items addObject:[MBFolder folderFromResponse:item withParent:self]];
+                 [items addObject:[MBBoxFolder folderFromResponse:item withParent:self]];
              }
-             else if([item isKindOfClass:[MBFileResponse class]])
+             else if([item isKindOfClass:[MBBoxFileResponse class]])
              {
-                 [items addObject:[MBFile fileFromResponse:item withParent:self]];
+                 [items addObject:[MBBoxFile fileFromResponse:item withParent:self]];
              }
          }
          
@@ -117,13 +117,13 @@
     [operation start];
 }
 
-/// Creates and populates an MBFolder object using values from folderResponse.
+/// Creates and populates an MBBoxFolder object using values from folderResponse.
 /// @param folderResponse The object containing the info from Box API about the folder.
 /// @param parent The parent of this folder.
-/// @return A new MBFolder object.
-+ (MBFolder*)folderFromResponse:(MBFolderResponse*)folderResponse withParent:(MBFolder*)parent
+/// @return A new MBBoxFolder object.
++ (MBBoxFolder*)folderFromResponse:(MBBoxFolderResponse*)folderResponse withParent:(MBBoxFolder*)parent
 {
-    MBFolder* newFolder = [[MBFolder alloc] init];
+    MBBoxFolder* newFolder = [[MBBoxFolder alloc] init];
     newFolder.user = parent.user;
     newFolder.bid = folderResponse.id;
     newFolder.name = folderResponse.name;

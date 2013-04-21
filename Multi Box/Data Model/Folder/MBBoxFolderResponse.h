@@ -1,5 +1,5 @@
 //
-//  MBFolderResponse.h
+//  MBBoxFolderResponse.h
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/20/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MBFolderResponse : NSObject
+@interface MBBoxFolderResponse : NSObject
 
 @property NSString* id;
 @property NSString* name;

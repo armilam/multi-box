@@ -1,5 +1,5 @@
 //
-//  MBRefreshTokenResponse.h
+//  MBBoxRefreshTokenResponse.h
 //  Multi Box
 //
 //  Created by Aaron Milam on 3/31/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MBRefreshTokenResponse : NSObject
+@interface MBBoxRefreshTokenResponse : NSObject
 
 @property (nonatomic, strong) NSString* accessToken;
 @property (nonatomic, assign) NSInteger expiresIn;

@@ -1,18 +1,18 @@
 //
-//  MBUser+GetInfo.m
+//  MBBoxUser+GetInfo.m
 //  Multi Box
 //
 //  Created by Aaron Milam on 4/4/13.
 //  Copyright (c) 2013 Milamsoft. All rights reserved.
 //
 
-#import "MBUser+GetInfo.h"
-#import "MBGetUserInfoResponse.h"
-#import "MBFolder.h"
+#import "MBBoxUser+GetInfo.h"
+#import "MBBoxGetUserInfoResponse.h"
+#import "MBBoxFolder.h"
 #import <RestKit/RestKit.h>
 #import <RestKit/RKObjectManager.h>
 
-@interface MBUser()
+@interface MBBoxUser()
 
 #pragma mark - Box User Information
 @property (nonatomic, strong, readwrite) NSString* userId;
@@ -42,11 +42,11 @@
 
 @end
 
-@implementation MBUser (GetInfo)
+@implementation MBBoxUser (GetInfo)
 
-- (void)getUserInfoWithCompletion:(void(^)(MBUser* user))returnBlock
+- (void)getUserInfoWithCompletion:(void(^)(MBBoxUser* user))returnBlock
 {
-    RKObjectMapping* responseMapping = [RKObjectMapping mappingForClass:[MBGetUserInfoResponse class]];
+    RKObjectMapping* responseMapping = [RKObjectMapping mappingForClass:[MBBoxGetUserInfoResponse class]];
     [responseMapping addAttributeMappingsFromDictionary:@{
         @"id" : @"userId",
         @"name" : @"name",
@@ -83,7 +83,7 @@
 
 #pragma mark - Helpers
 
-- (void)copyUserInfoFrom:(MBGetUserInfoResponse*)response
+- (void)copyUserInfoFrom:(MBBoxGetUserInfoResponse*)response
 {
     self.userId = response.userId;
     self.name = response.name;
