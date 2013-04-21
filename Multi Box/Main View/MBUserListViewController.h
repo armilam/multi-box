@@ -22,4 +22,6 @@
 
 - (IBAction)selectedRow:(id)sender;
 
+- (void)reloadUser:(MBUser*)user;
+
 @end

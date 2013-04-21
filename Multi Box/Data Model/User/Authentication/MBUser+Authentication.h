@@ -20,7 +20,9 @@
 /// Refreshes MBUser::accessToken. The Box API invalidates MBUser::accessToken every hour, so this must
 /// be called in order to have continued access. As long as MBUser::refreshToken is still valid,
 /// calling this will give the MBUser object a new valid MBUser::accessToken.
-- (void)refreshAccessToken;
+/// @param completion A block to be called once the user is refreshed (or refresh failed).
+/// The block passes in the same MBUser object and an NSException object which will be nil unless any errors occurred.
+- (void)refreshAccessTokenCompletion:(void(^)(MBUser* user, NSException* error))completion;
 
 /// Revokes the MBUser object's MBUser::accessToken and MBUser::refreshToken. Useful on logout.
 /// @param completion A block to run upon completion of the request. The block passes in a BOOL which indicates success of the request.

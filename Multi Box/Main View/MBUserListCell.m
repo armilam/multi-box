@@ -29,7 +29,8 @@
 {
     _user = user;
     self.userNameTextField.stringValue = user.name;
-    self.userEmailTextField.stringValue = user.loginId;
+    if(user.loginId) self.userEmailTextField.stringValue = user.loginId;
+    else self.userEmailTextField.stringValue = @"";
     [self.avatarImageView setImage:[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:user.avatarUrlString]]];
 }
 

@@ -27,8 +27,19 @@
                                                      forEventClass:kInternetEventClass
                                                         andEventID:kAEGetURL];
     
-    //TODO: Load existing users
-    // Use initWithRefreshToken
+    // Load existing users
+    [MBUser loadPersistedUsersLoadCompletion:^(MBUser* user, BOOL success)
+    {
+        if(success)
+        {
+            //TODO: Refresh the user list item
+            [self.mainViewController.userListViewController reloadUser:user];
+        }
+        else
+        {
+            //TODO: Inform the user that the account was not logged in
+        }
+    }];
     
     self.mainViewController = [[MBMainViewController alloc] initWithNibName:@"MBMainViewController" bundle:[NSBundle mainBundle]];
     [self.window.contentView addSubview:self.mainViewController.view];

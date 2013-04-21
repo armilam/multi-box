@@ -7,6 +7,7 @@
 //
 
 #import "MBUser+Authentication.h"
+#import "MBUser+Collection.h"
 #import "MBAccessTokenRequest.h"
 #import "MBAccessTokenResponse.h"
 #import "MBRefreshTokenRequest.h"
@@ -92,7 +93,7 @@
     }
 }
 
-- (void)refreshAccessToken
+- (void)refreshAccessTokenCompletion:(void(^)(MBUser* user, NSException* error))completion
 {
     //TODO: I can see potential race conditions here when the app tries to use the user's access token while this refresh is still happening
     RKObjectMapping* tokenMapping = [RKObjectMapping mappingForClass:[MBRefreshTokenResponse class]];
@@ -138,11 +139,17 @@
          self.refreshToken = tokenResponse.refreshToken;
          [self resetRefreshTokenExpiration];
          
+         [MBUser persistUser:self];
+         
          NSLog(@"Got refreshed token");
+         
+         if(completion) completion(self, nil);
      }
                 failure:^(RKObjectRequestOperation *operation, NSError *error)
      {
          NSLog(@"Token refresh failed with error: %@", [error localizedDescription]);
+         
+         if(completion) completion(self, [NSException exceptionWithName:@"Failed to refresh user token" reason:@"" userInfo:nil]);
      }];
 }
 

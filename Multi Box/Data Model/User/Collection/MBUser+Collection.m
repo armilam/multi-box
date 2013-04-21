@@ -7,10 +7,136 @@
 //
 
 #import "MBUser+Collection.h"
+#import "MBUser+Authentication.h"
+#import "MBUser+GetInfo.h"
 
+/// A collection of MBUser objects
 static NSMutableArray* _registeredUsers;
 
+static NSString* const user_id_key = @"user_id";
+static NSString* const name_key = @"name";
+static NSString* const refresh_token_expiration_key = @"refresh_token_exp";
+static NSString* const refresh_token_key = @"refresh_token";
+static NSString* const avatar_url_key = @"avatar_url";
+static NSString* const persisted_users_key = @"persisted_users";
+
+@interface MBUser()
+
+@property (nonatomic, strong, readwrite) NSDate* refreshTokenExpiration;
+@property (nonatomic, strong, readwrite) NSDate* accessTokenExpiration;
+
+#pragma mark - Box User Information
+@property (nonatomic, strong, readwrite) NSString* userId;
+@property (nonatomic, strong, readwrite) NSString* name;
+@property (nonatomic, strong, readwrite) NSString* avatarUrlString;
+
+@end
+
 @implementation MBUser (Collection)
+
++ (void)loadPersistedUsersLoadCompletion:(void(^)(MBUser* user, BOOL success))completion
+{
+    NSMutableArray* allPersistedUsers = [MBUser persistedUsers];
+    NSMutableArray* registeredUsers = [MBUser mutableRegisteredUsers];
+    [registeredUsers removeAllObjects];
+    
+    for(NSDictionary* persistedUser in allPersistedUsers)
+    {
+        MBUser* regUser = [[MBUser alloc] initWithPersistentDictionary:persistedUser completion:completion];
+        [registeredUsers addObject:regUser];
+    }
+}
+
+- (NSDictionary*)persistentDictionary
+{
+    return
+    @{
+        user_id_key: self.userId,
+        name_key: self.name,
+        refresh_token_expiration_key: [NSNumber numberWithDouble:[self.refreshTokenExpiration timeIntervalSince1970]],
+        refresh_token_key: self.refreshToken,
+        avatar_url_key: self.avatarUrlString
+    };
+}
+
+- (MBUser*)initWithPersistentDictionary:(NSDictionary*)dictionary completion:(void(^)(MBUser* user, BOOL success))completion
+{
+    self = [self init];
+    
+    self.userId = [dictionary objectForKey:user_id_key];
+    self.name = [dictionary objectForKey:name_key];
+    self.refreshTokenExpiration = [NSDate dateWithTimeIntervalSince1970:[[dictionary objectForKey:refresh_token_expiration_key] doubleValue]];
+    self.refreshToken = [dictionary objectForKey:refresh_token_key];
+    self.avatarUrlString = [dictionary objectForKey:avatar_url_key];
+
+    self.accessToken = nil;
+    self.accessTokenExpiration = [NSDate date];
+    
+    if([self.refreshTokenExpiration compare:[NSDate date]] == NSOrderedDescending)
+    {
+        // Get an access token, since the refresh token is still valid
+        [self refreshAccessTokenCompletion:^(MBUser* user, NSException* error)
+        {
+            if(error)
+            {
+                if(completion) completion(user, NO);
+            }
+            else
+            {
+                [user getUserInfoWithCompletion:^(MBUser* user)
+                {
+                    if(completion) completion(user, YES);
+                }];
+            }
+        }];
+    }
+    else
+    {
+        //TODO: Indicate not-logged-in-ness
+        NSLog(@"User %@ (%@) needs logged in again", self.userId, self.name);
+    }
+    
+    return self;
+}
+
+//TODO: Persist user using this method every time the user's refreshToken or refreshTokenExpiration changes.
+//TODO: It may be better to, instead of persisting one user, to persist all users at the same time.
+//      This way, we don't have the complexity of trying to find and update a user.
+//      We are keeping track of all persisted users in the registeredUsers property, anyway.
++ (void)persistUser:(MBUser*)user
+{
+    // Get the existing persisted users
+    NSMutableArray* userArray = [MBUser persistedUsers];
+    
+    // Find the user in the existing persisted users array
+    NSUInteger userIndex = [userArray indexOfObjectPassingTest:^(NSDictionary* dUser, NSUInteger index, BOOL* stop)
+    {
+        if([[dUser objectForKey:user_id_key] isEqualToString:user.userId]) return YES;
+        else return NO;
+    }];
+    
+    if(userIndex == NSNotFound)
+    {
+        // Add the user to the persisted collection
+        [userArray addObject:[user persistentDictionary]];
+    }
+    else
+    {
+        // Replace the existing persisted user
+        [userArray setObject:[user persistentDictionary] atIndexedSubscript:userIndex];
+    }
+    
+    // Persist the updated users array
+    [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:persisted_users_key];
+}
+
++ (NSMutableArray*)persistedUsers
+{
+    // Get the persisted users array, or create it if it doesn't exist
+    NSMutableArray* userArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:persisted_users_key]];
+    if(!userArray) userArray = [NSMutableArray arrayWithCapacity:1];
+    return userArray;
+}
 
 + (NSMutableArray*)mutableRegisteredUsers
 {
@@ -28,10 +154,10 @@ static NSMutableArray* _registeredUsers;
     NSMutableArray* users = [MBUser mutableRegisteredUsers];
     
     //TODO: If user is already in the list, return NO
-    
-    //TODO: Add new user to persistent storage
-    
+
     [users addObject:user];
+    [MBUser persistUser:user];
+
     return YES;
 }
 
@@ -42,6 +168,8 @@ static NSMutableArray* _registeredUsers;
     //TODO: If user is not in the list, return NO
     
     //TODO: Revoke the user using [user revokeWithCompletion:] when it is implemented
+    
+    //TODO: Remove the persisted user
     
     [users removeObject:user];
     return YES;

@@ -11,6 +11,12 @@
 
 @implementation MBUserListViewController
 
+- (void)reloadUser:(MBUser *)user
+{
+    //TODO: Reload the user in the list instead of the whole list
+    [self.tableView reloadData];
+}
+
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
     return [[MBUser registeredUsers] count];
