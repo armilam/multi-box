@@ -43,6 +43,10 @@
 		A566770B172454E2007B5D9A /* MBBoxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A5667707172454E2007B5D9A /* MBBoxFile.m */; };
 		A566770C172454E2007B5D9A /* MBBoxFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5667709172454E2007B5D9A /* MBBoxFileResponse.m */; };
 		A566770D172454E2007B5D9A /* MBBoxFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5667709172454E2007B5D9A /* MBBoxFileResponse.m */; };
+		A566771117245AF7007B5D9A /* MBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A566771017245AF6007B5D9A /* MBUser.m */; };
+		A566771217245AF7007B5D9A /* MBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A566771017245AF6007B5D9A /* MBUser.m */; };
+		A566771517245B16007B5D9A /* MBBoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A566771417245B16007B5D9A /* MBBoxUser.m */; };
+		A566771617245B16007B5D9A /* MBBoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A566771417245B16007B5D9A /* MBBoxUser.m */; };
 		A5E9FA6A1708B9D8000C723C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FA691708B9D8000C723C /* Cocoa.framework */; };
 		A5E9FA741708B9D8000C723C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5E9FA721708B9D8000C723C /* InfoPlist.strings */; };
 		A5E9FA761708B9D8000C723C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FA751708B9D8000C723C /* main.m */; };
@@ -63,17 +67,14 @@
 		A5E9FACC1708EDF0000C723C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FAC91708EDF0000C723C /* SystemConfiguration.framework */; };
 		A5E9FACE1708EE6A000C723C /* RestKit.framework in Copy RestKit Framework */ = {isa = PBXBuildFile; fileRef = A5E9FAC01708EC86000C723C /* RestKit.framework */; };
 		D3F6401017387F415D5E2B72 /* MBBoxRefreshTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6409F15958C127F608896 /* MBBoxRefreshTokenRequest.m */; };
-		D3F640408ECB12A2A8E1B709 /* MBBoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64A52077838350A586D70 /* MBBoxUser.m */; };
 		D3F64064592856D9E6E59638 /* MBBoxAccessTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64CB2175A4FAABE85C992 /* MBBoxAccessTokenResponse.m */; };
 		D3F64101C6437A951FEF3E50 /* MBBoxRevokeTokenRequest.h in Copy RestKit Framework */ = {isa = PBXBuildFile; fileRef = D3F646F4FCE21533D411DC56 /* MBBoxRevokeTokenRequest.h */; };
 		D3F641570C2332B51F2CA9A3 /* MBLoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64DF7F5671C69B26DE6BC /* MBLoginWindowController.m */; };
 		D3F641E6BAA9B50F48AC9846 /* MBBoxRevokeTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6427844E40CA6F1731EE9 /* MBBoxRevokeTokenRequest.m */; };
 		D3F641EB583EC5FB66676055 /* MBLoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64DF7F5671C69B26DE6BC /* MBLoginWindowController.m */; };
-		D3F642EE024D60FB4B2B7FFC /* MBBoxUser.h in Copy RestKit Framework */ = {isa = PBXBuildFile; fileRef = D3F649A9166C30CF0E01C6F3 /* MBBoxUser.h */; };
 		D3F642FCA14D9856F4C44BA0 /* MBLoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3F64895B49B645F2EA41AF3 /* MBLoginWindowController.xib */; };
 		D3F6447B43C60CF19FF1F55B /* MBBoxUser+Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6463C7A731A330D24D81C /* MBBoxUser+Authentication.m */; };
 		D3F64539C38782E0128068AF /* MBLoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3F64895B49B645F2EA41AF3 /* MBLoginWindowController.xib */; };
-		D3F645B432C0328EDAB77FBD /* MBBoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64A52077838350A586D70 /* MBBoxUser.m */; };
 		D3F645B4FC1AEAC0B60B56B5 /* MBBoxAccessTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64CB2175A4FAABE85C992 /* MBBoxAccessTokenResponse.m */; };
 		D3F646242E762E296FBFD941 /* MBBoxRefreshTokenResponse.h in Copy RestKit Framework */ = {isa = PBXBuildFile; fileRef = D3F649F11BF74BD3CF39922B /* MBBoxRefreshTokenResponse.h */; };
 		D3F64714BFFFF45D099BAA33 /* MBBoxRevokeTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6427844E40CA6F1731EE9 /* MBBoxRevokeTokenRequest.m */; };
@@ -145,7 +146,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A5E9FACE1708EE6A000C723C /* RestKit.framework in Copy RestKit Framework */,
-				D3F642EE024D60FB4B2B7FFC /* MBBoxUser.h in Copy RestKit Framework */,
 				D3F64F02EE3260B023D9DB39 /* MBBoxAccessTokenRequest.h in Copy RestKit Framework */,
 				D3F64101C6437A951FEF3E50 /* MBBoxRevokeTokenRequest.h in Copy RestKit Framework */,
 				D3F6497B82C25A0884A8B46A /* MBBoxAccessTokenResponse.h in Copy RestKit Framework */,
@@ -193,6 +193,10 @@
 		A5667707172454E2007B5D9A /* MBBoxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFile.m; path = "Data Model/File System/File/Box/MBBoxFile.m"; sourceTree = "<group>"; };
 		A5667708172454E2007B5D9A /* MBBoxFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFileResponse.h; path = "Data Model/File System/File/Box/MBBoxFileResponse.h"; sourceTree = "<group>"; };
 		A5667709172454E2007B5D9A /* MBBoxFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFileResponse.m; path = "Data Model/File System/File/Box/MBBoxFileResponse.m"; sourceTree = "<group>"; };
+		A566770F17245AF6007B5D9A /* MBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBUser.h; path = "Data Model/User/MBUser.h"; sourceTree = "<group>"; };
+		A566771017245AF6007B5D9A /* MBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBUser.m; path = "Data Model/User/MBUser.m"; sourceTree = "<group>"; };
+		A566771317245B16007B5D9A /* MBBoxUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxUser.h; path = "Data Model/User/Box/MBBoxUser.h"; sourceTree = "<group>"; };
+		A566771417245B16007B5D9A /* MBBoxUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxUser.m; path = "Data Model/User/Box/MBBoxUser.m"; sourceTree = "<group>"; };
 		A5E9FA661708B9D8000C723C /* Multi Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E9FA691708B9D8000C723C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A5E9FA6C1708B9D8000C723C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -230,10 +234,8 @@
 		D3F64895B49B645F2EA41AF3 /* MBLoginWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MBLoginWindowController.xib; sourceTree = "<group>"; };
 		D3F648E7252508CE0E75A170 /* MBBoxAccessTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxAccessTokenRequest.m; path = "Data Model/User/Authentication/MBBoxAccessTokenRequest.m"; sourceTree = "<group>"; };
 		D3F64982F46B1B31438692D6 /* MBLoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLoginWindowController.h; sourceTree = "<group>"; };
-		D3F649A9166C30CF0E01C6F3 /* MBBoxUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxUser.h; path = "Data Model/User/MBBoxUser.h"; sourceTree = "<group>"; };
 		D3F649A9746E0F18DD0C003D /* MBBoxAccessTokenResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxAccessTokenResponse.h; path = "Data Model/User/Authentication/MBBoxAccessTokenResponse.h"; sourceTree = "<group>"; };
 		D3F649F11BF74BD3CF39922B /* MBBoxRefreshTokenResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxRefreshTokenResponse.h; path = "Data Model/User/Authentication/MBBoxRefreshTokenResponse.h"; sourceTree = "<group>"; };
-		D3F64A52077838350A586D70 /* MBBoxUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxUser.m; path = "Data Model/User/MBBoxUser.m"; sourceTree = "<group>"; };
 		D3F64BC5370A3AFFADD3616A /* MBAPIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAPIKey.m; sourceTree = "<group>"; };
 		D3F64CB2175A4FAABE85C992 /* MBBoxAccessTokenResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxAccessTokenResponse.m; path = "Data Model/User/Authentication/MBBoxAccessTokenResponse.m"; sourceTree = "<group>"; };
 		D3F64DF7F5671C69B26DE6BC /* MBLoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLoginWindowController.m; sourceTree = "<group>"; };
@@ -367,14 +369,24 @@
 			name = Box;
 			sourceTree = "<group>";
 		};
+		A566770E17245ADA007B5D9A /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				A566771317245B16007B5D9A /* MBBoxUser.h */,
+				A566771417245B16007B5D9A /* MBBoxUser.m */,
+			);
+			name = Box;
+			sourceTree = "<group>";
+		};
 		A56C2080170BE06B00E7B368 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				A566770E17245ADA007B5D9A /* Box */,
 				A5578728170DB06A007185F1 /* User Info */,
 				A509564B170BF7AC00FF4CD3 /* Collection */,
 				D3F64DC01289F6EFD511823C /* Authentication */,
-				D3F649A9166C30CF0E01C6F3 /* MBBoxUser.h */,
-				D3F64A52077838350A586D70 /* MBBoxUser.m */,
+				A566770F17245AF6007B5D9A /* MBUser.h */,
+				A566771017245AF6007B5D9A /* MBUser.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -689,7 +701,6 @@
 				A5E9FA761708B9D8000C723C /* main.m in Sources */,
 				A5E9FA7D1708B9D8000C723C /* MBAppDelegate.m in Sources */,
 				A5E9FAAE1708E51B000C723C /* NSString+URLQuery.m in Sources */,
-				D3F640408ECB12A2A8E1B709 /* MBBoxUser.m in Sources */,
 				D3F649F4EF56C6EA70DF7038 /* MBBoxAccessTokenRequest.m in Sources */,
 				D3F641E6BAA9B50F48AC9846 /* MBBoxRevokeTokenRequest.m in Sources */,
 				D3F645B4FC1AEAC0B60B56B5 /* MBBoxAccessTokenResponse.m in Sources */,
@@ -713,6 +724,8 @@
 				A5667704172454CB007B5D9A /* MBBoxFolderResponse.m in Sources */,
 				A566770A172454E2007B5D9A /* MBBoxFile.m in Sources */,
 				A566770C172454E2007B5D9A /* MBBoxFileResponse.m in Sources */,
+				A566771117245AF7007B5D9A /* MBUser.m in Sources */,
+				A566771517245B16007B5D9A /* MBBoxUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,7 +735,6 @@
 			files = (
 				A5E9FA941708B9D8000C723C /* Multi_BoxTests.m in Sources */,
 				A5E9FAAF1708E51B000C723C /* NSString+URLQuery.m in Sources */,
-				D3F645B432C0328EDAB77FBD /* MBBoxUser.m in Sources */,
 				D3F64EB70D25B1E3FE221E40 /* MBBoxAccessTokenRequest.m in Sources */,
 				D3F64714BFFFF45D099BAA33 /* MBBoxRevokeTokenRequest.m in Sources */,
 				D3F64064592856D9E6E59638 /* MBBoxAccessTokenResponse.m in Sources */,
@@ -746,6 +758,8 @@
 				A5667705172454CB007B5D9A /* MBBoxFolderResponse.m in Sources */,
 				A566770B172454E2007B5D9A /* MBBoxFile.m in Sources */,
 				A566770D172454E2007B5D9A /* MBBoxFileResponse.m in Sources */,
+				A566771217245AF7007B5D9A /* MBUser.m in Sources */,
+				A566771617245B16007B5D9A /* MBBoxUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

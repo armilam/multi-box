@@ -39,7 +39,7 @@
     if([item isKindOfClass:[MBBoxFolder class]])
     {
         MBBoxFolder* folderItem = (MBBoxFolder*)item;
-        return folderItem.itemCollection.count;
+        return folderItem.children.count;
     }
     else
     {
@@ -51,7 +51,7 @@
 {
     // Assumes the item is an MBBoxFolder object
     MBBoxFolder* folderItem = (MBBoxFolder*)item;
-    return [folderItem.itemCollection objectAtIndex:index];
+    return [folderItem.children objectAtIndex:index];
 }
 
 - (BOOL)browser:(NSBrowser*)browser isLeafItem:(id)item

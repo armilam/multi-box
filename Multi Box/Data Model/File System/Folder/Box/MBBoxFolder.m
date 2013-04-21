@@ -18,26 +18,26 @@
 
 @interface MBBoxFolder()
 
-@property (nonatomic, strong, readwrite) NSString* bid;
-@property (nonatomic, strong, readwrite) NSString* sequenceId;
-@property (nonatomic, strong, readwrite) NSString* etag;
-@property (nonatomic, strong, readwrite) NSString* name;
-@property (nonatomic, strong, readwrite) NSDate* createdAt;
-@property (nonatomic, strong, readwrite) NSDate* modifiedAt;
-@property (nonatomic, strong, readwrite) NSString* bdescription;
-@property (nonatomic, assign, readwrite) NSInteger size;
-@property (nonatomic, strong, readwrite) NSArray* pathCollection;
-@property (nonatomic, strong, readwrite) MBBoxUser* createdBy;
-@property (nonatomic, strong, readwrite) MBBoxUser* modifiedBy;
-@property (nonatomic, strong, readwrite) MBBoxUser* ownedBy;
-@property (nonatomic, strong, readwrite) NSString* sharedLinkUrlString;
-@property (nonatomic, strong, readwrite) NSString* folderUploadEmail;
-@property (nonatomic, strong, readwrite) MBBoxFolder* parent;
-@property (nonatomic, strong, readwrite) NSString* itemStatus;
-@property (nonatomic, strong, readwrite) NSArray* itemCollection;
-@property (nonatomic, strong, readwrite) NSString* syncState;
+@property (readwrite) NSString* id;
+@property (readwrite) NSString* sequenceId;
+@property (readwrite) NSString* etag;
+@property (readwrite) NSString* name;
+@property (readwrite) NSDate* createdAt;
+@property (readwrite) NSDate* modifiedAt;
+@property (readwrite) NSString* desc;
+@property (readwrite) NSInteger size;
+@property (readwrite) NSArray* pathCollection;
+@property (readwrite) MBBoxUser* createdBy;
+@property (readwrite) MBBoxUser* modifiedBy;
+@property (readwrite) MBBoxUser* ownedBy;
+@property (readwrite) NSString* sharedLinkUrlString;
+@property (readwrite) NSString* folderUploadEmail;
+@property (readwrite) MBBoxFolder* parent;
+@property (readwrite) BOOL isDeleted;
+@property (readwrite) NSArray* children;
+@property (readwrite) NSString* syncState;
 
-@property (nonatomic, strong, readwrite) MBBoxUser* user;
+@property MBBoxUser* user;
 
 @end
 
@@ -45,15 +45,14 @@
 
 - (MBBoxFolder*)initRootFolderForUser:(MBBoxUser*)user
 {
-    self = [self init];
+    self = [super initRootFolderForUser:user];
     
-    self.bid = @"0";
-    self.user = user;
+    self.id = @"0";
     
     return self;
 }
 
-- (void)refreshContents:(void (^)(MBBoxFolder *))returnBlock
+- (void)refreshContents:(void (^)(MBBoxFolder*))returnBlock
 {
     //TODO: Expand folder mapping
     RKObjectMapping* folderMapping = [RKObjectMapping mappingForClass:[MBBoxFolderResponse class]];
@@ -82,7 +81,7 @@
       @"fields" : @"name,id"
     };
     
-    NSString* url = [NSString stringWithFormat:@"https://api.box.com/2.0/folders/%@/items?%@", self.bid, [NSString queryStringFromDictionary:queryItems]];
+    NSString* url = [NSString stringWithFormat:@"https://api.box.com/2.0/folders/%@/items?%@", self.id, [NSString queryStringFromDictionary:queryItems]];
 
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request setValue:[NSString stringWithFormat:@"Bearer %@", self.user.accessToken] forHTTPHeaderField:@"Authorization"];
@@ -103,7 +102,7 @@
              }
          }
          
-         self.itemCollection = [NSArray arrayWithArray:items];
+         self.children = [NSArray arrayWithArray:items];
          
          NSLog(@"Got folder items (%d)", (int)items.count);
          
@@ -125,7 +124,7 @@
 {
     MBBoxFolder* newFolder = [[MBBoxFolder alloc] init];
     newFolder.user = parent.user;
-    newFolder.bid = folderResponse.id;
+    newFolder.id = folderResponse.id;
     newFolder.name = folderResponse.name;
 
     return newFolder;
