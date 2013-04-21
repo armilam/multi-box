@@ -23,12 +23,26 @@
 		A5205FED1716504100BC8C69 /* MBFileBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5205FEB1716504100BC8C69 /* MBFileBrowserController.m */; };
 		A555A31D170E3313005428DA /* box_logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A555A31C170E3313005428DA /* box_logo_small.png */; };
 		A555A31E170E3313005428DA /* box_logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A555A31C170E3313005428DA /* box_logo_small.png */; };
-		A555A322170E7CD0005428DA /* MBBoxFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A555A321170E7CD0005428DA /* MBBoxFolder.m */; };
-		A555A323170E7CD0005428DA /* MBBoxFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A555A321170E7CD0005428DA /* MBBoxFolder.m */; };
 		A557872E170DB0BC007185F1 /* MBBoxUser+GetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A557872D170DB0BC007185F1 /* MBBoxUser+GetInfo.m */; };
 		A557872F170DB0BC007185F1 /* MBBoxUser+GetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A557872D170DB0BC007185F1 /* MBBoxUser+GetInfo.m */; };
 		A5578733170DB24A007185F1 /* MBBoxGetUserInfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5578732170DB24A007185F1 /* MBBoxGetUserInfoResponse.m */; };
 		A5578734170DB24A007185F1 /* MBBoxGetUserInfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5578732170DB24A007185F1 /* MBBoxGetUserInfoResponse.m */; };
+		A56676EE17245407007B5D9A /* MBFileSystemObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676ED17245407007B5D9A /* MBFileSystemObject.m */; };
+		A56676EF17245407007B5D9A /* MBFileSystemObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676ED17245407007B5D9A /* MBFileSystemObject.m */; };
+		A56676F21724542D007B5D9A /* MBFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676F11724542D007B5D9A /* MBFolder.m */; };
+		A56676F31724542D007B5D9A /* MBFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676F11724542D007B5D9A /* MBFolder.m */; };
+		A56676F617245452007B5D9A /* MBFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676F517245452007B5D9A /* MBFile.m */; };
+		A56676F717245452007B5D9A /* MBFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676F517245452007B5D9A /* MBFile.m */; };
+		A5667700172454CB007B5D9A /* MBBoxFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676FB172454CB007B5D9A /* MBBoxFolder.m */; };
+		A5667701172454CB007B5D9A /* MBBoxFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676FB172454CB007B5D9A /* MBBoxFolder.m */; };
+		A5667702172454CB007B5D9A /* MBBoxFolderItemsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676FD172454CB007B5D9A /* MBBoxFolderItemsResponse.m */; };
+		A5667703172454CB007B5D9A /* MBBoxFolderItemsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676FD172454CB007B5D9A /* MBBoxFolderItemsResponse.m */; };
+		A5667704172454CB007B5D9A /* MBBoxFolderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676FF172454CB007B5D9A /* MBBoxFolderResponse.m */; };
+		A5667705172454CB007B5D9A /* MBBoxFolderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A56676FF172454CB007B5D9A /* MBBoxFolderResponse.m */; };
+		A566770A172454E2007B5D9A /* MBBoxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A5667707172454E2007B5D9A /* MBBoxFile.m */; };
+		A566770B172454E2007B5D9A /* MBBoxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A5667707172454E2007B5D9A /* MBBoxFile.m */; };
+		A566770C172454E2007B5D9A /* MBBoxFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5667709172454E2007B5D9A /* MBBoxFileResponse.m */; };
+		A566770D172454E2007B5D9A /* MBBoxFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5667709172454E2007B5D9A /* MBBoxFileResponse.m */; };
 		A5E9FA6A1708B9D8000C723C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FA691708B9D8000C723C /* Cocoa.framework */; };
 		A5E9FA741708B9D8000C723C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5E9FA721708B9D8000C723C /* InfoPlist.strings */; };
 		A5E9FA761708B9D8000C723C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FA751708B9D8000C723C /* main.m */; };
@@ -48,14 +62,6 @@
 		A5E9FACB1708EDF0000C723C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FAC81708EDF0000C723C /* Security.framework */; };
 		A5E9FACC1708EDF0000C723C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FAC91708EDF0000C723C /* SystemConfiguration.framework */; };
 		A5E9FACE1708EE6A000C723C /* RestKit.framework in Copy RestKit Framework */ = {isa = PBXBuildFile; fileRef = A5E9FAC01708EC86000C723C /* RestKit.framework */; };
-		A5F6330317233A7E000B3CA4 /* MBBoxFolderItemsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F6330217233A7E000B3CA4 /* MBBoxFolderItemsResponse.m */; };
-		A5F6330417233A7E000B3CA4 /* MBBoxFolderItemsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F6330217233A7E000B3CA4 /* MBBoxFolderItemsResponse.m */; };
-		A5F6330B17233BA9000B3CA4 /* MBBoxFolderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F6330A17233BA9000B3CA4 /* MBBoxFolderResponse.m */; };
-		A5F6330C17233BA9000B3CA4 /* MBBoxFolderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F6330A17233BA9000B3CA4 /* MBBoxFolderResponse.m */; };
-		A5F6331017233BC0000B3CA4 /* MBBoxFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F6330F17233BC0000B3CA4 /* MBBoxFileResponse.m */; };
-		A5F6331117233BC0000B3CA4 /* MBBoxFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F6330F17233BC0000B3CA4 /* MBBoxFileResponse.m */; };
-		A5F63314172352D8000B3CA4 /* MBBoxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F63313172352D8000B3CA4 /* MBBoxFile.m */; };
-		A5F63315172352D8000B3CA4 /* MBBoxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F63313172352D8000B3CA4 /* MBBoxFile.m */; };
 		D3F6401017387F415D5E2B72 /* MBBoxRefreshTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6409F15958C127F608896 /* MBBoxRefreshTokenRequest.m */; };
 		D3F640408ECB12A2A8E1B709 /* MBBoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64A52077838350A586D70 /* MBBoxUser.m */; };
 		D3F64064592856D9E6E59638 /* MBBoxAccessTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F64CB2175A4FAABE85C992 /* MBBoxAccessTokenResponse.m */; };
@@ -167,12 +173,26 @@
 		A5205FEA1716504100BC8C69 /* MBFileBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBFileBrowserController.h; path = "Main View/MBFileBrowserController.h"; sourceTree = "<group>"; };
 		A5205FEB1716504100BC8C69 /* MBFileBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFileBrowserController.m; path = "Main View/MBFileBrowserController.m"; sourceTree = "<group>"; };
 		A555A31C170E3313005428DA /* box_logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = box_logo_small.png; path = Images/box_logo_small.png; sourceTree = "<group>"; };
-		A555A320170E7CD0005428DA /* MBBoxFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFolder.h; path = "Data Model/Folder/MBBoxFolder.h"; sourceTree = "<group>"; };
-		A555A321170E7CD0005428DA /* MBBoxFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFolder.m; path = "Data Model/Folder/MBBoxFolder.m"; sourceTree = "<group>"; };
 		A557872C170DB0BC007185F1 /* MBBoxUser+GetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBBoxUser+GetInfo.h"; path = "Data Model/User/User Info/MBBoxUser+GetInfo.h"; sourceTree = "<group>"; };
 		A557872D170DB0BC007185F1 /* MBBoxUser+GetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBBoxUser+GetInfo.m"; path = "Data Model/User/User Info/MBBoxUser+GetInfo.m"; sourceTree = "<group>"; };
 		A5578731170DB24A007185F1 /* MBBoxGetUserInfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxGetUserInfoResponse.h; path = "Data Model/User/User Info/MBBoxGetUserInfoResponse.h"; sourceTree = "<group>"; };
 		A5578732170DB24A007185F1 /* MBBoxGetUserInfoResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxGetUserInfoResponse.m; path = "Data Model/User/User Info/MBBoxGetUserInfoResponse.m"; sourceTree = "<group>"; };
+		A56676EC17245407007B5D9A /* MBFileSystemObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBFileSystemObject.h; path = "Data Model/File System/MBFileSystemObject.h"; sourceTree = "<group>"; };
+		A56676ED17245407007B5D9A /* MBFileSystemObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFileSystemObject.m; path = "Data Model/File System/MBFileSystemObject.m"; sourceTree = "<group>"; };
+		A56676F01724542D007B5D9A /* MBFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBFolder.h; path = "Data Model/File System/Folder/MBFolder.h"; sourceTree = "<group>"; };
+		A56676F11724542D007B5D9A /* MBFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFolder.m; path = "Data Model/File System/Folder/MBFolder.m"; sourceTree = "<group>"; };
+		A56676F417245452007B5D9A /* MBFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBFile.h; path = "Data Model/File System/File/MBFile.h"; sourceTree = "<group>"; };
+		A56676F517245452007B5D9A /* MBFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFile.m; path = "Data Model/File System/File/MBFile.m"; sourceTree = "<group>"; };
+		A56676FA172454CB007B5D9A /* MBBoxFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFolder.h; path = "Data Model/File System/Folder/Box/MBBoxFolder.h"; sourceTree = "<group>"; };
+		A56676FB172454CB007B5D9A /* MBBoxFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFolder.m; path = "Data Model/File System/Folder/Box/MBBoxFolder.m"; sourceTree = "<group>"; };
+		A56676FC172454CB007B5D9A /* MBBoxFolderItemsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFolderItemsResponse.h; path = "Data Model/File System/Folder/Box/MBBoxFolderItemsResponse.h"; sourceTree = "<group>"; };
+		A56676FD172454CB007B5D9A /* MBBoxFolderItemsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFolderItemsResponse.m; path = "Data Model/File System/Folder/Box/MBBoxFolderItemsResponse.m"; sourceTree = "<group>"; };
+		A56676FE172454CB007B5D9A /* MBBoxFolderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFolderResponse.h; path = "Data Model/File System/Folder/Box/MBBoxFolderResponse.h"; sourceTree = "<group>"; };
+		A56676FF172454CB007B5D9A /* MBBoxFolderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFolderResponse.m; path = "Data Model/File System/Folder/Box/MBBoxFolderResponse.m"; sourceTree = "<group>"; };
+		A5667706172454E2007B5D9A /* MBBoxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFile.h; path = "Data Model/File System/File/Box/MBBoxFile.h"; sourceTree = "<group>"; };
+		A5667707172454E2007B5D9A /* MBBoxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFile.m; path = "Data Model/File System/File/Box/MBBoxFile.m"; sourceTree = "<group>"; };
+		A5667708172454E2007B5D9A /* MBBoxFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFileResponse.h; path = "Data Model/File System/File/Box/MBBoxFileResponse.h"; sourceTree = "<group>"; };
+		A5667709172454E2007B5D9A /* MBBoxFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFileResponse.m; path = "Data Model/File System/File/Box/MBBoxFileResponse.m"; sourceTree = "<group>"; };
 		A5E9FA661708B9D8000C723C /* Multi Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E9FA691708B9D8000C723C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A5E9FA6C1708B9D8000C723C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -199,14 +219,6 @@
 		A5E9FAC71708EDF0000C723C /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		A5E9FAC81708EDF0000C723C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A5E9FAC91708EDF0000C723C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		A5F6330117233A7E000B3CA4 /* MBBoxFolderItemsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFolderItemsResponse.h; path = "Data Model/Folder/MBBoxFolderItemsResponse.h"; sourceTree = "<group>"; };
-		A5F6330217233A7E000B3CA4 /* MBBoxFolderItemsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFolderItemsResponse.m; path = "Data Model/Folder/MBBoxFolderItemsResponse.m"; sourceTree = "<group>"; };
-		A5F6330917233BA9000B3CA4 /* MBBoxFolderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFolderResponse.h; path = "Data Model/Folder/MBBoxFolderResponse.h"; sourceTree = "<group>"; };
-		A5F6330A17233BA9000B3CA4 /* MBBoxFolderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFolderResponse.m; path = "Data Model/Folder/MBBoxFolderResponse.m"; sourceTree = "<group>"; };
-		A5F6330E17233BC0000B3CA4 /* MBBoxFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFileResponse.h; path = "Data Model/File/MBBoxFileResponse.h"; sourceTree = "<group>"; };
-		A5F6330F17233BC0000B3CA4 /* MBBoxFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFileResponse.m; path = "Data Model/File/MBBoxFileResponse.m"; sourceTree = "<group>"; };
-		A5F63312172352D8000B3CA4 /* MBBoxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFile.h; path = "Data Model/File/MBBoxFile.h"; sourceTree = "<group>"; };
-		A5F63313172352D8000B3CA4 /* MBBoxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFile.m; path = "Data Model/File/MBBoxFile.m"; sourceTree = "<group>"; };
 		D3F6409F15958C127F608896 /* MBBoxRefreshTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxRefreshTokenRequest.m; path = "Data Model/User/Authentication/MBBoxRefreshTokenRequest.m"; sourceTree = "<group>"; };
 		D3F6427844E40CA6F1731EE9 /* MBBoxRevokeTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxRevokeTokenRequest.m; path = "Data Model/User/Authentication/MBBoxRevokeTokenRequest.m"; sourceTree = "<group>"; };
 		D3F642DE9BABB9439E996035 /* MBBoxRefreshTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxRefreshTokenRequest.h; path = "Data Model/User/Authentication/MBBoxRefreshTokenRequest.h"; sourceTree = "<group>"; };
@@ -289,19 +301,6 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		A555A31F170E7C9A005428DA /* Folder */ = {
-			isa = PBXGroup;
-			children = (
-				A555A320170E7CD0005428DA /* MBBoxFolder.h */,
-				A555A321170E7CD0005428DA /* MBBoxFolder.m */,
-				A5F6330117233A7E000B3CA4 /* MBBoxFolderItemsResponse.h */,
-				A5F6330217233A7E000B3CA4 /* MBBoxFolderItemsResponse.m */,
-				A5F6330917233BA9000B3CA4 /* MBBoxFolderResponse.h */,
-				A5F6330A17233BA9000B3CA4 /* MBBoxFolderResponse.m */,
-			);
-			name = Folder;
-			sourceTree = "<group>";
-		};
 		A5578728170DB06A007185F1 /* User Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +310,61 @@
 				A5578732170DB24A007185F1 /* MBBoxGetUserInfoResponse.m */,
 			);
 			name = "User Info";
+			sourceTree = "<group>";
+		};
+		A56676E9172453D8007B5D9A /* File System */ = {
+			isa = PBXGroup;
+			children = (
+				A56676EC17245407007B5D9A /* MBFileSystemObject.h */,
+				A56676ED17245407007B5D9A /* MBFileSystemObject.m */,
+				A56676EB172453E2007B5D9A /* Folder */,
+				A56676EA172453DE007B5D9A /* File */,
+			);
+			name = "File System";
+			sourceTree = "<group>";
+		};
+		A56676EA172453DE007B5D9A /* File */ = {
+			isa = PBXGroup;
+			children = (
+				A56676F417245452007B5D9A /* MBFile.h */,
+				A56676F517245452007B5D9A /* MBFile.m */,
+				A56676F81724545C007B5D9A /* Box */,
+			);
+			name = File;
+			sourceTree = "<group>";
+		};
+		A56676EB172453E2007B5D9A /* Folder */ = {
+			isa = PBXGroup;
+			children = (
+				A56676F01724542D007B5D9A /* MBFolder.h */,
+				A56676F11724542D007B5D9A /* MBFolder.m */,
+				A56676F917245464007B5D9A /* Box */,
+			);
+			name = Folder;
+			sourceTree = "<group>";
+		};
+		A56676F81724545C007B5D9A /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				A5667706172454E2007B5D9A /* MBBoxFile.h */,
+				A5667707172454E2007B5D9A /* MBBoxFile.m */,
+				A5667708172454E2007B5D9A /* MBBoxFileResponse.h */,
+				A5667709172454E2007B5D9A /* MBBoxFileResponse.m */,
+			);
+			name = Box;
+			sourceTree = "<group>";
+		};
+		A56676F917245464007B5D9A /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				A56676FA172454CB007B5D9A /* MBBoxFolder.h */,
+				A56676FB172454CB007B5D9A /* MBBoxFolder.m */,
+				A56676FC172454CB007B5D9A /* MBBoxFolderItemsResponse.h */,
+				A56676FD172454CB007B5D9A /* MBBoxFolderItemsResponse.m */,
+				A56676FE172454CB007B5D9A /* MBBoxFolderResponse.h */,
+				A56676FF172454CB007B5D9A /* MBBoxFolderResponse.m */,
+			);
+			name = Box;
 			sourceTree = "<group>";
 		};
 		A56C2080170BE06B00E7B368 /* User */ = {
@@ -421,8 +475,7 @@
 		A5E9FAA61708DDC8000C723C /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				A5F6330D17233BAE000B3CA4 /* File */,
-				A555A31F170E7C9A005428DA /* Folder */,
+				A56676E9172453D8007B5D9A /* File System */,
 				A56C2080170BE06B00E7B368 /* User */,
 			);
 			name = "Data Model";
@@ -446,17 +499,6 @@
 				A5E9FAC21708EC86000C723C /* RestKitFrameworkTests.octest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A5F6330D17233BAE000B3CA4 /* File */ = {
-			isa = PBXGroup;
-			children = (
-				A5F6330E17233BC0000B3CA4 /* MBBoxFileResponse.h */,
-				A5F6330F17233BC0000B3CA4 /* MBBoxFileResponse.m */,
-				A5F63312172352D8000B3CA4 /* MBBoxFile.h */,
-				A5F63313172352D8000B3CA4 /* MBBoxFile.m */,
-			);
-			name = File;
 			sourceTree = "<group>";
 		};
 		D3F6429A6CE04EE9854A49DD /* Login */ = {
@@ -662,12 +704,15 @@
 				A5095652170BFD1D00FF4CD3 /* MBUserListCell.m in Sources */,
 				A557872E170DB0BC007185F1 /* MBBoxUser+GetInfo.m in Sources */,
 				A5578733170DB24A007185F1 /* MBBoxGetUserInfoResponse.m in Sources */,
-				A555A322170E7CD0005428DA /* MBBoxFolder.m in Sources */,
 				A5205FEC1716504100BC8C69 /* MBFileBrowserController.m in Sources */,
-				A5F6330317233A7E000B3CA4 /* MBBoxFolderItemsResponse.m in Sources */,
-				A5F6330B17233BA9000B3CA4 /* MBBoxFolderResponse.m in Sources */,
-				A5F6331017233BC0000B3CA4 /* MBBoxFileResponse.m in Sources */,
-				A5F63314172352D8000B3CA4 /* MBBoxFile.m in Sources */,
+				A56676EE17245407007B5D9A /* MBFileSystemObject.m in Sources */,
+				A56676F21724542D007B5D9A /* MBFolder.m in Sources */,
+				A56676F617245452007B5D9A /* MBFile.m in Sources */,
+				A5667700172454CB007B5D9A /* MBBoxFolder.m in Sources */,
+				A5667702172454CB007B5D9A /* MBBoxFolderItemsResponse.m in Sources */,
+				A5667704172454CB007B5D9A /* MBBoxFolderResponse.m in Sources */,
+				A566770A172454E2007B5D9A /* MBBoxFile.m in Sources */,
+				A566770C172454E2007B5D9A /* MBBoxFileResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,12 +737,15 @@
 				A5095653170BFD1D00FF4CD3 /* MBUserListCell.m in Sources */,
 				A557872F170DB0BC007185F1 /* MBBoxUser+GetInfo.m in Sources */,
 				A5578734170DB24A007185F1 /* MBBoxGetUserInfoResponse.m in Sources */,
-				A555A323170E7CD0005428DA /* MBBoxFolder.m in Sources */,
 				A5205FED1716504100BC8C69 /* MBFileBrowserController.m in Sources */,
-				A5F6330417233A7E000B3CA4 /* MBBoxFolderItemsResponse.m in Sources */,
-				A5F6330C17233BA9000B3CA4 /* MBBoxFolderResponse.m in Sources */,
-				A5F6331117233BC0000B3CA4 /* MBBoxFileResponse.m in Sources */,
-				A5F63315172352D8000B3CA4 /* MBBoxFile.m in Sources */,
+				A56676EF17245407007B5D9A /* MBFileSystemObject.m in Sources */,
+				A56676F31724542D007B5D9A /* MBFolder.m in Sources */,
+				A56676F717245452007B5D9A /* MBFile.m in Sources */,
+				A5667701172454CB007B5D9A /* MBBoxFolder.m in Sources */,
+				A5667703172454CB007B5D9A /* MBBoxFolderItemsResponse.m in Sources */,
+				A5667705172454CB007B5D9A /* MBBoxFolderResponse.m in Sources */,
+				A566770B172454E2007B5D9A /* MBBoxFile.m in Sources */,
+				A566770D172454E2007B5D9A /* MBBoxFileResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
