@@ -47,6 +47,12 @@
 		A566771217245AF7007B5D9A /* MBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A566771017245AF6007B5D9A /* MBUser.m */; };
 		A566771517245B16007B5D9A /* MBBoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A566771417245B16007B5D9A /* MBBoxUser.m */; };
 		A566771617245B16007B5D9A /* MBBoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A566771417245B16007B5D9A /* MBBoxUser.m */; };
+		A57BD5491745AC75008EFC98 /* MBBoxFileSystemUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BD5481745AC75008EFC98 /* MBBoxFileSystemUserResponse.m */; };
+		A57BD54A1745AC75008EFC98 /* MBBoxFileSystemUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BD5481745AC75008EFC98 /* MBBoxFileSystemUserResponse.m */; };
+		A57BD5511745B56E008EFC98 /* MBFileInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BD54F1745B56E008EFC98 /* MBFileInfoViewController.m */; };
+		A57BD5521745B56E008EFC98 /* MBFileInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BD54F1745B56E008EFC98 /* MBFileInfoViewController.m */; };
+		A57BD5531745B56E008EFC98 /* MBFileInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A57BD5501745B56E008EFC98 /* MBFileInfoViewController.xib */; };
+		A57BD5541745B56E008EFC98 /* MBFileInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A57BD5501745B56E008EFC98 /* MBFileInfoViewController.xib */; };
 		A5E9FA6A1708B9D8000C723C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E9FA691708B9D8000C723C /* Cocoa.framework */; };
 		A5E9FA741708B9D8000C723C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5E9FA721708B9D8000C723C /* InfoPlist.strings */; };
 		A5E9FA761708B9D8000C723C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9FA751708B9D8000C723C /* main.m */; };
@@ -197,6 +203,11 @@
 		A566771017245AF6007B5D9A /* MBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBUser.m; path = "Data Model/User/MBUser.m"; sourceTree = "<group>"; };
 		A566771317245B16007B5D9A /* MBBoxUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxUser.h; path = "Data Model/User/Box/MBBoxUser.h"; sourceTree = "<group>"; };
 		A566771417245B16007B5D9A /* MBBoxUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxUser.m; path = "Data Model/User/Box/MBBoxUser.m"; sourceTree = "<group>"; };
+		A57BD5471745AC75008EFC98 /* MBBoxFileSystemUserResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBoxFileSystemUserResponse.h; path = "Data Model/File System/Folder/Box/MBBoxFileSystemUserResponse.h"; sourceTree = "<group>"; };
+		A57BD5481745AC75008EFC98 /* MBBoxFileSystemUserResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBoxFileSystemUserResponse.m; path = "Data Model/File System/Folder/Box/MBBoxFileSystemUserResponse.m"; sourceTree = "<group>"; };
+		A57BD54E1745B56E008EFC98 /* MBFileInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBFileInfoViewController.h; path = "Main View/MBFileInfoViewController.h"; sourceTree = "<group>"; };
+		A57BD54F1745B56E008EFC98 /* MBFileInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFileInfoViewController.m; path = "Main View/MBFileInfoViewController.m"; sourceTree = "<group>"; };
+		A57BD5501745B56E008EFC98 /* MBFileInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MBFileInfoViewController.xib; path = "Main View/MBFileInfoViewController.xib"; sourceTree = "<group>"; };
 		A5E9FA661708B9D8000C723C /* Multi Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E9FA691708B9D8000C723C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A5E9FA6C1708B9D8000C723C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -282,6 +293,9 @@
 				A5095654170BFD3000FF4CD3 /* MBUserListCell.xib */,
 				A5205FEA1716504100BC8C69 /* MBFileBrowserController.h */,
 				A5205FEB1716504100BC8C69 /* MBFileBrowserController.m */,
+				A57BD54E1745B56E008EFC98 /* MBFileInfoViewController.h */,
+				A57BD54F1745B56E008EFC98 /* MBFileInfoViewController.m */,
+				A57BD5501745B56E008EFC98 /* MBFileInfoViewController.xib */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -365,6 +379,8 @@
 				A56676FD172454CB007B5D9A /* MBBoxFolderItemsResponse.m */,
 				A56676FE172454CB007B5D9A /* MBBoxFolderResponse.h */,
 				A56676FF172454CB007B5D9A /* MBBoxFolderResponse.m */,
+				A57BD5471745AC75008EFC98 /* MBBoxFileSystemUserResponse.h */,
+				A57BD5481745AC75008EFC98 /* MBBoxFileSystemUserResponse.m */,
 			);
 			name = Box;
 			sourceTree = "<group>";
@@ -660,6 +676,7 @@
 				A5095645170BF1A900FF4CD3 /* MBMainViewController.xib in Resources */,
 				A5095655170BFD3000FF4CD3 /* MBUserListCell.xib in Resources */,
 				A555A31D170E3313005428DA /* box_logo_small.png in Resources */,
+				A57BD5531745B56E008EFC98 /* MBFileInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +689,7 @@
 				A5095646170BF1A900FF4CD3 /* MBMainViewController.xib in Resources */,
 				A5095656170BFD3000FF4CD3 /* MBUserListCell.xib in Resources */,
 				A555A31E170E3313005428DA /* box_logo_small.png in Resources */,
+				A57BD5541745B56E008EFC98 /* MBFileInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +744,8 @@
 				A566770C172454E2007B5D9A /* MBBoxFileResponse.m in Sources */,
 				A566771117245AF7007B5D9A /* MBUser.m in Sources */,
 				A566771517245B16007B5D9A /* MBBoxUser.m in Sources */,
+				A57BD5491745AC75008EFC98 /* MBBoxFileSystemUserResponse.m in Sources */,
+				A57BD5511745B56E008EFC98 /* MBFileInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +780,8 @@
 				A566770D172454E2007B5D9A /* MBBoxFileResponse.m in Sources */,
 				A566771217245AF7007B5D9A /* MBUser.m in Sources */,
 				A566771617245B16007B5D9A /* MBBoxUser.m in Sources */,
+				A57BD54A1745AC75008EFC98 /* MBBoxFileSystemUserResponse.m in Sources */,
+				A57BD5521745B56E008EFC98 /* MBFileInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

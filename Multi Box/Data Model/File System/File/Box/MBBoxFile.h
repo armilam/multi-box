@@ -9,14 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "MBBoxFileResponse.h"
 #import "MBFile.h"
-
-@class MBBoxFolder;
+#import "MBBoxFolder.h"
 
 @interface MBBoxFile : MBFile
 
-@property (readonly) NSString* bid;
-@property (readonly) NSString* name;
+/// The MBBoxFolder object that contains the file
 @property (readonly) MBBoxFolder* parent;
+
+/// A unique ID for use with the /events endpoint
+@property (readonly) NSString* sequenceId;
+
+/// The SHA1 hash of the file's contents
+@property (readonly) NSString* sha1;
+
+/// A unique string identifying the version of the file
+@property (readonly) NSString* etag;
 
 /// Creates and populates an MBBoxFile object using values from fileResponse.
 /// @param fileResponse The object containing the info from Box API about the file.

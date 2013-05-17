@@ -10,6 +10,7 @@
 #import "MBBoxFile.h"
 #import "MBBoxUser.h"
 #import "MBBoxFolderItemsResponse.h"
+#import "MBBoxFileSystemUserResponse.h"
 #import "MBBoxFileResponse.h"
 #import "MBBoxFolderResponse.h"
 #import "NSString+URLQuery.h"
@@ -54,14 +55,23 @@
 
 - (void)refreshContents:(void (^)(MBBoxFolder*))returnBlock
 {
-    //TODO: Expand folder mapping
+    //TODO: Expand folder mapping to include more properties
     RKObjectMapping* folderMapping = [RKObjectMapping mappingForClass:[MBBoxFolderResponse class]];
     [folderMapping addAttributeMappingsFromArray:@[@"name", @"id"]];
-    
-    //TODO: Expand file mapping
+
+    NSArray* fileMappingItems = @[
+                                 @"name", @"id", @"sequence_id", @"etag", @"description",
+                                 @"size", @"created_at", @"modified_at", @"shared_link", @"item_status"
+                                 ];
     RKObjectMapping* fileMapping = [RKObjectMapping mappingForClass:[MBBoxFileResponse class]];
-    [fileMapping addAttributeMappingsFromArray:@[@"name", @"id"]];
-    
+    [fileMapping addAttributeMappingsFromArray:fileMappingItems];
+
+    RKObjectMapping* fileUserMapping = [RKObjectMapping mappingForClass:[MBBoxFileSystemUserResponse class]];
+    [fileUserMapping addAttributeMappingsFromArray:@[@"type", @"id", @"name", @"login"]];
+    [fileMapping addRelationshipMappingWithSourceKeyPath:@"created_by" mapping:fileUserMapping];
+    [fileMapping addRelationshipMappingWithSourceKeyPath:@"modified_by" mapping:fileUserMapping];
+    [fileMapping addRelationshipMappingWithSourceKeyPath:@"owned_by" mapping:fileUserMapping];
+
     RKDynamicMapping* dynamicMapping = [RKDynamicMapping new];
     [dynamicMapping addMatcher:[RKObjectMappingMatcher matcherWithKeyPath:@"type" expectedValue:@"file" objectMapping:fileMapping]];
     [dynamicMapping addMatcher:[RKObjectMappingMatcher matcherWithKeyPath:@"type" expectedValue:@"folder" objectMapping:folderMapping]];
@@ -78,9 +88,9 @@
     @{
 //      @"limit" : @"1",
 //      @"offset" : @"0",
-      @"fields" : @"name,id"
+      @"fields" : [fileMappingItems componentsJoinedByString:@","]
     };
-    
+
     NSString* url = [NSString stringWithFormat:@"https://api.box.com/2.0/folders/%@/items?%@", self.id, [NSString queryStringFromDictionary:queryItems]];
 
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];

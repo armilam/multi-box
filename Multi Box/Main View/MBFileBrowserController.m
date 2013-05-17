@@ -10,6 +10,7 @@
 #import "MBBoxFolder.h"
 #import "MBBoxFile.h"
 #import "MBBoxUser+GetInfo.h"
+#import "MBFileInfoViewController.h"
 
 @interface MBFileBrowserController()
 
@@ -84,7 +85,6 @@
     if([selectedItem isKindOfClass:[MBBoxFolder class]])
     {
         MBBoxFolder* selectedFolder = selectedItem;
-        //TODO: Expand folder
         [selectedFolder refreshContents:^(MBBoxFolder* refreshedFolder)
         {
             [browser reloadColumn:column+1];
@@ -97,6 +97,13 @@
     }
     
     return proposedSelectionIndexes;
+}
+
+- (NSViewController *)browser:(NSBrowser *)browser previewViewControllerForLeafItem:(id)item
+{
+    MBFileInfoViewController* viewController = [[MBFileInfoViewController alloc] initWithNibName:@"MBFileInfoViewController" bundle:[NSBundle mainBundle]];
+    [viewController setFile:item];
+    return viewController;
 }
 
 @end

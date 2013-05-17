@@ -8,6 +8,7 @@
 
 #import "MBBoxFile.h"
 #import "MBBoxFolder.h"
+#import <RestKit/RestKit.h>
 
 @interface MBBoxFile()
 
